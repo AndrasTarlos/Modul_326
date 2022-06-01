@@ -1,46 +1,49 @@
 package employees;
 
+import company.JobFunctions;
+import company.Teams;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Participation {
-    private List<JobFunctions> function = new ArrayList<>();
-    private List<Team> teams = new ArrayList<>();
+    private JobFunctions functions = new JobFunctions();
+    private Teams teams = new Teams();
     private Person owner;
 
     public Participation(Person person) {
-
+        owner = person;
     }
 
-    public void addFunction(JobFunction jobFunction) {
-
+    public void addFunction(String designation) {
+        functions.addJobFunction(designation);
     }
 
     public String getFunctionName(int index) {
-        return function.get(index);
+        return functions.getJobFunction(index);
     }
 
     public void removeFunction(int index) {
-        function.remove();
+        functions.removeJobFunction(index);
     }
 
     public int getNumberOfFunctions() {
-        return function.getSize();
+        return functions.getSize();
     }
 
-    public void addTeam(Teams teams) {
-        teams.add(teams);
+    public void addTeam(String designation) {
+        teams.addTeam(designation);
     }
 
     public String getTeamName(int index) {
-        return "";
+        return teams.getTeam(index);
     }
 
     public void removeTeam(int index) {
-
+        teams.removeTeam(index);
     }
 
     public int getNumberOfTeams() {
-        return 1;
+        return teams.getSize();
     }
 }
