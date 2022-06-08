@@ -15,9 +15,7 @@ public class Teams {
     /**
      * empty constructor
      */
-    public Teams() {
-
-    }
+    public Teams() {}
 
     /**
      * adds team to designations ArrayList
