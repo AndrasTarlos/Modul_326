@@ -13,7 +13,7 @@ public class ReadWriteJSON {
     }
 
     public void writePersonJSON() {
-        ObjectMapper objectMapper = new ObjectMapper();
+        /*ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
@@ -25,6 +25,6 @@ public class ReadWriteJSON {
             objectWriter.writeValue(fileWriter, getClientList());
         } catch (IOException ex) {
             ex.printStackTrace();
-        }
+        }*/
     }
 }
