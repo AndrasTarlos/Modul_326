@@ -4,12 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Francesco Ryu
+ * Author: Francesco Ryu
+ * Date: 08.06.2022
+ *
  */
 
 public class Menu extends JFrame {
 
     JTabbedPane selectTab;
+
     public Menu() {
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
