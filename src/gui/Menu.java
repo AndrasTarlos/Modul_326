@@ -3,6 +3,10 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Francesco Ryu
+ */
+
 public class Menu extends JFrame {
 
     JTabbedPane selectTab;
