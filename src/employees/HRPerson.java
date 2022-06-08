@@ -6,6 +6,13 @@ import log.UserAction;
 import java.io.IOException;
 
 public class HRPerson extends Person {
+    /**
+     * <h1>Employees</h1>
+     * author: Andras Tarlos
+     * version: 1.0
+     * date: 08.06.2022
+     * description: This class includes methods for HRPerson
+     */
     private int modus;
     private String pwd;
 //, byte[] photo
