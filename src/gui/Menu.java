@@ -12,6 +12,7 @@ public class Menu extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
 
+
         Overview overview = new Overview();
         Assignment assignment = new Assignment();
         Persons persons = new Persons();
