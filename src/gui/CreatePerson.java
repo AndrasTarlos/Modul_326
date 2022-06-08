@@ -1,7 +1,5 @@
 package gui;
 
-import javax.swing.*;
-
-public class CreatePerson extends JDialog {
+public class CreatePerson{
 
 }
