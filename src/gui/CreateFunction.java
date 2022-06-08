@@ -1,4 +1,6 @@
 package gui;
 
-public class CreateFunction {
+import javax.swing.*;
+
+public class CreateFunction extends JDialog {
 }
