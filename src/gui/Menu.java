@@ -1,7 +1,5 @@
 package gui;
 
-import employees.Person;
-
 import javax.swing.*;
 import java.awt.*;
 
