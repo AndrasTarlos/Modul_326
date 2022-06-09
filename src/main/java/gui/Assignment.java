@@ -5,6 +5,7 @@ import java.awt.*;
 
 /**
  * author: Francesco Ryu
+ * date: 10.06.2022
  */
 
 public class Assignment extends JPanel {
