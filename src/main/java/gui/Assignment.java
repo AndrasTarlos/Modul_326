@@ -3,6 +3,10 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * author: Francesco Ryu
+ */
+
 public class Assignment extends JPanel {
 
     JPanel personEditPanel;
