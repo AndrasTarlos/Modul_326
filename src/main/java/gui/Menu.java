@@ -17,7 +17,6 @@ public class Menu extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
 
-
         Overview overview = new Overview();
         Assignment assignment = new Assignment();
         Person person = new Person();
@@ -33,7 +32,7 @@ public class Menu extends JFrame {
 
         this.add(selectTab);
 
-        this.setSize(600, 750);
+        this.setSize(600, 700);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
