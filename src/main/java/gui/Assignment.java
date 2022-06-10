@@ -1,6 +1,5 @@
 package gui;
-
-import employees.Person;
+import gui.components.PersonOverview;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -14,14 +13,12 @@ import java.awt.*;
 public class Assignment extends JPanel {
 
     JPanel personEditPanel;
-    JPanel personListPanel;
-    JPanel personOverviewPanel;
+
+    PersonOverview personOverviewPanel;
     JPanel personDetailPanel;
     JPanel personNameImagePanel;
     JPanel personAssignmentPanel;
 
-    DefaultListModel personListModel;
-    JList personList;
     JLabel personEditLabel;
     JLabel personNameLabel;
 
@@ -30,20 +27,10 @@ public class Assignment extends JPanel {
     public Assignment() {
         this.setLayout(new BorderLayout());
 
-        personListModel = new DefaultListModel();
-        for (int i = 0; i < 15; i++) {
-            personListModel.addElement("Francesco Ryu");
-            personListModel.addElement("Max Muster");
-            personListModel.addElement("Hans Maier");
-        }
-
-        personList = new JList(personListModel);
-
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
-        personListPanel = new JPanel();
         personEditPanel = new JPanel();
-        personOverviewPanel = new JPanel();
+        personOverviewPanel = new PersonOverview();
         personDetailPanel = new JPanel();
         personNameImagePanel = new JPanel();
         personAssignmentPanel = new JPanel();
@@ -53,22 +40,12 @@ public class Assignment extends JPanel {
 
         nameInputTextField = new JTextField();
 
-        JScrollPane scrollPanePerson = new JScrollPane(personList);
-        scrollPanePerson.setPreferredSize(new Dimension(170, 0));
-
         personEditLabel = new JLabel("  Personen bearbeiten:");
         personNameLabel = new JLabel("  Name: ");
-
-        personListPanel.add(scrollPanePerson);
-
-        personOverviewPanel.add(scrollPanePerson, BorderLayout.LINE_START);
-        personOverviewPanel.setBorder(new TitledBorder("Übersicht:"));
 
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
         personNameImagePanel.setLayout(new GridBagLayout());
-
-
         personNameImagePanel.add(personNameLabel);
 
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
