@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -19,9 +20,10 @@ public class Assignment extends JPanel {
 
     DefaultListModel personListModel;
     JList personList;
-
-    JLabel overviewLabel;
     JLabel personEditLabel;
+    JLabel personNameLabel;
+
+    JTextField nameInputTextField;
 
     public Assignment() {
         this.setLayout(new BorderLayout());
@@ -38,62 +40,17 @@ public class Assignment extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
         personOverviewPanel.setLayout(new BorderLayout());
 
-        overviewLabel = new JLabel("Übersicht:");
-        personEditLabel = new JLabel("Personen bearbeiten:");
+        personEditLabel = new JLabel("  Personen bearbeiten:");
+        personNameLabel = new JLabel("  Name:");
+
+        nameInputTextField = new JTextField();
 
         personListModel = new DefaultListModel();
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
-        personListModel.addElement("Andras Tarlos");
-        personListModel.addElement("Julian Janik");
-        personListModel.addElement("Francesco Ryu");
+        for (int i = 0; i < 15; i++) {
+            personListModel.addElement("Francesco Ryu");
+            personListModel.addElement("Max Muster");
+            personListModel.addElement("Hans Maier");
+        }
 
         personList = new JList(personListModel);
 
@@ -102,17 +59,20 @@ public class Assignment extends JPanel {
 
         personListPanel.add(scrollPanePerson);
 
-        personOverviewPanel.add(overviewLabel, BorderLayout.PAGE_START);
         personOverviewPanel.add(scrollPanePerson, BorderLayout.LINE_START);
-        personOverviewPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        personOverviewPanel.setBorder(new TitledBorder("Übersicht:"));
 
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
-        personNameImagePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        personNameImagePanel.setLayout(new GridBagLayout());
+
+
+        personNameImagePanel.add(personNameLabel);
+        personNameImagePanel.add(nameInputTextField);
 
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        personDetailPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        personDetailPanel.setBorder(new TitledBorder("  Detail: "));
         personDetailPanel.setLayout(personDetailLayout);
         personDetailPanel.add(personNameImagePanel);
         personDetailPanel.add(personAssignmentPanel);
