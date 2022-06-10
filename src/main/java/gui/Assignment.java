@@ -13,6 +13,9 @@ public class Assignment extends JPanel {
     JPanel personEditPanel;
     JPanel personListPanel;
     JPanel personOverviewPanel;
+    JPanel personDetailPanel;
+    JPanel personNameImagePanel;
+    JPanel personAssignmentPanel;
 
     DefaultListModel personListModel;
     JList personList;
@@ -23,9 +26,14 @@ public class Assignment extends JPanel {
     public Assignment() {
         this.setLayout(new BorderLayout());
 
+        GridLayout personDetailLayout = new GridLayout(2, 0);
+
         personListPanel = new JPanel();
         personEditPanel = new JPanel();
         personOverviewPanel = new JPanel();
+        personDetailPanel = new JPanel();
+        personNameImagePanel = new JPanel();
+        personAssignmentPanel = new JPanel();
 
         personEditPanel.setLayout(new BorderLayout());
         personOverviewPanel.setLayout(new BorderLayout());
@@ -98,8 +106,17 @@ public class Assignment extends JPanel {
         personOverviewPanel.add(scrollPanePerson, BorderLayout.LINE_START);
         personOverviewPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-        personEditPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
+
+        personNameImagePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
+        personDetailPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        personDetailPanel.setLayout(personDetailLayout);
+        personDetailPanel.add(personNameImagePanel);
+        personDetailPanel.add(personAssignmentPanel);
+
+        personEditPanel.add(personDetailPanel, BorderLayout.CENTER);
         this.add(personEditPanel);
         this.add(personEditLabel, BorderLayout.PAGE_START);
         this.setVisible(true);
