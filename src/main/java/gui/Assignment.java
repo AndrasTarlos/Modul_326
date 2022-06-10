@@ -1,10 +1,12 @@
 package gui;
 
+import gui.components.PersonNameImagePanel;
 import gui.components.PersonOverview;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * author: Francesco Ryu
@@ -17,13 +19,11 @@ public class Assignment extends JPanel {
 
     PersonOverview personOverviewPanel;
     JPanel personDetailPanel;
-    JPanel personNameImagePanel;
+    PersonNameImagePanel personNameImagePanel;
     JPanel personAssignmentPanel;
 
     JLabel personEditLabel;
-    JLabel personNameLabel;
 
-    JTextField nameInputTextField;
 
     public Assignment() {
         this.setLayout(new BorderLayout());
@@ -33,24 +33,13 @@ public class Assignment extends JPanel {
         personEditPanel = new JPanel();
         personOverviewPanel = new PersonOverview();
         personDetailPanel = new JPanel();
-        personNameImagePanel = new JPanel();
+        personNameImagePanel = new PersonNameImagePanel();
         personAssignmentPanel = new JPanel();
 
         personEditPanel.setBorder(new TitledBorder("    Person bearbeiten:  "));
-
         personEditPanel.setLayout(new BorderLayout());
-
-        nameInputTextField = new JTextField();
-        nameInputTextField.setColumns(25);
-
         personEditLabel = new JLabel("  Personen bearbeiten:");
-        personNameLabel = new JLabel("  Name: " );
-
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
-
-        //personNameImagePanel.setLayout(new GridLayout(2, 2));
-        personNameImagePanel.add(personNameLabel);
-        personNameImagePanel.add(nameInputTextField);
 
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
@@ -61,7 +50,6 @@ public class Assignment extends JPanel {
 
         personEditPanel.add(personDetailPanel, BorderLayout.CENTER);
         this.add(personEditPanel);
-        //this.add(personEditLabel, BorderLayout.PAGE_START);
         this.setVisible(true);
     }
 }
