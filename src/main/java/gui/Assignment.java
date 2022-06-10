@@ -1,5 +1,7 @@
 package gui;
 
+import employees.Person;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -28,6 +30,15 @@ public class Assignment extends JPanel {
     public Assignment() {
         this.setLayout(new BorderLayout());
 
+        personListModel = new DefaultListModel();
+        for (int i = 0; i < 15; i++) {
+            personListModel.addElement("Francesco Ryu");
+            personListModel.addElement("Max Muster");
+            personListModel.addElement("Hans Maier");
+        }
+
+        personList = new JList(personListModel);
+
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
         personListPanel = new JPanel();
@@ -40,22 +51,13 @@ public class Assignment extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
         personOverviewPanel.setLayout(new BorderLayout());
 
-        personEditLabel = new JLabel("  Personen bearbeiten:");
-        personNameLabel = new JLabel("  Name:");
-
         nameInputTextField = new JTextField();
-
-        personListModel = new DefaultListModel();
-        for (int i = 0; i < 15; i++) {
-            personListModel.addElement("Francesco Ryu");
-            personListModel.addElement("Max Muster");
-            personListModel.addElement("Hans Maier");
-        }
-
-        personList = new JList(personListModel);
 
         JScrollPane scrollPanePerson = new JScrollPane(personList);
         scrollPanePerson.setPreferredSize(new Dimension(170, 0));
+
+        personEditLabel = new JLabel("  Personen bearbeiten:");
+        personNameLabel = new JLabel("  Name: ");
 
         personListPanel.add(scrollPanePerson);
 
@@ -68,7 +70,6 @@ public class Assignment extends JPanel {
 
 
         personNameImagePanel.add(personNameLabel);
-        personNameImagePanel.add(nameInputTextField);
 
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
