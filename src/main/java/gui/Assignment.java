@@ -1,4 +1,5 @@
 package gui;
+
 import gui.components.PersonOverview;
 
 import javax.swing.*;
@@ -36,7 +37,6 @@ public class Assignment extends JPanel {
         personAssignmentPanel = new JPanel();
 
         personEditPanel.setLayout(new BorderLayout());
-        personOverviewPanel.setLayout(new BorderLayout());
 
         nameInputTextField = new JTextField();
 
