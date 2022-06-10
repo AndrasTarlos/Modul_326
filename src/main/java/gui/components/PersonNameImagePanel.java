@@ -1,4 +1,5 @@
 package gui.components;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -8,6 +9,7 @@ public class PersonNameImagePanel extends JPanel {
     JLabel personNameLabel;
 
     JLabel imagePlaceHolder;
+    JLabel imageLabel;
 
     public PersonNameImagePanel() {
         personNameLabel = new JLabel("  Name: ");
@@ -18,7 +20,7 @@ public class PersonNameImagePanel extends JPanel {
         nameInputTextField.setEditable(false);
 
         imagePlaceHolder = new JLabel();
-        imagePlaceHolder.setPreferredSize(new Dimension( 200, 200));
+        imagePlaceHolder.setPreferredSize(new Dimension(200, 200));
         imagePlaceHolder.setBorder(new TitledBorder("PLACEHOLDER"));
 
         this.add(personNameLabel);
