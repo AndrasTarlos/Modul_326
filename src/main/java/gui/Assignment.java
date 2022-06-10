@@ -109,6 +109,7 @@ public class Assignment extends JPanel {
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
         personNameImagePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
         personDetailPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
