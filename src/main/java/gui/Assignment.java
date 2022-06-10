@@ -41,14 +41,16 @@ public class Assignment extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
 
         nameInputTextField = new JTextField();
+        nameInputTextField.setColumns(25);
 
         personEditLabel = new JLabel("  Personen bearbeiten:");
-        personNameLabel = new JLabel("  Name: ");
+        personNameLabel = new JLabel("  Name: " );
 
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
-        personNameImagePanel.setLayout(new GridBagLayout());
+        //personNameImagePanel.setLayout(new GridLayout(2, 2));
         personNameImagePanel.add(personNameLabel);
+        personNameImagePanel.add(nameInputTextField);
 
         personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
