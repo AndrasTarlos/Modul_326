@@ -36,6 +36,8 @@ public class Assignment extends JPanel {
         personNameImagePanel = new JPanel();
         personAssignmentPanel = new JPanel();
 
+        personEditPanel.setBorder(new TitledBorder("    Person bearbeiten:  "));
+
         personEditPanel.setLayout(new BorderLayout());
 
         nameInputTextField = new JTextField();
@@ -57,7 +59,7 @@ public class Assignment extends JPanel {
 
         personEditPanel.add(personDetailPanel, BorderLayout.CENTER);
         this.add(personEditPanel);
-        this.add(personEditLabel, BorderLayout.PAGE_START);
+        //this.add(personEditLabel, BorderLayout.PAGE_START);
         this.setVisible(true);
     }
 }

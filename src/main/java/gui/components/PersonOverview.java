@@ -1,7 +1,6 @@
 package gui.components;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -22,9 +21,10 @@ public class PersonOverview extends JPanel {
 
         personList = new JList<>(personListModel);
         scrollPanePerson = new JScrollPane(personList);
-        this.setPreferredSize(new Dimension(170, 0));
-        this.add(scrollPanePerson, BorderLayout.LINE_START);
+        scrollPanePerson.setPreferredSize(new Dimension(170, 0));
 
+        this.setPreferredSize(new Dimension(170, 0));
+        this.add(scrollPanePerson, BorderLayout.CENTER);
         this.setBorder(new TitledBorder("   Übersicht:  "));
         this.setVisible(true);
     }
