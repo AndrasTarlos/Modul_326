@@ -2,6 +2,8 @@ package gui.components;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -22,6 +24,7 @@ public class PersonOverview extends JPanel {
             personListModel.addElement("Max Muster");
             personListModel.addElement("Hans Maier");
         }
+
 
         personList = new JList<>(personListModel);
         scrollPanePerson = new JScrollPane(personList);
