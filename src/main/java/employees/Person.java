@@ -48,4 +48,11 @@ public class Person {
     public void setParticipation(Participation participation) {
         this.participation = participation;
     }
+
+    public boolean getIsPerson(HRPerson person) {
+        if (person.getModus() == 0 && person.getPwd() == null) {
+            return true;
+        }
+        return false;
+    }
 }
