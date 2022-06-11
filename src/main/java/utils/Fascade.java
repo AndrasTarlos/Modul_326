@@ -40,7 +40,7 @@ public class Fascade {
 
     // Department
 
-    public List<Department> getAllDepartment() {
+    public ArrayList<Department> getAllDepartment() {
         return company.getDepartments();
     }
 

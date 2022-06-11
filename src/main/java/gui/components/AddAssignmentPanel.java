@@ -41,10 +41,10 @@ public class AddAssignmentPanel extends JPanel {
         teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        abteilungComboBox = new JComboBox<>(testData);
+        abteilungComboBox = new JComboBox<>();
         abteilungComboBox.setPreferredSize(new Dimension(224, 20));
 
-        funktionComboBox = new JComboBox<>(testData);
+        funktionComboBox = new JComboBox<>();
         funktionComboBox.setPreferredSize(new Dimension(224, 20));
 
         teamsComboBox = new JComboBox<>();
@@ -64,11 +64,15 @@ public class AddAssignmentPanel extends JPanel {
         this.add(selectionPanel, BorderLayout.CENTER);
     }
 
-    public void updateComboBox(ArrayList<Team> teams) {
-        String[] content = new String[teams.size()];
-        for (int i = 0; i < teams.size(); i++) {
-            content[0] = teams.get(i).getDesignation();
+    public void updateComboBox(ArrayList<Team> teams, ArrayList<JobFunction> jobFunctions, ArrayList<Department> departments, Person person) {
+        for (Team t: teams) {
+            teamsComboBox.addItem(t.getDesignation());
         }
-        teamsComboBox = new JComboBox<>(content);
+        for (JobFunction f: jobFunctions) {
+            funktionComboBox.addItem(f.getDesignation());
+        }
+        for (Department d: departments) {
+            abteilungComboBox.addItem(d.getName());
+        }
     }
 }

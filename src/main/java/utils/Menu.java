@@ -1,5 +1,6 @@
 package utils;
 
+import company.Company;
 import gui.*;
 
 import javax.swing.*;
@@ -42,7 +43,8 @@ public class Menu extends JFrame {
     public static void main(String[] args) {
         ReadWriteJSON readWriteJSON = new ReadWriteJSON();
         Fascade fascade = readWriteJSON.readFascadeJSON();
-        fascade.setCompany(readWriteJSON.readCompanyJSON());
+        Company company = readWriteJSON.readCompanyJSON();
+        fascade.setCompany(company);
         new Menu(fascade);
     }
 }

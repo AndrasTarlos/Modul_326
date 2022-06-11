@@ -1,5 +1,6 @@
 package gui.components;
 
+import company.Team;
 import employees.Person;
 import utils.Fascade;
 import utils.Menu;
@@ -83,6 +84,6 @@ public class PersonOverview extends JPanel {
 
     public void updatePanels(Person person) {
         personInfoPanel.update(person);
-        addAssignmentPanel.updateComboBox(fascade.getAllTeams());
+        addAssignmentPanel.updateComboBox(fascade.getAllTeams(), fascade.getJobFunctions(), fascade.getAllDepartment(), person);
     }
 }
