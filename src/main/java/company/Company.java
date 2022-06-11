@@ -1,7 +1,11 @@
 package company;
 
 import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Company {
     private String name;
     private final ArrayList<Department> departments = new ArrayList<>();
@@ -33,17 +37,5 @@ public class Company {
     }
     public int getNumberOfDepartments(){
         return departments.size();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ArrayList<Department> getDepartments() {
-        return departments;
     }
 }
