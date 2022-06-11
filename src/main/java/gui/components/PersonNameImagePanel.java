@@ -17,7 +17,7 @@ public class PersonNameImagePanel extends JPanel {
         personNameLabel = new JLabel("  Name: ");
         ImageIcon picture = new ImageIcon("img.png");
 
-        nameInputTextField = new JTextField("PLACEHOLDER" + personOverview.personList.getSelectedValue());
+        nameInputTextField = new JTextField("PLACEHOLDER");
         nameInputTextField.setColumns(25);
         nameInputTextField.setEditable(false);
 

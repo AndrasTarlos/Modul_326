@@ -9,27 +9,22 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class PersonOverview extends JPanel {
     DefaultListModel<String> personListModel;
-    JList<String> personList;
+    List<String> personList;
     JScrollPane scrollPanePerson;
     JLabel testLabel;
 
     public PersonOverview() {
         this.setLayout(new BorderLayout());
         personListModel = new DefaultListModel<String>();
-        for (int i = 0; i < 15; i++) {
-            personListModel.addElement("Francesco Ryu");
-            personListModel.addElement("Max Muster");
-            personListModel.addElement("Hans Maier");
-        }
 
-
-        personList = new JList<>(personListModel);
-        scrollPanePerson = new JScrollPane(personList);
-        scrollPanePerson.setPreferredSize(new Dimension(170, 0));
-
+        scrollPanePerson = new JScrollPane();
 
 
         this.setPreferredSize(new Dimension(170, 0));

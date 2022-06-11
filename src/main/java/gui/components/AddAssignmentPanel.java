@@ -13,10 +13,11 @@ public class AddAssignmentPanel extends JPanel {
     JLabel funktion;
     JLabel teams;
 
-    JTextField abteilungTextField;
-
+    JComboBox<String> abteilungComboBox;
     JComboBox<String> funktionComboBox;
-    JList selectFunktionList;
+    JComboBox<String> teamsComboBox;
+
+    String[] testData = {"asdgbvbbn", "wertrtztjj", "öjklhjh"};
 
     public AddAssignmentPanel() {
         this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
@@ -26,25 +27,31 @@ public class AddAssignmentPanel extends JPanel {
         selectionPanel = new JPanel();
 
         abteilung = new JLabel("Abteilung:");
+        abteilung.setBorder(new EmptyBorder(0, 0, 0, 0));
+
         funktion = new JLabel("Funktion:");
+        funktion.setBorder(new EmptyBorder(5, 0, 0, 0));
+
         teams = new JLabel("Teams:");
+        teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        abteilungTextField = new JTextField();
-        abteilungTextField.setColumns(20);
+        abteilungComboBox = new JComboBox<>(testData);
+        abteilungComboBox.setPreferredSize(new Dimension(224, 20));
 
-        funktionComboBox = new JComboBox<>();
-        funktionComboBox.setPreferredSize(new Dimension(50, 20));
+        funktionComboBox = new JComboBox<>(testData);
+        funktionComboBox.setPreferredSize(new Dimension(224, 20));
 
-        selectFunktionList = new JList();
+        teamsComboBox = new JComboBox<>(testData);
+        teamsComboBox.setPreferredSize(new Dimension(224, 20));
 
-        selectionPanel.add(abteilungTextField);
+        selectionPanel.add(abteilungComboBox);
         selectionPanel.add(funktionComboBox);
+        selectionPanel.add(teamsComboBox);
 
         labelPanel.add(abteilung);
         labelPanel.add(funktion);
         labelPanel.add(teams);
 
-        labelPanel.setBorder(new TitledBorder(""));
         labelPanel.setPreferredSize(new Dimension(100, 0));
 
         this.add(labelPanel, BorderLayout.WEST);
