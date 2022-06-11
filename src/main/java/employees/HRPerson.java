@@ -4,7 +4,11 @@ import log.LogBook;
 import log.UserAction;
 
 import java.io.IOException;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class HRPerson extends Person {
     /**
      * <h1>Employees</h1>
@@ -29,21 +33,6 @@ public class HRPerson extends Person {
 
     }
 
-    public int getModus() {
-        return modus;
-    }
-
-    public void setModus(int modus) {
-        this.modus = modus;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
 
     public void writeLogEntry(Person person, int action) throws IOException {
         UserAction ua = new UserAction(this, person, action);

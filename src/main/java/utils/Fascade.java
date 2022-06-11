@@ -2,7 +2,7 @@ package utils;
 
 import company.Company;
 import company.Department;
-import employees.JobFunctions;
+import employees.JobFunction;
 import company.Team;
 import employees.Person;
 
@@ -15,14 +15,16 @@ import lombok.Setter;
 @Setter
 public class Fascade {
     private Company company = new Company();
-    private List<Team> teams = new ArrayList<>();
-    private List<JobFunctions> jobFunctions = new ArrayList<>();
+    private ArrayList<Team> teams = new ArrayList<>();
+    private ArrayList<JobFunction> jobFunctions = new ArrayList<>();
 
     public Fascade() {}
 
     public Fascade(Company company) {
         setCompany(company);
     }
+
+    // Company
 
     public void setCompany(Company company) {
         this.company = company;
@@ -36,6 +38,8 @@ public class Fascade {
         company.setCompanyName(name);
     }
 
+    // Department
+
     public List<Department> getAllDepartment() {
         return company.getDepartments();
     }
@@ -47,6 +51,8 @@ public class Fascade {
         }
         return names;
     }
+
+    // Person
 
     public List<Person> getAllPerson() {
         List<Person> person = new ArrayList<>();
@@ -64,5 +70,17 @@ public class Fascade {
             }
         }
         return null;
+    }
+
+    // Teams
+
+    public ArrayList<Team> getAllTeams() {
+        return getTeams();
+    }
+
+    // JobFunctions
+
+    public List<JobFunction> getAllJobFunctions() {
+        return getJobFunctions();
     }
 }

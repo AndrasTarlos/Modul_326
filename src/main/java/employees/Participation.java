@@ -1,26 +1,14 @@
 package employees;
 
 import company.Team;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Participation {
-    private JobFunctions functions = new JobFunctions();
+    private JobFunction function = new JobFunction();
     private Team team = new Team();
 
     public Participation() {}
-
-    public JobFunctions getFunctions() {
-        return functions;
-    }
-
-    public void setFunctions(JobFunctions functions) {
-        this.functions = functions;
-    }
-
-    public Team getTeams() {
-        return team;
-    }
-
-    public void setTeams(Team team) {
-        this.team = team;
-    }
 }

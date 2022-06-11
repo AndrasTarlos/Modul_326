@@ -9,10 +9,10 @@
             "firstName": "Valentin",
             "lastName": "Adrianus",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "Frontend"
               },
-              "teams": {
+              "team": {
                 "designation": "Avengers"
               }
             },
@@ -28,10 +28,10 @@
             "firstName": "Xose",
             "lastName": "Tushar",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "Frontend"
               },
-              "teams": {
+              "team": {
                 "designation": "Amigos"
               }
             },
@@ -42,10 +42,10 @@
             "firstName": "Stef",
             "lastName": "Regulo",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "Backend"
               },
-              "teams": {
+              "team": {
                 "designation": "A Team"
               }
             },
@@ -61,10 +61,10 @@
             "firstName": "Modred",
             "lastName": "Leander",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "XML"
               },
-              "teams": {
+              "team": {
                 "designation": "All Stars"
               }
             },
@@ -75,10 +75,10 @@
             "firstName": "John",
             "lastName": "Dasoda-hae",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "Backend"
               },
-              "teams": {
+              "team": {
                 "designation": "Champions"
               }
             },
@@ -89,10 +89,10 @@
             "firstName": "admin",
             "lastName": "admin",
             "participation": {
-              "functions": {
+              "function": {
                 "designation": "Backend"
               },
-              "teams": {
+              "team": {
                 "designation": "Bosses"
               }
             },
