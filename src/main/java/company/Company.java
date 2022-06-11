@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Company {
     private String name;
-    private ArrayList<Department> departments = new ArrayList<>();
+    private final ArrayList<Department> departments = new ArrayList<>();
 
 
-    public void Company(String name){
+    public Company(String name){
         setCompanyName(name);
     }
 
