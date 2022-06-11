@@ -2,7 +2,11 @@ package gui.components;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class PersonOverview extends JPanel {
     DefaultListModel<String> personListModel;
@@ -22,6 +26,8 @@ public class PersonOverview extends JPanel {
         personList = new JList<>(personListModel);
         scrollPanePerson = new JScrollPane(personList);
         scrollPanePerson.setPreferredSize(new Dimension(170, 0));
+
+
 
         this.setPreferredSize(new Dimension(170, 0));
         this.add(scrollPanePerson, BorderLayout.CENTER);

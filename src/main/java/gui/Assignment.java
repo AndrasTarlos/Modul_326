@@ -1,12 +1,13 @@
 package gui;
 
+import gui.components.AddAssignmentPanel;
 import gui.components.PersonNameImagePanel;
 import gui.components.PersonOverview;
 
 import javax.swing.*;
+import javax.swing.border.MatteBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.io.IOException;
 
 /**
  * author: Francesco Ryu
@@ -20,7 +21,7 @@ public class Assignment extends JPanel {
     PersonOverview personOverviewPanel;
     JPanel personDetailPanel;
     PersonNameImagePanel personNameImagePanel;
-    JPanel personAssignmentPanel;
+    AddAssignmentPanel personAssignmentPanel;
 
     JLabel personEditLabel;
 
@@ -34,14 +35,14 @@ public class Assignment extends JPanel {
         personOverviewPanel = new PersonOverview();
         personDetailPanel = new JPanel();
         personNameImagePanel = new PersonNameImagePanel();
-        personAssignmentPanel = new JPanel();
+        personAssignmentPanel = new AddAssignmentPanel();
 
         personEditPanel.setBorder(new TitledBorder("    Person bearbeiten:  "));
         personEditPanel.setLayout(new BorderLayout());
         personEditLabel = new JLabel("  Personen bearbeiten:");
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
-        personAssignmentPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+
 
         personDetailPanel.setBorder(new TitledBorder("  Detail: "));
         personDetailPanel.setLayout(personDetailLayout);
