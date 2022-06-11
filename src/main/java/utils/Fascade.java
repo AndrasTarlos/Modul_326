@@ -2,6 +2,8 @@ package utils;
 
 import company.Company;
 import company.Department;
+import employees.HRPerson;
+import employees.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +23,11 @@ public class Fascade {
         return company.getCompanyName();
     }
 
-    public ArrayList<Department> getAllDepartment() {
+    public void setCompanyName(String name) {
+        company.setCompanyName(name);
+    }
+
+    public List<Department> getAllDepartment() {
         return company.getDepartments();
     }
 
@@ -31,5 +37,14 @@ public class Fascade {
             names.add(d.getName());
         }
         return names;
+    }
+
+    public List<Person> getAllPerson() {
+        List<Person> person = new ArrayList<>();
+        for (Department d: company.getDepartments()) {
+            person.addAll(d.getMembers());
+        }
+
+        return person;
     }
 }

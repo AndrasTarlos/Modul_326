@@ -15,16 +15,16 @@ public class Person {
         setLastName(lastName);
         //setPhoto(photo);
     }
-/*
-    public byte[] getPhoto() {
-        return photo;
-    }
+    /*
+        public byte[] getPhoto() {
+            return photo;
+        }
 
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
- */
+        public void setPhoto(byte[] photo) {
+            this.photo = photo;
+        }
+     */
     public String getFirstName() {
         return firstName;
     }
