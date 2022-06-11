@@ -8,6 +8,8 @@ public class Person {
     private String lastName;
     private Participation participation;
 
+    public Person() {}
+
     public Person(String firstName, String lastName) {
         setFirstName(firstName);
         setLastName(lastName);

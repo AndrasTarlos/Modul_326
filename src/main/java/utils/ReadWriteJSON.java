@@ -9,9 +9,6 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class ReadWriteJSON {
 
@@ -44,10 +41,9 @@ public class ReadWriteJSON {
         try {
             fileOutputStream = new FileOutputStream("C:\\Users\\andra\\OneDrive - Bildungszentrum Zürichsee\\BZZ\\Probst\\Modul 326\\Auftrag_4\\Auftrag_4\\src\\main\\resources\\JSON\\company.json");
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, company);
+            objectWriter.writeValue(fileWriter, new Company[] {company});
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
-
 }

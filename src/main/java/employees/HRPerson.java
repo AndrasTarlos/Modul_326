@@ -16,6 +16,11 @@ public class HRPerson extends Person {
     private int modus;
     private String pwd;
 //, byte[] photo
+
+    public HRPerson() {
+        super();
+    }
+
     public HRPerson(String firstName, String lastName) {
         super(firstName, lastName);
     }

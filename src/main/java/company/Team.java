@@ -9,13 +9,12 @@ import java.util.ArrayList;
  * description: This class includes methods for Teams.
  */
 
-public class Teams {
+public class Team {
     private ArrayList<String> designations = new ArrayList<>();
-
     /**
      * empty constructor
      */
-    public Teams() {}
+    public Team() {}
 
     /**
      * adds team to designations ArrayList

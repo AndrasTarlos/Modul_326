@@ -6,6 +6,8 @@ public class Company {
     private String name;
     private final ArrayList<Department> departments = new ArrayList<>();
 
+    public Company() {}
+
     public Company(String name){
         setCompanyName(name);
     }

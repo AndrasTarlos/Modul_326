@@ -3,6 +3,137 @@
     "name": "Our company",
     "departments": [
       {
+        "name": "Office",
+        "members": [
+          {
+            "firstName": "Valentin",
+            "lastName": "Adrianus",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Frontend",
+                  "JSON"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Avengers",
+                  "A Team"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "IT",
+        "members": [
+          {
+            "firstName": "Xose",
+            "lastName": "Tushar",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Frontend",
+                  "JSON"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Avengers",
+                  "Amigos"
+                ]
+              }
+            },
+            "modus": 0,
+            "pwd": null
+          },
+          {
+            "firstName": "Stef",
+            "lastName": "Regulo",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Backend",
+                  "XML"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Amigos",
+                  "A Team"
+                ]
+              }
+            },
+            "modus": 0,
+            "pwd": null
+          }
+        ]
+      },
+      {
+        "name": "Management",
+        "members": [
+          {
+            "firstName": "Modred",
+            "lastName": "Leander",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Backend",
+                  "XML"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Bosses",
+                  "All Stars"
+                ]
+              }
+            },
+            "modus": 0,
+            "pwd": "secretkitty"
+          },
+          {
+            "firstName": "John",
+            "lastName": "Dasoda-hae",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Backend",
+                  "XML"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Champions",
+                  "Bosses"
+                ]
+              }
+            },
+            "modus": 0,
+            "pwd": "secretpasswd"
+          },
+          {
+            "firstName": "admin",
+            "lastName": "admin",
+            "participation": {
+              "functions": {
+                "designations": [
+                  "Backend",
+                  "XML"
+                ]
+              },
+              "teams": {
+                "designations": [
+                  "Bosses",
+                  "A Team"
+                ]
+              }
+            },
+            "modus": 1,
+            "pwd": "admin"
+          }
+        ]
       }
     ]
   }

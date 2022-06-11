@@ -1,19 +1,13 @@
 package employees;
 
 import company.JobFunctions;
-import company.Teams;
-
-import java.util.ArrayList;
-import java.util.List;
+import company.Team;
 
 public class Participation {
     private JobFunctions functions = new JobFunctions();
-    private Teams teams = new Teams();
-    private Person owner;
+    private Team team = new Team();
 
-    public Participation(Person person) {
-        owner = person;
-    }
+    public Participation() {}
 
     public void addFunction(String designation) {
         functions.addJobFunction(designation);
@@ -32,19 +26,19 @@ public class Participation {
     }
 
     public void addTeam(String designation) {
-        teams.addTeam(designation);
+        team.addTeam(designation);
     }
 
     public String getTeamName(int index) {
-        return teams.getTeam(index);
+        return team.getTeam(index);
     }
 
     public void removeTeam(int index) {
-        teams.removeTeam(index);
+        team.removeTeam(index);
     }
 
     public int getNumberOfTeams() {
-        return teams.getSize();
+        return team.getSize();
     }
 
     public JobFunctions getFunctions() {
@@ -55,19 +49,11 @@ public class Participation {
         this.functions = functions;
     }
 
-    public Teams getTeams() {
-        return teams;
+    public Team getTeams() {
+        return team;
     }
 
-    public void setTeams(Teams teams) {
-        this.teams = teams;
-    }
-
-    public Person getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Person owner) {
-        this.owner = owner;
+    public void setTeams(Team team) {
+        this.team = team;
     }
 }
