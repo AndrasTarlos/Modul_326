@@ -2,20 +2,29 @@ package utils;
 
 import company.Company;
 import company.Department;
-import employees.HRPerson;
+import employees.JobFunctions;
+import company.Team;
 import employees.Person;
 
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Fascade {
     private Company company = new Company();
+    private List<Team> teams = new ArrayList<>();
+    private List<JobFunctions> jobFunctions = new ArrayList<>();
+
+    public Fascade() {}
 
     public Fascade(Company company) {
         setCompany(company);
     }
 
-    private void setCompany(Company company) {
+    public void setCompany(Company company) {
         this.company = company;
     }
 
@@ -49,7 +58,7 @@ public class Fascade {
     }
 
     public Person getPersonByFullName(String name) {
-        for (Person p: getAllPerson()) {
+        for (Person p : getAllPerson()) {
             if (name.equals(p.getFirstName() + " " + p.getLastName())) {
                 return p;
             }

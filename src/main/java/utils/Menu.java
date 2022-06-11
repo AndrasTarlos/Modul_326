@@ -41,7 +41,8 @@ public class Menu extends JFrame {
 
     public static void main(String[] args) {
         ReadWriteJSON readWriteJSON = new ReadWriteJSON();
-        Fascade fascade = new Fascade(readWriteJSON.readCompanyJSON());
+        Fascade fascade = readWriteJSON.readFascadeJSON();
+        fascade.setCompany(readWriteJSON.readCompanyJSON());
         new Menu(fascade);
     }
 }

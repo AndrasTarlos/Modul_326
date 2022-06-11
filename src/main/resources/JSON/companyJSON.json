@@ -10,16 +10,10 @@
             "lastName": "Adrianus",
             "participation": {
               "functions": {
-                "designations": [
-                  "Frontend",
-                  "JSON"
-                ]
+                "designation": "Frontend"
               },
               "teams": {
-                "designations": [
-                  "Avengers",
-                  "A Team"
-                ]
+                "designation": "Avengers"
               }
             },
             "modus": 0,
@@ -35,16 +29,10 @@
             "lastName": "Tushar",
             "participation": {
               "functions": {
-                "designations": [
-                  "Frontend",
-                  "JSON"
-                ]
+                "designation": "Frontend"
               },
               "teams": {
-                "designations": [
-                  "Avengers",
-                  "Amigos"
-                ]
+                "designation": "Amigos"
               }
             },
             "modus": 0,
@@ -55,16 +43,10 @@
             "lastName": "Regulo",
             "participation": {
               "functions": {
-                "designations": [
-                  "Backend",
-                  "XML"
-                ]
+                "designation": "Backend"
               },
               "teams": {
-                "designations": [
-                  "A Team",
-                  "Amigos"
-                ]
+                "designation": "A Team"
               }
             },
             "modus": 0,
@@ -80,16 +62,10 @@
             "lastName": "Leander",
             "participation": {
               "functions": {
-                "designations": [
-                  "Backend",
-                  "XML"
-                ]
+                "designation": "XML"
               },
               "teams": {
-                "designations": [
-                  "Bosses",
-                  "All Stars"
-                ]
+                "designation": "All Stars"
               }
             },
             "modus": 0,
@@ -100,16 +76,10 @@
             "lastName": "Dasoda-hae",
             "participation": {
               "functions": {
-                "designations": [
-                  "Backend",
-                  "XML"
-                ]
+                "designation": "Backend"
               },
               "teams": {
-                "designations": [
-                  "Bosses",
-                  "Champions"
-                ]
+                "designation": "Champions"
               }
             },
             "modus": 0,
@@ -120,16 +90,10 @@
             "lastName": "admin",
             "participation": {
               "functions": {
-                "designations": [
-                  "Backend",
-                  "XML"
-                ]
+                "designation": "Backend"
               },
               "teams": {
-                "designations": [
-                  "Bosses",
-                  "A Team"
-                ]
+                "designation": "Bosses"
               }
             },
             "modus": 1,
