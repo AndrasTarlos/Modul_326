@@ -14,18 +14,20 @@ import java.util.List;
 
 public class PersonOverview extends JPanel {
     PersonInfoPanel personInfoPanel;
+    AddAssignmentPanel addAssignmentPanel;
     DefaultListModel<String> personListModel;
     List<Person> personList;
     JScrollPane scrollPanePerson;
     Fascade fascade;
 
-    public PersonOverview(PersonInfoPanel personInfoPanel) {
+    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel) {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
         personListModel = new DefaultListModel<>();
         setPersonInfoPanel(personInfoPanel);
+        setAddAssignmentPanel(addAssignmentPanel);
 
         addButtons();
 
@@ -63,7 +65,7 @@ public class PersonOverview extends JPanel {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    updatePersonInfoPanel(fascade.getPersonByFullName(e.getActionCommand()));
+                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
                 }
             });
             panel.add(button);
@@ -75,7 +77,12 @@ public class PersonOverview extends JPanel {
         this.personInfoPanel = personInfoPanel;
     }
 
-    public void updatePersonInfoPanel(Person person) {
+    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {
+        this.addAssignmentPanel = addAssignmentPanel;
+    }
+
+    public void updatePanels(Person person) {
         personInfoPanel.update(person);
+        addAssignmentPanel.updateComboBox(fascade.getAllTeams());
     }
 }

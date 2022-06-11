@@ -1,8 +1,14 @@
 package gui.components;
 
+import company.Department;
+import company.Team;
+import employees.JobFunction;
+import employees.Person;
+
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AddAssignmentPanel extends JPanel {
 
@@ -41,7 +47,7 @@ public class AddAssignmentPanel extends JPanel {
         funktionComboBox = new JComboBox<>(testData);
         funktionComboBox.setPreferredSize(new Dimension(224, 20));
 
-        teamsComboBox = new JComboBox<>(testData);
+        teamsComboBox = new JComboBox<>();
         teamsComboBox.setPreferredSize(new Dimension(224, 20));
 
         selectionPanel.add(abteilungComboBox);
@@ -56,5 +62,13 @@ public class AddAssignmentPanel extends JPanel {
 
         this.add(labelPanel, BorderLayout.WEST);
         this.add(selectionPanel, BorderLayout.CENTER);
+    }
+
+    public void updateComboBox(ArrayList<Team> teams) {
+        String[] content = new String[teams.size()];
+        for (int i = 0; i < teams.size(); i++) {
+            content[0] = teams.get(i).getDesignation();
+        }
+        teamsComboBox = new JComboBox<>(content);
     }
 }

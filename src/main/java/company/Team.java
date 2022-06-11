@@ -1,6 +1,7 @@
 package company;
-import java.util.ArrayList;
 
+import lombok.Getter;
+import lombok.Setter;
 /**
  * <h1>Teams</h1>
  * author: Francesco Ryu
@@ -9,6 +10,8 @@ import java.util.ArrayList;
  * description: This class includes methods for Teams.
  */
 
+@Getter
+@Setter
 public class Team {
     private String designation;
     /**

@@ -4,7 +4,11 @@ import employees.HRPerson;
 import employees.Person;
 
 import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Department {
     private String name;
     private ArrayList<HRPerson> members = new ArrayList<>();
@@ -13,14 +17,6 @@ public class Department {
 
     public Department(String name){
         setName(name);
-    }
-
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public void addMember(HRPerson member) {
@@ -37,13 +33,5 @@ public class Department {
 
     public int getNumberOfMembers(){
         return members.size();
-    }
-
-    public ArrayList<HRPerson> getMembers() {
-        return members;
-    }
-
-    public void setMembers(ArrayList<HRPerson> members) {
-        this.members = members;
     }
 }
