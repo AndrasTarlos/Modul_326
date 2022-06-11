@@ -8,7 +8,6 @@ import gui.Overview;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 /**
  * Author: Francesco Ryu
@@ -17,20 +16,19 @@ import java.io.IOException;
  */
 
 public class Menu extends JFrame {
+    public static Fascade fascade;
 
-    JTabbedPane selectTab;
-//rrrrrrrrrrrrrrrrrrrrrrrrr
-    public Menu() {
+    public Menu(Fascade fascade) {
+        Menu.fascade = fascade;
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
-
         Overview overview = new Overview();
         Assignment assignment = new Assignment();
         Person person = new Person();
         Data data = new Data();
         Logbook logbook = new Logbook();
 
-        selectTab = new JTabbedPane();
+        JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overview);
         selectTab.addTab("Zuordnung", assignment);
         selectTab.addTab("Person", person);
@@ -45,6 +43,8 @@ public class Menu extends JFrame {
     }
 
     public static void main(String[] args) {
-        new Menu();
+        ReadWriteJSON readWriteJSON = new ReadWriteJSON();
+        Fascade fascade = new Fascade(readWriteJSON.readCompanyJSON());
+        new Menu(fascade);
     }
 }
