@@ -1,4 +1,10 @@
-package gui;
+package utils;
+
+import employees.Person;
+import gui.Assignment;
+import gui.Data;
+import gui.Logbook;
+import gui.Overview;
 
 import javax.swing.*;
 import java.awt.*;
