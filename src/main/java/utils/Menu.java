@@ -1,5 +1,6 @@
 package utils;
 
+import company.Company;
 import gui.Assignment;
 import gui.Data;
 import gui.Logbook;

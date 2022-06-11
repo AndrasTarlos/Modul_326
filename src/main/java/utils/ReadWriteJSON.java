@@ -36,7 +36,7 @@ public class ReadWriteJSON {
         return company[0];
     }
 
-    protected void writeCompanyJSON(List<Company> company) {
+    protected void writeCompanyJSON(Company company) {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
