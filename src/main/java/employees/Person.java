@@ -1,8 +1,7 @@
 package employees;
 
-import java.awt.*;
 
-public class Person extends Component {
+public class Person {
     //private byte[] photo;
     private String firstName;
     private String lastName;

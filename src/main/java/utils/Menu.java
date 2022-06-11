@@ -1,10 +1,7 @@
 package utils;
 
 import employees.Person;
-import gui.Assignment;
-import gui.Data;
-import gui.Logbook;
-import gui.Overview;
+import gui.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,14 +21,14 @@ public class Menu extends JFrame {
         this.setTitle("I am looking for");
         Overview overview = new Overview();
         Assignment assignment = new Assignment();
-        Person person = new Person();
+        Folks folks = new Folks();
         Data data = new Data();
         Logbook logbook = new Logbook();
 
         JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overview);
         selectTab.addTab("Zuordnung", assignment);
-        selectTab.addTab("Person", person);
+        selectTab.addTab("Person", folks);
         selectTab.addTab("Stammdaten", data);
         selectTab.addTab("Logbuch", logbook);
 
