@@ -1,10 +1,6 @@
 package utils;
 
 import company.Company;
-import employees.HRPerson;
-import employees.Person;
-import log.LogBook;
-import utils.ReadWriteJSON;
 
 import java.io.IOException;
 

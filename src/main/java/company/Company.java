@@ -6,7 +6,6 @@ public class Company {
     private String name;
     private final ArrayList<Department> departments = new ArrayList<>();
 
-
     public Company(String name){
         setCompanyName(name);
     }
@@ -32,5 +31,17 @@ public class Company {
     }
     public int getNumberOfDepartments(){
         return departments.size();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<Department> getDepartments() {
+        return departments;
     }
 }

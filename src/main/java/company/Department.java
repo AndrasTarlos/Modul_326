@@ -31,4 +31,11 @@ public class Department {
         return members.size();
     }
 
+    public ArrayList<Person> getMembers() {
+        return members;
+    }
+
+    public void setMembers(ArrayList<Person> members) {
+        this.members = members;
+    }
 }

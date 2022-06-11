@@ -46,4 +46,28 @@ public class Participation {
     public int getNumberOfTeams() {
         return teams.getSize();
     }
+
+    public JobFunctions getFunctions() {
+        return functions;
+    }
+
+    public void setFunctions(JobFunctions functions) {
+        this.functions = functions;
+    }
+
+    public Teams getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Teams teams) {
+        this.teams = teams;
+    }
+
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
 }

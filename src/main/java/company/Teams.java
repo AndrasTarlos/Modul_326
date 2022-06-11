@@ -49,4 +49,12 @@ public class Teams {
     public int getSize() {
         return designations.size();
     }
+
+    public ArrayList<String> getDesignations() {
+        return designations;
+    }
+
+    public void setDesignations(ArrayList<String> designations) {
+        this.designations = designations;
+    }
 }
