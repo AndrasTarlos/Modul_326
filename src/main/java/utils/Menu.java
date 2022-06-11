@@ -1,6 +1,5 @@
 package utils;
 
-import employees.Person;
 import gui.*;
 
 import javax.swing.*;
@@ -17,6 +16,7 @@ public class Menu extends JFrame {
 
     public Menu(Fascade fascade) {
         Menu.fascade = fascade;
+
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
         Overview overview = new Overview();

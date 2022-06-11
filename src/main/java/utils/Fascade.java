@@ -47,4 +47,13 @@ public class Fascade {
 
         return person;
     }
+
+    public Person getPersonByFullName(String name) {
+        for (Person p: getAllPerson()) {
+            if (name.equals(p.getFirstName() + " " + p.getLastName())) {
+                return p;
+            }
+        }
+        return null;
+    }
 }

@@ -1,19 +1,19 @@
 package gui.components;
 
+import employees.Person;
+
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
-public class PersonNameImagePanel extends JPanel {
+public class PersonInfoPanel extends JPanel {
     JTextField nameInputTextField;
     JLabel personNameLabel;
 
     JLabel imagePlaceHolder;
     JLabel imageLabel;
 
-    public PersonNameImagePanel() {
-        PersonOverview personOverview = new PersonOverview();
+    public PersonInfoPanel() {
         personNameLabel = new JLabel("  Name: ");
         ImageIcon picture = new ImageIcon("img.png");
 
@@ -29,5 +29,9 @@ public class PersonNameImagePanel extends JPanel {
         this.add(personNameLabel);
         this.add(nameInputTextField);
         this.add(imagePlaceHolder);
+    }
+
+    public void update(Person person) {
+        nameInputTextField.setText(person.getFirstName() + " " + person.getLastName());
     }
 }

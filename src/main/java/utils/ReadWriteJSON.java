@@ -18,7 +18,7 @@ public class ReadWriteJSON {
         Company[] company;
         try {
             //C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul 326\Auftrag_4\Auftrag_4\src\main\resources\JSON
-            String path = "C:\\Users\\franc\\Modul_326\\src\\main\\resources\\JSON\\company.json";
+            String path = "C:\\Users\\andra\\OneDrive - Bildungszentrum Zürichsee\\BZZ\\Probst\\Modul 326\\Auftrag_4\\Auftrag_4\\src\\main\\resources\\JSON\\company.json";
             //String pathi = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/person.json")).toString();
             //pathi = pathi.replace("file:/", "");
 
