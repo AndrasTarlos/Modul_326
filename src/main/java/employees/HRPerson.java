@@ -25,8 +25,10 @@ public class HRPerson extends Person {
         super();
     }
 
-    public HRPerson(String firstName, String lastName) {
-        super(firstName, lastName);
+    public HRPerson(String firstName, String lastName, String departmentName, int modus, String pwd) {
+        super(firstName, lastName, departmentName);
+        setModus(modus);
+        setPwd(pwd);
     }
 
     public void change(Person person, int modus) {

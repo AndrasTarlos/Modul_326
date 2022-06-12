@@ -1,6 +1,7 @@
 package gui.components;
 
 import company.Team;
+import employees.HRPerson;
 import employees.Person;
 import utils.Fascade;
 import utils.Menu;
@@ -17,7 +18,7 @@ public class PersonOverview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel addAssignmentPanel;
     DefaultListModel<String> personListModel;
-    List<Person> personList;
+    List<HRPerson> personList;
     JScrollPane scrollPanePerson;
     Fascade fascade;
 
@@ -82,8 +83,8 @@ public class PersonOverview extends JPanel {
         this.addAssignmentPanel = addAssignmentPanel;
     }
 
-    public void updatePanels(Person person) {
+    public void updatePanels(HRPerson person) {
         personInfoPanel.update(person);
-        addAssignmentPanel.updateComboBox(fascade.getAllTeams(), fascade.getJobFunctions(), fascade.getAllDepartment(), person);
+        addAssignmentPanel.updateComboBox(person);
     }
 }

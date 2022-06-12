@@ -1,51 +1,24 @@
 package employees;
 
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Person {
     //private byte[] photo;
     private String firstName;
     private String lastName;
     private Participation participation;
+    private String departmentName;
 
     public Person() {}
 
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, String departmentName) {
         setFirstName(firstName);
         setLastName(lastName);
+        setDepartmentName(departmentName);
         //setPhoto(photo);
-    }
-    /*
-        public byte[] getPhoto() {
-            return photo;
-        }
-
-
-        public void setPhoto(byte[] photo) {
-            this.photo = photo;
-        }
-     */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Participation getParticipation() {
-        return participation;
-    }
-
-    public void setParticipation(Participation participation) {
-        this.participation = participation;
     }
 
     public boolean getIsPerson(HRPerson person) {

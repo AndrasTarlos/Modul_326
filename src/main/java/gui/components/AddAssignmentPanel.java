@@ -2,13 +2,15 @@ package gui.components;
 
 import company.Department;
 import company.Team;
+import employees.HRPerson;
 import employees.JobFunction;
+import employees.Participation;
 import employees.Person;
+import utils.Fascade;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class AddAssignmentPanel extends JPanel {
 
@@ -19,15 +21,16 @@ public class AddAssignmentPanel extends JPanel {
     JLabel funktion;
     JLabel teams;
 
-    JComboBox<String> abteilungComboBox;
-    JComboBox<String> funktionComboBox;
+    JComboBox<String> departmentComboBox;
+    JComboBox<String> functionComboBox;
     JComboBox<String> teamsComboBox;
 
-    String[] testData = {"asdgbvbbn", "wertrtztjj", "öjklhjh"};
+    Fascade fascade;
 
     public AddAssignmentPanel() {
         this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
+        fascade = utils.Menu.fascade;
 
         labelPanel = new JPanel();
         selectionPanel = new JPanel();
@@ -41,17 +44,17 @@ public class AddAssignmentPanel extends JPanel {
         teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        abteilungComboBox = new JComboBox<>();
-        abteilungComboBox.setPreferredSize(new Dimension(224, 20));
+        departmentComboBox = new JComboBox<>();
+        departmentComboBox.setPreferredSize(new Dimension(224, 20));
 
-        funktionComboBox = new JComboBox<>();
-        funktionComboBox.setPreferredSize(new Dimension(224, 20));
+        functionComboBox = new JComboBox<>();
+        functionComboBox.setPreferredSize(new Dimension(224, 20));
 
         teamsComboBox = new JComboBox<>();
         teamsComboBox.setPreferredSize(new Dimension(224, 20));
 
-        selectionPanel.add(abteilungComboBox);
-        selectionPanel.add(funktionComboBox);
+        selectionPanel.add(departmentComboBox);
+        selectionPanel.add(functionComboBox);
         selectionPanel.add(teamsComboBox);
 
         labelPanel.add(abteilung);
@@ -60,19 +63,28 @@ public class AddAssignmentPanel extends JPanel {
 
         labelPanel.setPreferredSize(new Dimension(100, 0));
 
+        loadComboBoxData();
+
         this.add(labelPanel, BorderLayout.WEST);
         this.add(selectionPanel, BorderLayout.CENTER);
     }
 
-    public void updateComboBox(ArrayList<Team> teams, ArrayList<JobFunction> jobFunctions, ArrayList<Department> departments, Person person) {
-        for (Team t: teams) {
+    public void loadComboBoxData() {
+        for (Team t: fascade.getAllTeams()) {
             teamsComboBox.addItem(t.getDesignation());
         }
-        for (JobFunction f: jobFunctions) {
-            funktionComboBox.addItem(f.getDesignation());
+        for (JobFunction f: fascade.getJobFunctions()) {
+            functionComboBox.addItem(f.getDesignation());
         }
-        for (Department d: departments) {
-            abteilungComboBox.addItem(d.getName());
+        for (Department d: fascade.getAllDepartment()) {
+            departmentComboBox.addItem(d.getName());
         }
+    }
+
+    public void updateComboBox(HRPerson person) {
+        Participation p = person.getParticipation();
+        teamsComboBox.setSelectedItem(p.getTeam().getDesignation());
+        functionComboBox.setSelectedItem(p.getFunction().getDesignation());
+        departmentComboBox.setSelectedItem(person.getDepartmentName());
     }
 }

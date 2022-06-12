@@ -8,12 +8,13 @@
           {
             "firstName": "Valentin",
             "lastName": "Adrianus",
+            "departmentName": "Office",
             "participation": {
               "function": {
-                "designation": "Frontend"
+                "designation": "Secretary"
               },
               "team": {
-                "designation": "Avengers"
+                "designation": "Desk Champions"
               }
             },
             "modus": 0,
@@ -27,12 +28,13 @@
           {
             "firstName": "Xose",
             "lastName": "Tushar",
+            "departmentName": "IT",
             "participation": {
               "function": {
-                "designation": "Frontend"
+                "designation": "Programmer"
               },
               "team": {
-                "designation": "Amigos"
+                "designation": "Boss Mode"
               }
             },
             "modus": 0,
@@ -41,12 +43,13 @@
           {
             "firstName": "Stef",
             "lastName": "Regulo",
+            "departmentName": "IT",
             "participation": {
               "function": {
-                "designation": "Backend"
+                "designation": "Programmer"
               },
               "team": {
-                "designation": "A Team"
+                "designation": "The Water Coolers"
               }
             },
             "modus": 0,
@@ -60,12 +63,13 @@
           {
             "firstName": "Modred",
             "lastName": "Leander",
+            "departmentName": "Management",
             "participation": {
               "function": {
-                "designation": "XML"
+                "designation": "Marketing"
               },
               "team": {
-                "designation": "All Stars"
+                "designation": "Never Overtime"
               }
             },
             "modus": 0,
@@ -74,12 +78,13 @@
           {
             "firstName": "John",
             "lastName": "Dasoda-hae",
+            "departmentName": "Management",
             "participation": {
               "function": {
-                "designation": "Backend"
+                "designation": "Secretary"
               },
               "team": {
-                "designation": "Champions"
+                "designation": "Office Heroes"
               }
             },
             "modus": 0,
@@ -88,12 +93,13 @@
           {
             "firstName": "admin",
             "lastName": "admin",
+            "departmentName": "Management",
             "participation": {
               "function": {
-                "designation": "Backend"
+                "designation": "Admin"
               },
               "team": {
-                "designation": "Bosses"
+                "designation": "Never Overtime"
               }
             },
             "modus": 1,

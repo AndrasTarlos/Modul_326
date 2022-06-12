@@ -2,6 +2,7 @@ package utils;
 
 import company.Company;
 import company.Department;
+import employees.HRPerson;
 import employees.JobFunction;
 import company.Team;
 import employees.Person;
@@ -54,8 +55,8 @@ public class Fascade {
 
     // Person
 
-    public List<Person> getAllPerson() {
-        List<Person> person = new ArrayList<>();
+    public List<HRPerson> getAllPerson() {
+        List<HRPerson> person = new ArrayList<>();
         for (Department d: company.getDepartments()) {
             person.addAll(d.getMembers());
         }
@@ -63,8 +64,8 @@ public class Fascade {
         return person;
     }
 
-    public Person getPersonByFullName(String name) {
-        for (Person p : getAllPerson()) {
+    public HRPerson getPersonByFullName(String name) {
+        for (HRPerson p : getAllPerson()) {
             if (name.equals(p.getFirstName() + " " + p.getLastName())) {
                 return p;
             }
