@@ -15,13 +15,6 @@ import java.awt.event.ActionListener;
 
 public class AddAssignmentPanel extends JPanel {
 
-    private final JPanel labelPanel;
-    private final JPanel selectionPanel;
-
-    private final JLabel department;
-    private final JLabel function;
-    private final JLabel teams;
-
     private final JComboBox<String> departmentComboBox;
     private final JComboBox<String> functionComboBox;
     private final JComboBox<String> teamsComboBox;
@@ -29,21 +22,21 @@ public class AddAssignmentPanel extends JPanel {
     private final Fascade fascade;
     private HRPerson focusedPerson;
 
-    public AddAssignmentPanel() {
+    public AddAssignmentPanel(boolean enableComboBoxes) {
         this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
 
-        labelPanel = new JPanel();
-        selectionPanel = new JPanel();
+        JPanel labelPanel = new JPanel();
+        JPanel selectionPanel = new JPanel();
 
-        department = new JLabel("Abteilung:");
+        JLabel department = new JLabel("Abteilung:");
         department.setBorder(new EmptyBorder(0, 0, 0, 0));
 
-        function = new JLabel("Funktion:");
+        JLabel function = new JLabel("Funktion:");
         function.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        teams = new JLabel("Teams:");
+        JLabel teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
         departmentComboBox = new JComboBox<>();
@@ -53,7 +46,7 @@ public class AddAssignmentPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (focusedPerson != null) {
-
+                    fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
                 }
                     //focusedPersondepartmentComboBox.getSelectedItem();
             }
@@ -83,6 +76,12 @@ public class AddAssignmentPanel extends JPanel {
                 }
             }
         });
+
+        if (!enableComboBoxes) {
+            departmentComboBox.setEnabled(false);
+            functionComboBox.setEnabled(false);
+            teamsComboBox.setEnabled(false);
+        }
 
         selectionPanel.add(departmentComboBox);
         selectionPanel.add(functionComboBox);
