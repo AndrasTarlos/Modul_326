@@ -53,7 +53,7 @@ public class AddAssignmentPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (focusedPerson != null) {
-
+                    fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
                 }
                     //focusedPersondepartmentComboBox.getSelectedItem();
             }

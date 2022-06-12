@@ -52,6 +52,15 @@ public class Fascade {
         return names;
     }
 
+    public Department getSearchedDepartment(String name) {
+        for (Department d: getAllDepartment()) {
+            if (d.getName().equals(name)) {
+                return d;
+            }
+        }
+        return null;
+    }
+
     // Person
 
     public List<HRPerson> getAllPerson() {
@@ -67,6 +76,21 @@ public class Fascade {
         for (HRPerson p : getAllPerson()) {
             if (name.equals(p.getFirstName() + " " + p.getLastName())) {
                 return p;
+            }
+        }
+        return null;
+    }
+
+    public void switchPersonDepartmentTo(Department newDepartment, HRPerson person) {
+        newDepartment.addMember(person);
+        getPersonsCurrentDepartment(person).removeMember(person);
+
+    }
+
+    public Department getPersonsCurrentDepartment(HRPerson person) {
+        for (Department d: getAllDepartment()) {
+            if (person.getDepartmentName().equals(d.getName())) {
+                return d;
             }
         }
         return null;

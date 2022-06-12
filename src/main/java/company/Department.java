@@ -31,6 +31,10 @@ public class Department {
         members.remove(index);
     }
 
+    public void removeMember(HRPerson person) {
+        members.remove(person);
+    }
+
     public int getNumberOfMembers(){
         return members.size();
     }
