@@ -21,7 +21,7 @@ public class Overview extends JPanel {
         personenPanel = new JPanel(new BorderLayout());
         GridLayout personDetailLayout = new GridLayout(2, 0);
         personDetailPanel = new JPanel(personDetailLayout);
-        personAssignmentPanel = new AddAssignmentPanel();
+        personAssignmentPanel = new AddAssignmentPanel(false);
         personInfoPanel = new PersonInfoPanel();
         personenPanel.setBorder(new TitledBorder("  Personen:    "));
 
