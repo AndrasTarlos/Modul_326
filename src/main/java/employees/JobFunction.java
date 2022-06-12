@@ -3,10 +3,10 @@ package employees;
 import lombok.Getter;
 import lombok.Setter;
 /**
- * <h1>JobFunctions</h1>
- * author: Francesco Ryu
+ * JobFunctions
+ * author: Tarlos Andras
  * version: 1.0
- * date: 01.06.2022
+ * date: 01.12.2022
  * description: This class includes methods for JobFunctions.
  */
 @Setter

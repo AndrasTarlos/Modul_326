@@ -11,6 +11,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Getter
 @Setter
 public class Fascade {
@@ -84,7 +85,6 @@ public class Fascade {
     public void switchPersonDepartmentTo(Department newDepartment, HRPerson person) {
         newDepartment.addMember(person);
         getPersonsCurrentDepartment(person).removeMember(person);
-
     }
 
     public Department getPersonsCurrentDepartment(HRPerson person) {
