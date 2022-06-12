@@ -11,19 +11,58 @@ import java.awt.*;
 public class Overview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel personAssignmentPanel;
-    JPanel personenPanel;
     PersonOverview personOverview;
+
+    JPanel personenPanel;
     JPanel personDetailPanel;
+    JPanel southPanel;
+    JPanel sortPanel;
+    JPanel filterPanel;
+
+    JRadioButton noneSort, AtoZSort, ZToASort;
+
+    ButtonGroup sortBtnGroup;
 
 
     public Overview() {
-        this.setLayout(new BorderLayout());
-        personenPanel = new JPanel(new BorderLayout());
         GridLayout personDetailLayout = new GridLayout(2, 0);
+        this.setLayout(new BorderLayout());
+
+        personenPanel = new JPanel(new BorderLayout());
         personDetailPanel = new JPanel(personDetailLayout);
         personAssignmentPanel = new AddAssignmentPanel(false);
+
         personInfoPanel = new PersonInfoPanel();
-        personenPanel.setBorder(new TitledBorder("  Personen:    "));
+        personenPanel.setBorder(new TitledBorder("Personen:    "));
+
+        southPanel = new JPanel();
+        southPanel.setLayout(new BorderLayout());
+        southPanel.setPreferredSize(new Dimension(0, 120));
+
+        sortPanel = new JPanel();
+        sortPanel.setBorder(new TitledBorder("Sortierung:"));
+        sortPanel.setPreferredSize(new Dimension(175, 0));
+        sortPanel.setLayout(new BorderLayout());
+
+        sortBtnGroup = new ButtonGroup();
+
+        noneSort = new JRadioButton("None   ");
+        AtoZSort = new JRadioButton("A-Z    ");
+        ZToASort = new JRadioButton("Z-A    ");
+
+        sortBtnGroup.add(noneSort);
+        sortBtnGroup.add(AtoZSort);
+        sortBtnGroup.add(ZToASort);
+
+        sortPanel.add(noneSort, BorderLayout.NORTH);
+        sortPanel.add(AtoZSort, BorderLayout.CENTER);
+        sortPanel.add(ZToASort, BorderLayout.SOUTH);
+
+        filterPanel = new JPanel();
+        filterPanel.setBorder(new TitledBorder("Filter:"));
+
+        southPanel.add(sortPanel, BorderLayout.WEST);
+        southPanel.add(filterPanel, BorderLayout.CENTER);
 
         personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel);
         personOverview.setPreferredSize(new Dimension(170, 0));
@@ -34,6 +73,7 @@ public class Overview extends JPanel {
 
         personenPanel.add(personOverview, BorderLayout.WEST);
         personenPanel.add(personDetailPanel, BorderLayout.CENTER);
+        this.add(southPanel, BorderLayout.SOUTH);
         this.add(personenPanel);
 
     }
