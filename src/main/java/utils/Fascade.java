@@ -5,7 +5,6 @@ import company.Department;
 import employees.HRPerson;
 import employees.JobFunction;
 import company.Team;
-import employees.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,13 +74,29 @@ public class Fascade {
 
     // Teams
 
-    public ArrayList<Team> getAllTeams() {
-        return getTeams();
+    public Team getSearchedTeam(String name) {
+        for (Team t: getTeams()) {
+            if (name.equals(t.getDesignation()))
+                return t;
+        }
+        return null;
+    }
+
+    public void setTeamOfPerson(HRPerson person, String value) {
+        person.getParticipation().setTeam(getSearchedTeam(value));
     }
 
     // JobFunctions
 
-    public List<JobFunction> getAllJobFunctions() {
-        return getJobFunctions();
+    public JobFunction getSearchedJobFunction(String name) {
+        for (JobFunction j: getJobFunctions()) {
+            if (name.equals(j.getDesignation()))
+                return j;
+        }
+        return null;
+    }
+
+    public void setJobFunctionOfPerson(HRPerson person, String value) {
+        person.getParticipation().setFunction(getSearchedJobFunction(value));
     }
 }

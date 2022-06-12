@@ -5,27 +5,29 @@ import company.Team;
 import employees.HRPerson;
 import employees.JobFunction;
 import employees.Participation;
-import employees.Person;
 import utils.Fascade;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AddAssignmentPanel extends JPanel {
 
-    JPanel labelPanel;
-    JPanel selectionPanel;
+    private final JPanel labelPanel;
+    private final JPanel selectionPanel;
 
-    JLabel abteilung;
-    JLabel funktion;
-    JLabel teams;
+    private final JLabel department;
+    private final JLabel function;
+    private final JLabel teams;
 
-    JComboBox<String> departmentComboBox;
-    JComboBox<String> functionComboBox;
-    JComboBox<String> teamsComboBox;
+    private final JComboBox<String> departmentComboBox;
+    private final JComboBox<String> functionComboBox;
+    private final JComboBox<String> teamsComboBox;
 
-    Fascade fascade;
+    private final Fascade fascade;
+    private HRPerson focusedPerson;
 
     public AddAssignmentPanel() {
         this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
@@ -35,30 +37,59 @@ public class AddAssignmentPanel extends JPanel {
         labelPanel = new JPanel();
         selectionPanel = new JPanel();
 
-        abteilung = new JLabel("Abteilung:");
-        abteilung.setBorder(new EmptyBorder(0, 0, 0, 0));
+        department = new JLabel("Abteilung:");
+        department.setBorder(new EmptyBorder(0, 0, 0, 0));
 
-        funktion = new JLabel("Funktion:");
-        funktion.setBorder(new EmptyBorder(5, 0, 0, 0));
+        function = new JLabel("Funktion:");
+        function.setBorder(new EmptyBorder(5, 0, 0, 0));
 
         teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
         departmentComboBox = new JComboBox<>();
         departmentComboBox.setPreferredSize(new Dimension(224, 20));
+        departmentComboBox.setFocusable(false);
+        departmentComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (focusedPerson != null) {
+
+                }
+                    //focusedPersondepartmentComboBox.getSelectedItem();
+            }
+        });
 
         functionComboBox = new JComboBox<>();
         functionComboBox.setPreferredSize(new Dimension(224, 20));
+        functionComboBox.setFocusable(false);
+        functionComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (focusedPerson != null) {
+                    fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());
+                }
+            }
+        });
 
         teamsComboBox = new JComboBox<>();
         teamsComboBox.setPreferredSize(new Dimension(224, 20));
+        teamsComboBox.setFocusable(false);
+        teamsComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (focusedPerson != null) {
+                    fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());
+                    focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));
+                }
+            }
+        });
 
         selectionPanel.add(departmentComboBox);
         selectionPanel.add(functionComboBox);
         selectionPanel.add(teamsComboBox);
 
-        labelPanel.add(abteilung);
-        labelPanel.add(funktion);
+        labelPanel.add(department);
+        labelPanel.add(function);
         labelPanel.add(teams);
 
         labelPanel.setPreferredSize(new Dimension(100, 0));
@@ -70,7 +101,7 @@ public class AddAssignmentPanel extends JPanel {
     }
 
     public void loadComboBoxData() {
-        for (Team t: fascade.getAllTeams()) {
+        for (Team t: fascade.getTeams()) {
             teamsComboBox.addItem(t.getDesignation());
         }
         for (JobFunction f: fascade.getJobFunctions()) {
@@ -82,6 +113,7 @@ public class AddAssignmentPanel extends JPanel {
     }
 
     public void updateComboBox(HRPerson person) {
+        focusedPerson = person;
         Participation p = person.getParticipation();
         teamsComboBox.setSelectedItem(p.getTeam().getDesignation());
         functionComboBox.setSelectedItem(p.getFunction().getDesignation());
