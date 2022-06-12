@@ -36,7 +36,7 @@ public class Assignment extends JPanel {
         personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel);
         personDetailPanel = new JPanel();
 
-        personEditPanel.setBorder(new TitledBorder("    Person zuordnen:  "));
+        personEditPanel.setBorder(new TitledBorder("Person zuordnen:  "));
         personEditPanel.setLayout(new BorderLayout());
         personEditLabel = new JLabel("  Personen bearbeiten:");
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);

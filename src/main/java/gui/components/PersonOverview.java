@@ -52,18 +52,6 @@ public class PersonOverview extends JPanel {
             button.setBackground(new Color(246, 245, 245));
             button.setFocusable(false);
 
-            button.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    button.setBackground(new Color(178, 176, 176));
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    button.setBackground(new Color(246, 245, 245));
-                }
-            });
-
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -72,6 +60,7 @@ public class PersonOverview extends JPanel {
             });
             panel.add(button);
         }
+
         scrollPanePerson = new JScrollPane(panel);
     }
 
