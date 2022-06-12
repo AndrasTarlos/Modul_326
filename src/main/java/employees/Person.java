@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * <h1>Person</h1>
+ * Person
  * author: Tarlos Andras
  * version: 1.0
  * date: 01.12.2022
