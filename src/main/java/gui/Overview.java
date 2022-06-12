@@ -46,7 +46,9 @@ public class Overview extends JPanel {
 
         sortBtnGroup = new ButtonGroup();
 
-        noneSort = new JRadioButton("None   ");
+        noneSort = new JRadioButton("Keine   ");
+        noneSort.setSelected(true);
+
         AtoZSort = new JRadioButton("A-Z    ");
         ZToASort = new JRadioButton("Z-A    ");
 
