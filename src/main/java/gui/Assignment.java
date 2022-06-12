@@ -32,7 +32,7 @@ public class Assignment extends JPanel {
 
         personEditPanel = new JPanel();
         personInfoPanel = new PersonInfoPanel();
-        personAssignmentPanel = new AddAssignmentPanel();
+        personAssignmentPanel = new AddAssignmentPanel(true);
         personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel);
         personDetailPanel = new JPanel();
 
