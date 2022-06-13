@@ -12,6 +12,7 @@ import java.awt.*;
 public class Overview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel personAssignmentPanel;
+    AddAssignmentPanel filterAssignmentPanel;
     PersonOverview personOverview;
 
     JPanel personenPanel;
@@ -19,9 +20,6 @@ public class Overview extends JPanel {
     JPanel southPanel;
     JPanel sortPanel;
     JPanel filterPanel;
-    JPanel selectionPanel;
-
-    JPanel labelPanel;
 
     JRadioButton noneSort, AtoZSort, ZToASort;
 
@@ -67,9 +65,6 @@ public class Overview extends JPanel {
         filterPanel.setBorder(new TitledBorder("Filter:"));
         filterPanel.setLayout(new BorderLayout());
 
-        labelPanel = new JPanel();
-        selectionPanel = new JPanel();
-
         JLabel department = new JLabel("Abteilung:");
         department.setBorder(new EmptyBorder(0, 0, 0, 0));
 
@@ -79,11 +74,9 @@ public class Overview extends JPanel {
         JLabel teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        labelPanel.add(department);
-        labelPanel.add(function);
-        labelPanel.add(teams);
+        filterAssignmentPanel = new AddAssignmentPanel(true);
 
-        filterPanel.add(labelPanel, BorderLayout.WEST);
+        filterPanel.add(filterAssignmentPanel);
 
         southPanel.add(sortPanel, BorderLayout.WEST);
         southPanel.add(filterPanel, BorderLayout.CENTER);
