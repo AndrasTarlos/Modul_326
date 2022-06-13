@@ -5,6 +5,7 @@ import gui.components.PersonInfoPanel;
 import gui.components.PersonOverview;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
@@ -18,6 +19,9 @@ public class Overview extends JPanel {
     JPanel southPanel;
     JPanel sortPanel;
     JPanel filterPanel;
+    JPanel selectionPanel;
+
+    JPanel labelPanel;
 
     JRadioButton noneSort, AtoZSort, ZToASort;
 
@@ -42,13 +46,12 @@ public class Overview extends JPanel {
         sortPanel = new JPanel();
         sortPanel.setBorder(new TitledBorder("Sortierung:"));
         sortPanel.setPreferredSize(new Dimension(175, 0));
-        sortPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        sortPanel.setLayout(new BorderLayout());
 
         sortBtnGroup = new ButtonGroup();
 
         noneSort = new JRadioButton("Keine");
         noneSort.setSelected(true);
-
         AtoZSort = new JRadioButton("A-Z");
         ZToASort = new JRadioButton("Z-A");
 
@@ -56,12 +59,31 @@ public class Overview extends JPanel {
         sortBtnGroup.add(AtoZSort);
         sortBtnGroup.add(ZToASort);
 
-        sortPanel.add(noneSort);
-        sortPanel.add(AtoZSort);
-        sortPanel.add(ZToASort);
+        sortPanel.add(noneSort, BorderLayout.NORTH);
+        sortPanel.add(AtoZSort, BorderLayout.CENTER);
+        sortPanel.add(ZToASort, BorderLayout.SOUTH);
 
         filterPanel = new JPanel();
         filterPanel.setBorder(new TitledBorder("Filter:"));
+        filterPanel.setLayout(new BorderLayout());
+
+        labelPanel = new JPanel();
+        selectionPanel = new JPanel();
+
+        JLabel department = new JLabel("Abteilung:");
+        department.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+        JLabel function = new JLabel("Funktion:");
+        function.setBorder(new EmptyBorder(5, 0, 0, 0));
+
+        JLabel teams = new JLabel("Teams:");
+        teams.setBorder(new EmptyBorder(5, 0, 0, 0));
+
+        labelPanel.add(department);
+        labelPanel.add(function);
+        labelPanel.add(teams);
+
+        filterPanel.add(labelPanel, BorderLayout.WEST);
 
         southPanel.add(sortPanel, BorderLayout.WEST);
         southPanel.add(filterPanel, BorderLayout.CENTER);
