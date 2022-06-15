@@ -31,7 +31,6 @@ import java.util.List;
 public class PersonOverview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel addAssignmentPanel;
-    DefaultListModel<String> personListModel;
     List<HRPerson> personList;
     JScrollPane scrollPanePerson;
     Fascade fascade;
@@ -53,7 +52,6 @@ public class PersonOverview extends JPanel {
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
-        personListModel = new DefaultListModel<>();
         setPersonInfoPanel(personInfoPanel);
         setAddAssignmentPanel(addAssignmentPanel);
 
