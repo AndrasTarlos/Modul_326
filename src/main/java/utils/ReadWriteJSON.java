@@ -6,26 +6,38 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import company.Company;
 
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 
 public class ReadWriteJSON {
+    private static URI companyJsonPath;
+    private static URI fascadeJsonPath;
 
-    public ReadWriteJSON() {}
+    static {
+        try {
+            companyJsonPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/companyJSON.json")).toURI();
+            fascadeJsonPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/fascadeJSON.json")).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+    public ReadWriteJSON() {
+
+    }
 
     protected Company readCompanyJSON() {
         Company[] company;
         try {
-            //C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul 326\Auftrag_4\Auftrag_4\src\main\resources\JSON
-            String path = "C:\\Users\\Francesco Ryu\\Desktop\\Modul_326\\src\\main\\resources\\JSON\\companyJSON.json";
-            //String pathi = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/person.json")).toString();
-            //pathi = pathi.replace("file:/", "");
-
-
-            byte[] jsonData = new byte[0];
-            jsonData = Files.readAllBytes(Paths.get(path));
+            String path = Paths.get(companyJsonPath).toString();
+            byte[] jsonData = Files.readAllBytes(Paths.get(path));
             ObjectMapper objectMapper = new ObjectMapper();
             company = objectMapper.readValue(jsonData, Company[].class);
         } catch (IOException e) {
@@ -34,41 +46,42 @@ public class ReadWriteJSON {
         return company[0];
     }
 
-    protected Fascade readFascadeJSON() {
-        Fascade[] fascade;
-        try {
-            //C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul 326\Auftrag_4\Auftrag_4\src\main\resources\JSON
-            String path = "C:\\Users\\Francesco Ryu\\Desktop\\Modul_326\\src\\main\\resources\\JSON\\fascadeJSON.json";
-            //String pathi = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/person.json")).toString();
-            //pathi = pathi.replace("file:/", "");
-
-
-            byte[] jsonData = new byte[0];
-            jsonData = Files.readAllBytes(Paths.get(path));
-            ObjectMapper objectMapper = new ObjectMapper();
-            fascade = objectMapper.readValue(jsonData, Fascade[].class);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return fascade[0];
-    }
-
     /**
      *
      * @param company
      */
     protected void writeCompanyJSON(Company company) {
         // TODO fix writer
+        List<Company> list = new ArrayList<>();
+        list.add(company);
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
+
         try {
-            fileOutputStream = new FileOutputStream("C:\\Users\\Francesco Ryu\\Desktop\\Modul_326\\src\\main\\resources\\JSON\\companyJSON.json");
+            fileOutputStream = new FileOutputStream(Paths.get(companyJsonPath).toString());
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, company);
+            objectWriter.writeValue(fileWriter, list);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    /**
+     *
+     * @return Fascade
+     */
+    protected Fascade readFascadeJSON() {
+        Fascade[] fascade;
+        try {
+            String path = Paths.get(fascadeJsonPath).toString();
+            byte[] jsonData = Files.readAllBytes(Paths.get(path));
+            ObjectMapper objectMapper = new ObjectMapper();
+            fascade = objectMapper.readValue(jsonData, Fascade[].class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return fascade[0];
     }
 }
