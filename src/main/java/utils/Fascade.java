@@ -127,8 +127,8 @@ public class Fascade {
     }
 
     public List<HRPerson> getAllPersonSortedZA() {
-        List<HRPerson> list = getAllPerson();
-        Collections.sort(list, Person.compareReversed());
+        List<HRPerson> list = getAllPersonSortedAZ();
+        Collections.reverse(list);
         return list;
     }
 
