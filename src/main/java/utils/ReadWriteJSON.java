@@ -68,6 +68,10 @@ public class ReadWriteJSON {
         }
     }
 
+    /**
+     *
+     * @return Fascade
+     */
     protected Fascade readFascadeJSON() {
         Fascade[] fascade;
         try {
