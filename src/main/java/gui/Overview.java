@@ -42,23 +42,23 @@ public class Overview extends JPanel {
         sortPanel = new JPanel();
         sortPanel.setBorder(new TitledBorder("Sortierung:"));
         sortPanel.setPreferredSize(new Dimension(175, 0));
-        sortPanel.setLayout(new BorderLayout());
+        sortPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
         sortBtnGroup = new ButtonGroup();
 
-        noneSort = new JRadioButton("Keine   ");
+        noneSort = new JRadioButton("Keine");
         noneSort.setSelected(true);
 
-        AtoZSort = new JRadioButton("A-Z    ");
-        ZToASort = new JRadioButton("Z-A    ");
+        AtoZSort = new JRadioButton("A-Z");
+        ZToASort = new JRadioButton("Z-A");
 
         sortBtnGroup.add(noneSort);
         sortBtnGroup.add(AtoZSort);
         sortBtnGroup.add(ZToASort);
 
-        sortPanel.add(noneSort, BorderLayout.NORTH);
-        sortPanel.add(AtoZSort, BorderLayout.CENTER);
-        sortPanel.add(ZToASort, BorderLayout.SOUTH);
+        sortPanel.add(noneSort);
+        sortPanel.add(AtoZSort);
+        sortPanel.add(ZToASort);
 
         filterPanel = new JPanel();
         filterPanel.setBorder(new TitledBorder("Filter:"));
