@@ -30,7 +30,7 @@ public class Menu extends JFrame {
         JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overview);
         selectTab.addTab("Zuordnung", assignment);
-        selectTab.addTab("Person", folks);
+        selectTab.addTab("Personen", folks);
         selectTab.addTab("Stammdaten", data);
         selectTab.addTab("Logbuch", logbook);
 

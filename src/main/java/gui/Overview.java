@@ -36,7 +36,7 @@ public class Overview extends JPanel {
         personAssignmentPanel = new AddAssignmentPanel(false);
 
         personInfoPanel = new PersonInfoPanel();
-        personenPanel.setBorder(new TitledBorder("Personen:    "));
+        personenPanel.setBorder(new TitledBorder("   Personen:   "));
 
         southPanel = new JPanel();
         southPanel.setLayout(new BorderLayout());
@@ -88,7 +88,7 @@ public class Overview extends JPanel {
         personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel, true);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
-        personDetailPanel.setBorder(new TitledBorder("  Detail: "));
+        personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
         personDetailPanel.add(personInfoPanel);
         personDetailPanel.add(personAssignmentPanel);
 

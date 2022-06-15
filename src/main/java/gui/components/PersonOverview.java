@@ -63,7 +63,6 @@ public class PersonOverview extends JPanel {
         ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(lensImage);
         JButton imgButton = new JButton();
-        imgButton.setLayout(new BorderLayout());
         imgButton.add(imgLabel, BorderLayout.WEST);
         imgButton.setBorder(null);
         imgButton.setBorderPainted(false);
@@ -87,7 +86,7 @@ public class PersonOverview extends JPanel {
         this.setPreferredSize(new Dimension(170, 0));
         this.add(scrollPanePerson);
         this.add(searchBar, BorderLayout.SOUTH);
-        this.setBorder(new TitledBorder("   Übersicht:  "));
+        this.setBorder(new TitledBorder("   Übersicht:   "));
         this.setVisible(true);
 
         if (!setVisibleSearchBar) {
