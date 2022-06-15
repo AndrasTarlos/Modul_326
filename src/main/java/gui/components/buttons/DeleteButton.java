@@ -3,6 +3,7 @@ package gui.components.buttons;
 import utils.ReadWriteJSON;
 
 import javax.swing.*;
+import java.awt.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -27,6 +28,7 @@ public class DeleteButton extends JButton{
     public DeleteButton() {
         ImageIcon addButtonPic = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(addButtonPic);
+        this.setBackground(new Color(246, 245, 245, 255));
         this.add(imgLabel);
     }
 }

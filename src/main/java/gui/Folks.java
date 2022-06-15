@@ -26,6 +26,7 @@ public class Folks extends JPanel {
     PersonInfoPanel personInfoPanel;
 
     JPanel southPanel;
+    JPanel buttonPanel;
     public Folks() throws IOException {
 
 
@@ -44,15 +45,19 @@ public class Folks extends JPanel {
         personDetailPanel.add(personInfoPanel);
 
         southPanel = new JPanel();
-        //southPanel.setLayout(new GridLayout(1, 9));
+        southPanel.setLayout(new BorderLayout());
+        buttonPanel = new JPanel();
+
 
         addButton = new AddButton();
         editButton = new EditButton();
         deleteButton = new DeleteButton();
 
-        southPanel.add(addButton);
-        southPanel.add(editButton);
-        southPanel.add(deleteButton);
+        buttonPanel.add(addButton);
+        buttonPanel.add(editButton);
+        buttonPanel.add(deleteButton);
+
+        southPanel.add(buttonPanel, BorderLayout.WEST);
 
         personEditPanel.add(personDetailPanel, BorderLayout.CENTER);
         personEditPanel.add(personOverview, BorderLayout.WEST);
