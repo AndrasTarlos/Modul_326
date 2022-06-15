@@ -1,5 +1,6 @@
 package company;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import employees.HRPerson;
 import employees.Person;
 
@@ -34,7 +35,7 @@ public class Department {
     public void removeMember(HRPerson person) {
         members.remove(person);
     }
-
+    @JsonIgnore
     public int getNumberOfMembers(){
         return members.size();
     }

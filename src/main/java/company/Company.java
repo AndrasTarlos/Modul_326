@@ -1,6 +1,8 @@
 package company;
 
 import java.util.ArrayList;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -35,6 +37,7 @@ public class Company {
     public void removeDepartment(int index){
         departments.remove(index);
     }
+    @JsonIgnore
     public int getNumberOfDepartments(){
         return departments.size();
     }
