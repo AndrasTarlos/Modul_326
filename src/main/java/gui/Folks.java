@@ -40,7 +40,7 @@ public class Folks extends JPanel {
         personDetailPanel.add(personInfoPanel);
 
         southPanel = new JPanel();
-        southPanel.setLayout(new GridLayout(1, 9));
+        //southPanel.setLayout(new GridLayout(1, 9));
 
         addButton = new AddButton();
         editButton = new EditButton();
