@@ -2,6 +2,10 @@ package employees;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Comparator;
+import java.util.Locale;
 
 /**
  * Person
@@ -13,7 +17,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class Person {
+public class Person implements Comparable<Person> {
     //private byte[] photo;
     private String firstName;
     private String lastName;
@@ -48,5 +52,28 @@ public class Person {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(@NotNull Person p) {
+        return firstName.compareTo(p.getFirstName());
+    }
+
+    public static Comparator<Person> compareAscending() {
+        return new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getFirstName().toUpperCase(Locale.ROOT).compareTo(o2.getFirstName().toUpperCase(Locale.ROOT));
+            }
+        };
+    }
+
+    public static Comparator<Person> compareReversed() {
+        return new Comparator<Person>() {
+            @Override
+            public int compare(Person o1, Person o2) {
+                return o1.getFirstName().toUpperCase(Locale.ROOT).compareTo(o2.getFirstName().toUpperCase(Locale.ROOT)) - 2;
+            }
+        };
     }
 }

@@ -11,11 +11,9 @@ public class PersonInfoPanel extends JPanel {
     JLabel personNameLabel;
 
     JLabel imagePlaceHolder;
-    JLabel imageLabel;
 
     public PersonInfoPanel() {
         personNameLabel = new JLabel("  Name: ");
-        ImageIcon picture = new ImageIcon("img.png");
 
         nameInputTextField = new JTextField();
         nameInputTextField.setColumns(25);

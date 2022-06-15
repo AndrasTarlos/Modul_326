@@ -3,6 +3,8 @@ package gui.components;
 import company.Team;
 import employees.HRPerson;
 import employees.Person;
+import exception.UnknownSortingTypeException;
+import org.jetbrains.annotations.NotNull;
 import utils.Fascade;
 import utils.Menu;
 import utils.ReadWriteJSON;
@@ -56,13 +58,9 @@ public class PersonOverview extends JPanel {
 
         ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(lensImage);
-        //imgLabel.setLayout(new BorderLayout());
         JButton imgButton = new JButton();
         imgButton.setLayout(new BorderLayout());
         imgButton.add(imgLabel, BorderLayout.WEST);
-
-        //imgLabel.setPreferredSize(new Dimension(1, 1));
-
 
         searchBar = new JPanel();
         searchBar.setBorder(new TitledBorder(""));
@@ -70,7 +68,6 @@ public class PersonOverview extends JPanel {
         searchBar.setPreferredSize(new Dimension(0, 45));
         searchBar.add(imgButton);
         searchBar.add(searchBarTextField);
-
 
         addButtons();
 
@@ -95,7 +92,7 @@ public class PersonOverview extends JPanel {
             button.setMaximumSize(new Dimension(170, 25));
             button.setBorder(null);
             button.setBorderPainted(false);
-            button.setBackground(new Color(246, 245, 245));
+            button.setBackground(new Color(246, 245, 245, 226));
             button.setFocusable(false);
 
             button.addActionListener(new ActionListener() {
@@ -121,5 +118,25 @@ public class PersonOverview extends JPanel {
     public void updatePanels(HRPerson person) {
         personInfoPanel.update(person);
         addAssignmentPanel.updateComboBox(person);
+    }
+
+    public void sortPerson(@NotNull String type) {
+        try {
+            switch (type) {
+                case "Keine":
+                    personList = Menu.fascade.getAllPerson();
+                    break;
+                case "A-Z":
+                    personList = Menu.fascade.getAllPersonSortedAZ();
+                    break;
+                case "Z-A":
+                    personList = Menu.fascade.getAllPersonSortedZA();
+                    break;
+                default:
+                    throw new UnknownSortingTypeException();
+            }
+        } catch (UnknownSortingTypeException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
