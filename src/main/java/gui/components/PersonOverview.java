@@ -3,6 +3,8 @@ package gui.components;
 import company.Team;
 import employees.HRPerson;
 import employees.Person;
+import exception.UnknownSortingTypeException;
+import org.jetbrains.annotations.NotNull;
 import utils.Fascade;
 import utils.Menu;
 import utils.ReadWriteJSON;
@@ -33,6 +35,7 @@ public class PersonOverview extends JPanel {
     AddAssignmentPanel addAssignmentPanel;
     List<HRPerson> personList;
     JScrollPane scrollPanePerson;
+    JPanel contentPanel;
     Fascade fascade;
     JPanel searchBar;
     JTextField searchBarTextField;
@@ -78,8 +81,11 @@ public class PersonOverview extends JPanel {
         searchBar.add(buttonPanelLens);
         searchBar.add(searchBarTextField);
 
+        contentPanel = new JPanel();
+        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
+        scrollPanePerson = new JScrollPane(contentPanel);
 
-        addButtons();
+        addButtonsToContentPanel();
 
         this.setPreferredSize(new Dimension(170, 0));
         this.add(scrollPanePerson);
@@ -92,24 +98,29 @@ public class PersonOverview extends JPanel {
         }
     }
 
-    public void addButtons() {
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
+    public void addButtonsToContentPanel() {
         for (int i = 0; i < personList.size(); i++) {
             JButton button = new JButton(personList.get(i).getFirstName() + " " + personList.get(i).getLastName());
             button.setMinimumSize(new Dimension(170, 25));
             button.setMaximumSize(new Dimension(170, 25));
             button.setBorder(null);
             button.setBorderPainted(false);
-            button.setBackground(new Color(246, 245, 245));
+            button.setBackground(new Color(246, 245, 245, 226));
             button.setFocusable(false);
 
-            button.addActionListener(e -> updatePanels(fascade.getPersonByFullName(e.getActionCommand())));
-            panel.add(button);
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
+                }
+            });
+            contentPanel.add(button);
         }
+        contentPanel.revalidate();
+    }
 
-        scrollPanePerson = new JScrollPane(panel);
+    public void removeContentPanelButtons() {
+        contentPanel.removeAll();
     }
 
     public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {
@@ -123,5 +134,28 @@ public class PersonOverview extends JPanel {
     public void updatePanels(HRPerson person) {
         personInfoPanel.update(person);
         addAssignmentPanel.updateComboBox(person);
+    }
+
+    public void sortPerson(@NotNull String type) {
+        try {
+            switch (type) {
+                case "Keine":
+                    personList = Menu.fascade.getAllPerson();
+                    break;
+                case "A-Z":
+                    personList = Menu.fascade.getAllPersonSortedAZ();
+                    break;
+                case "Z-A":
+                    personList = Menu.fascade.getAllPersonSortedZA();
+                    this.repaint();
+                    break;
+                default:
+                    throw new UnknownSortingTypeException();
+            }
+            removeContentPanelButtons();
+            addButtonsToContentPanel();
+        } catch (UnknownSortingTypeException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

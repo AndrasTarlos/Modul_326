@@ -67,13 +67,4 @@ public class Person implements Comparable<Person> {
             }
         };
     }
-
-    public static Comparator<Person> compareReversed() {
-        return new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.getFirstName().toUpperCase(Locale.ROOT).compareTo(o2.getFirstName().toUpperCase(Locale.ROOT)) - 2;
-            }
-        };
-    }
 }
