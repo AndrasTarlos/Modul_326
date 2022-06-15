@@ -5,6 +5,7 @@ import gui.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * Author: Francesco Ryu
@@ -15,7 +16,7 @@ import java.awt.*;
 public class Menu extends JFrame {
     public static Fascade fascade;
 
-    public Menu(Fascade fascade) {
+    public Menu(Fascade fascade) throws IOException {
         Menu.fascade = fascade;
 
         this.setLayout(new BorderLayout());
@@ -41,7 +42,7 @@ public class Menu extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ReadWriteJSON readWriteJSON = new ReadWriteJSON();
         Fascade fascade = readWriteJSON.readFascadeJSON();
         Company company = readWriteJSON.readCompanyJSON();

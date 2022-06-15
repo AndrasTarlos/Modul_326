@@ -7,6 +7,7 @@ import gui.components.PersonOverview;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * author: Francesco Ryu
@@ -25,7 +26,7 @@ public class Assignment extends JPanel {
     JLabel personEditLabel;
 
 
-    public Assignment() {
+    public Assignment() throws IOException {
         this.setLayout(new BorderLayout());
 
         GridLayout personDetailLayout = new GridLayout(2, 0);
@@ -33,15 +34,15 @@ public class Assignment extends JPanel {
         personEditPanel = new JPanel();
         personInfoPanel = new PersonInfoPanel();
         personAssignmentPanel = new AddAssignmentPanel(true);
-        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel);
+        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel, false);
         personDetailPanel = new JPanel();
 
-        personEditPanel.setBorder(new TitledBorder("Person zuordnen:  "));
+        personEditPanel.setBorder(new TitledBorder("   Person zuordnen:   "));
         personEditPanel.setLayout(new BorderLayout());
-        personEditLabel = new JLabel("  Personen bearbeiten:");
+        personEditLabel = new JLabel("   Personen bearbeiten:   ");
         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
 
-        personDetailPanel.setBorder(new TitledBorder("  Detail: "));
+        personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
         personDetailPanel.setLayout(personDetailLayout);
         personDetailPanel.add(personInfoPanel);
         personDetailPanel.add(personAssignmentPanel);

@@ -6,11 +6,15 @@ import employees.Person;
 import utils.Fascade;
 import utils.Menu;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -21,8 +25,10 @@ public class PersonOverview extends JPanel {
     List<HRPerson> personList;
     JScrollPane scrollPanePerson;
     Fascade fascade;
+    JPanel searchBar;
+    JTextField searchBarTextField;
 
-    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel) {
+    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
         fascade = Menu.fascade;
@@ -31,12 +37,31 @@ public class PersonOverview extends JPanel {
         setPersonInfoPanel(personInfoPanel);
         setAddAssignmentPanel(addAssignmentPanel);
 
+        searchBarTextField = new JTextField();
+        searchBarTextField.setColumns(15);
+
+        JLabel imgLabel = new JLabel(new ImageIcon("img.png"));
+        imgLabel.setPreferredSize(new Dimension(1, 1));
+
+
+        searchBar = new JPanel();
+        searchBar.setBorder(new TitledBorder(""));
+        searchBar.setLayout(new GridLayout(2, 1));
+        searchBar.setPreferredSize(new Dimension(0, 45));
+        searchBar.add(searchBarTextField);
+        searchBar.add(imgLabel);
+
         addButtons();
 
         this.setPreferredSize(new Dimension(170, 0));
         this.add(scrollPanePerson);
+        this.add(searchBar, BorderLayout.SOUTH);
         this.setBorder(new TitledBorder("   Übersicht:  "));
         this.setVisible(true);
+
+        if (!setVisibleSearchBar) {
+            searchBar.setVisible(false);
+        }
     }
 
     public void addButtons() {

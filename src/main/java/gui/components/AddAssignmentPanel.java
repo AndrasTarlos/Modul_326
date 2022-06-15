@@ -79,8 +79,31 @@ public class AddAssignmentPanel extends JPanel {
 
         if (!enableComboBoxes) {
             departmentComboBox.setEnabled(false);
+            departmentComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
+
             functionComboBox.setEnabled(false);
+            functionComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
+
             teamsComboBox.setEnabled(false);
+            teamsComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
         }
 
         selectionPanel.add(departmentComboBox);

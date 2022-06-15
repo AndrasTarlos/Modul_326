@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.io.IOException;
 
 public class Overview extends JPanel {
     PersonInfoPanel personInfoPanel;
@@ -26,7 +27,7 @@ public class Overview extends JPanel {
     ButtonGroup sortBtnGroup;
 
 
-    public Overview() {
+    public Overview() throws IOException {
         GridLayout personDetailLayout = new GridLayout(2, 0);
         this.setLayout(new BorderLayout());
 
@@ -81,7 +82,7 @@ public class Overview extends JPanel {
         southPanel.add(sortPanel, BorderLayout.WEST);
         southPanel.add(filterPanel, BorderLayout.CENTER);
 
-        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel);
+        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel, true);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
         personDetailPanel.setBorder(new TitledBorder("  Detail: "));
