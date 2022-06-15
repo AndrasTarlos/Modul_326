@@ -36,7 +36,7 @@ public class PersonOverview extends JPanel {
 
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/img.png")).toURI();
+            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/lensImage.png")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
@@ -56,7 +56,10 @@ public class PersonOverview extends JPanel {
 
         ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(lensImage);
-        imgLabel.setLayout(new BorderLayout());
+        //imgLabel.setLayout(new BorderLayout());
+        JButton imgButton = new JButton();
+        imgButton.setLayout(new BorderLayout());
+        imgButton.add(imgLabel, BorderLayout.WEST);
 
         //imgLabel.setPreferredSize(new Dimension(1, 1));
 
@@ -65,7 +68,7 @@ public class PersonOverview extends JPanel {
         searchBar.setBorder(new TitledBorder(""));
         searchBar.setLayout(new GridLayout(2, 1));
         searchBar.setPreferredSize(new Dimension(0, 45));
-        searchBar.add(imgLabel);
+        searchBar.add(imgButton);
         searchBar.add(searchBarTextField);
 
 
