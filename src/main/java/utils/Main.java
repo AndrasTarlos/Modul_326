@@ -7,6 +7,6 @@ public class Main {
         ReadWriteJSON readWriteJSON = new ReadWriteJSON();
         Fascade fascade = readWriteJSON.readFascadeJSON();
         Company company = readWriteJSON.readCompanyJSON();
-        readWriteJSON.writeCompanyJSON(company);
+        //readWriteJSON.writeCompanyJSON(company);
     }
 }

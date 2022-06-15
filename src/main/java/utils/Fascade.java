@@ -7,7 +7,10 @@ import employees.JobFunction;
 import company.Team;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import employees.Person;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
@@ -117,6 +120,18 @@ public class Fascade {
         return person;
     }
 
+    public List<HRPerson> getAllPersonSortedAZ() {
+        List<HRPerson> list = getAllPerson();
+        Collections.sort(list, Person.compareAscending());
+        return list;
+    }
+
+    public List<HRPerson> getAllPersonSortedZA() {
+        List<HRPerson> list = getAllPerson();
+        Collections.sort(list, Person.compareReversed());
+        return list;
+    }
+
     /**
      * Gets an HRPerson object
      * @param name = "firstname lastname"
@@ -166,8 +181,6 @@ public class Fascade {
             if (name.equals(j.getDesignation()))
                 return j;
         }
-        Company company1 = new Company();
-        company1.getName();
         return null;
     }
 

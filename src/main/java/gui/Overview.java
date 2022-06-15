@@ -8,6 +8,8 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class Overview extends JPanel {
@@ -49,12 +51,22 @@ public class Overview extends JPanel {
 
         sortBtnGroup = new ButtonGroup();
 
+        ActionListener sortActionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent actionEvent) {
+                AbstractButton aButton = (AbstractButton) actionEvent.getSource();
+                personOverview.sortPerson(aButton.getText());
+            }
+        };
+
         noneSort = new JRadioButton("Keine");
+        noneSort.addActionListener(sortActionListener);
         noneSort.setSelected(true);
         noneSort.setFocusable(false);
         AtoZSort = new JRadioButton("A-Z");
+        AtoZSort.addActionListener(sortActionListener);
         AtoZSort.setFocusable(false);
         ZToASort = new JRadioButton("Z-A");
+        ZToASort.addActionListener(sortActionListener);
         ZToASort.setFocusable(false);
 
         sortBtnGroup.add(noneSort);
@@ -96,6 +108,5 @@ public class Overview extends JPanel {
         personenPanel.add(personDetailPanel, BorderLayout.CENTER);
         this.add(southPanel, BorderLayout.SOUTH);
         this.add(personenPanel);
-
     }
 }
