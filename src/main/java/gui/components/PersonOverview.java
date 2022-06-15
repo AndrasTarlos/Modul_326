@@ -105,12 +105,7 @@ public class PersonOverview extends JPanel {
             button.setBackground(new Color(246, 245, 245));
             button.setFocusable(false);
 
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
-                }
-            });
+            button.addActionListener(e -> updatePanels(fascade.getPersonByFullName(e.getActionCommand())));
             panel.add(button);
         }
 
