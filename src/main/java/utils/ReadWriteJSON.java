@@ -51,7 +51,6 @@ public class ReadWriteJSON {
      * @param company
      */
     protected void writeCompanyJSON(Company company) {
-        // TODO fix writer
         List<Company> list = new ArrayList<>();
         list.add(company);
         ObjectMapper objectMapper = new ObjectMapper();
