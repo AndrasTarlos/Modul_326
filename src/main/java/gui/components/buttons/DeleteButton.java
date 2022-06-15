@@ -15,10 +15,9 @@ import java.util.Objects;
  */
 public class DeleteButton extends JButton{
     private static URI imgPath;
-
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/AddButton.png")).toURI();
+            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/DeleteButton.png")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
