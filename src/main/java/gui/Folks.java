@@ -52,7 +52,7 @@ public class Folks extends JPanel {
 
         southPanel.add(addButton);
         southPanel.add(editButton);
-        //southPanel.add(deleteButton);
+        southPanel.add(deleteButton);
 
         personEditPanel.add(personDetailPanel, BorderLayout.CENTER);
         personEditPanel.add(personOverview, BorderLayout.WEST);
