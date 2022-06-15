@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Our company",
+    "departments": [
+      {
+        "name": "Office",
+        "members": [
+          {
+            "firstName": "Valentin",
+            "lastName": "Adrianus",
+            "departmentName": "Office",
+            "participation": {
+              "function": {
+                "designation": "Secretary"
+              },
+              "team": {
+                "designation": "Desk Champions"
+              }
+            },
+            "modus": 0,
+            "pwd": null
+          }
+        ]
+      },
+      {
+        "name": "IT",
+        "members": [
+          {
+            "firstName": "Xose",
+            "lastName": "Tushar",
+            "departmentName": "IT",
+            "participation": {
+              "function": {
+                "designation": "Programmer"
+              },
+              "team": {
+                "designation": "Boss Mode"
+              }
+            },
+            "modus": 0,
+            "pwd": null
+          },
+          {
+            "firstName": "Stef",
+            "lastName": "Regulo",
+            "departmentName": "IT",
+            "participation": {
+              "function": {
+                "designation": "Programmer"
+              },
+              "team": {
+                "designation": "The Water Coolers"
+              }
+            },
+            "modus": 0,
+            "pwd": null
+          }
+        ]
+      },
+      {
+        "name": "Management",
+        "members": [
+          {
+            "firstName": "Modred",
+            "lastName": "Leander",
+            "departmentName": "Management",
+            "participation": {
+              "function": {
+                "designation": "Marketing"
+              },
+              "team": {
+                "designation": "Never Overtime"
+              }
+            },
+            "modus": 0,
+            "pwd": "secretkitty"
+          },
+          {
+            "firstName": "John",
+            "lastName": "Dasoda-hae",
+            "departmentName": "Management",
+            "participation": {
+              "function": {
+                "designation": "Secretary"
+              },
+              "team": {
+                "designation": "Office Heroes"
+              }
+            },
+            "modus": 0,
+            "pwd": "secretpasswd"
+          },
+          {
+            "firstName": "admin",
+            "lastName": "admin",
+            "departmentName": "Management",
+            "participation": {
+              "function": {
+                "designation": "Admin"
+              },
+              "team": {
+                "designation": "Never Overtime"
+              }
+            },
+            "modus": 1,
+            "pwd": "admin"
+          }
+        ]
+      }
+    ]
+  }
+]
