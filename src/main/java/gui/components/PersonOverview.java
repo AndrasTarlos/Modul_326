@@ -131,17 +131,11 @@ public class PersonOverview extends JPanel {
                     break;
                 case "A-Z":
                     personList = Menu.fascade.getAllPersonSortedAZ();
-                    for (HRPerson p: personList) {
-                        System.out.println(p.getFirstName());
-                    }
                     removeContentPanelButtons();
                     addButtonsToContentPanel();
                     break;
                 case "Z-A":
                     personList = Menu.fascade.getAllPersonSortedZA();
-                    for (HRPerson p: personList) {
-                        System.out.println(p.getFirstName());
-                    }
                     removeContentPanelButtons();
                     addButtonsToContentPanel();
                     this.repaint();
