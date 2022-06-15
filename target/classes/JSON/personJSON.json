@@ -1,0 +1,86 @@
+[
+  {
+    "firstName": "Kumar",
+    "lastName": "Lihuen"
+  },
+  {
+    "firstName": "Nihan",
+    "lastName": "Ivan"
+  },
+  {
+    "firstName": "Velvel",
+    "lastName": "Viktor"
+  },
+  {
+    "firstName": "Valentin",
+    "lastName": "Adrianus"
+  },
+  {
+    "firstName": "Xose",
+    "lastName": "Tushar"
+  },
+  {
+    "firstName": "Stef",
+    "lastName": "Regulo"
+  },
+  {
+    "firstName": "Pomare",
+    "lastName": "Quidel"
+  },
+  {
+    "firstName": "Mamun",
+    "lastName": "Mikhah"
+  },
+  {
+    "firstName": "Alex",
+    "lastName": "Amias"
+  },
+  {
+    "firstName": "Apis",
+    "lastName": "Mikalay"
+  },
+  {
+    "firstName": "Quirin",
+    "lastName": "Kadmos"
+  },
+  {
+    "firstName": "Lucjan",
+    "lastName": "Taliesin"
+  },
+  {
+    "firstName": "Nabu",
+    "lastName": "Arnost"
+  },
+  {
+    "firstName": "Hughard",
+    "lastName": "Iriney"
+  },
+  {
+    "firstName": "Halvdan",
+    "lastName": "Melchior"
+  },
+  {
+    "firstName": "Gregorius",
+    "lastName": "Artemon",
+    "modus": "0",
+    "pwd": "123456789"
+  },
+  {
+    "firstName": "Modred",
+    "lastName": "Leander",
+    "modus": "0",
+    "pwd": "secretkitty"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Dasoda-hae",
+    "modus": "0",
+    "pwd": "secretpasswd"
+  },
+  {
+    "firstName": "admin",
+    "lastName": "admin",
+    "modus": "1",
+    "pwd": "admin"
+  }
+]
