@@ -31,7 +31,7 @@ public class PersonOverview extends JPanel {
     JPanel searchBar;
     JTextField searchBarTextField;
 
-    private static URI imgPath;
+    private static final URI imgPath;
 
     static {
         try {
@@ -90,7 +90,7 @@ public class PersonOverview extends JPanel {
             button.setMaximumSize(new Dimension(170, 25));
             button.setBorder(null);
             button.setBorderPainted(false);
-            button.setBackground(new Color(246, 245, 245, 226));
+            button.setBackground(new Color(246, 245, 245, 255));
             button.setFocusable(false);
 
             button.addActionListener(new ActionListener() {
