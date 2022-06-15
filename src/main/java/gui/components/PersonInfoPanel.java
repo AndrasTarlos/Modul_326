@@ -44,11 +44,6 @@ public class PersonInfoPanel extends JPanel {
         nameInputTextField.setColumns(25);
         nameInputTextField.setEditable(false);
 
-        /*imagePlaceHolder = new JLabel();
-        imagePlaceHolder.setPreferredSize(new Dimension(200, 200));
-        imagePlaceHolder.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
-        imagePlaceHolder.add(imgLabel);*/
-
         this.add(personNameLabel);
         this.add(nameInputTextField);
         this.add(imgLabel, BorderLayout.CENTER);
