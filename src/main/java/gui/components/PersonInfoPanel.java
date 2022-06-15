@@ -1,16 +1,31 @@
 package gui.components;
 
 import employees.Person;
+import utils.ReadWriteJSON;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
+import java.util.Objects;
 
 public class PersonInfoPanel extends JPanel {
     JTextField nameInputTextField;
     JLabel personNameLabel;
 
     JLabel imagePlaceHolder;
+
+    private static final URI imgPath;
+
+    static {
+        try {
+            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/profile.png")).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public PersonInfoPanel() {
         personNameLabel = new JLabel("  Name: ");
@@ -19,7 +34,9 @@ public class PersonInfoPanel extends JPanel {
         nameInputTextField.setColumns(25);
         nameInputTextField.setEditable(false);
 
-        imagePlaceHolder = new JLabel();
+        ImageIcon profileImage = new ImageIcon(Paths.get(imgPath).toString());
+
+        imagePlaceHolder = new JLabel(profileImage);
         imagePlaceHolder.setPreferredSize(new Dimension(200, 200));
         imagePlaceHolder.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
 

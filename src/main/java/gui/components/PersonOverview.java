@@ -58,6 +58,10 @@ public class PersonOverview extends JPanel {
         JButton imgButton = new JButton();
         imgButton.setLayout(new BorderLayout());
         imgButton.add(imgLabel, BorderLayout.WEST);
+        imgButton.setBackground(new Color(246, 245, 245, 255));
+        imgButton.setBorder(null);
+        imgButton.setBorderPainted(false);
+        imgButton.setFocusable(false);
 
         searchBar = new JPanel();
         searchBar.setBorder(new TitledBorder(""));
