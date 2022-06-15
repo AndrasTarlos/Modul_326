@@ -29,6 +29,7 @@ public class AddButton extends JButton {
     public AddButton() {
         ImageIcon addButtonPic = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(addButtonPic);
+        this.setBackground(new Color(246, 245, 245, 255));
         this.add(imgLabel);
     }
 }

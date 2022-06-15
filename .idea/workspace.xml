@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Folks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Folks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/AddButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/DeleteButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/EditButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/Folks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/Folks.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,9 +138,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.utils.Menu" />
+        <item itemvalue="Application.CreateFunction" />
         <item itemvalue="Application.PersonOverview" />
         <item itemvalue="Application.Menu" />
-        <item itemvalue="Application.CreateFunction" />
         <item itemvalue="Application.AddButton" />
       </list>
     </recent_temporary>
@@ -409,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655323868395</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="test exchange">
+      <created>1655324631996</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1655324631996</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,6 +461,7 @@
     <MESSAGE value="Added image" />
     <MESSAGE value="Added PersonInfoPanel.java" />
     <MESSAGE value="added some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some stuff" />
+    <MESSAGE value="test exchange" />
+    <option name="LAST_COMMIT_MESSAGE" value="test exchange" />
   </component>
 </project>

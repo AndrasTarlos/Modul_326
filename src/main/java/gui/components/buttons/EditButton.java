@@ -4,6 +4,7 @@ import utils.ReadWriteJSON;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -26,6 +27,7 @@ public class EditButton extends JButton {
     public EditButton() {
         ImageIcon addButtonPic = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(addButtonPic);
+        this.setBackground(new Color(246, 245, 245, 255));
         this.add(imgLabel);
     }
 }
