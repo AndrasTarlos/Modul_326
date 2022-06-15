@@ -10,8 +10,9 @@ import java.awt.*;
 import java.io.IOException;
 
 /**
- * author: Francesco Ryu
- * date: 10.06.2022
+ * @author: Francesco Ryu
+ * @date: 10.06.2022
+ * @Version: 8.0
  */
 
 public class Assignment extends JPanel {

@@ -5,6 +5,11 @@ import employees.Person;
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
 import java.awt.*;
+/**
+ * @Author: Francesco Ryu/Andras Tarlos
+ * @Date: 15.06.2022
+ * @Version: 15.1
+ */
 
 public class PersonInfoPanel extends JPanel {
     JTextField nameInputTextField;

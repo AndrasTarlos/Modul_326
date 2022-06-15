@@ -22,6 +22,12 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
+/**
+ * @Author: Francesco Ryu/Andras Tarlos
+ * @Date: 15.06.2022
+ * @Version: 15.1
+ */
+
 public class PersonOverview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel addAssignmentPanel;
@@ -56,19 +62,23 @@ public class PersonOverview extends JPanel {
 
         ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(lensImage);
-        //imgLabel.setLayout(new BorderLayout());
         JButton imgButton = new JButton();
         imgButton.setLayout(new BorderLayout());
         imgButton.add(imgLabel, BorderLayout.WEST);
+        imgButton.setBorder(null);
+        imgButton.setBorderPainted(false);
+        imgButton.setBackground(new Color(246, 245, 245));
+        imgButton.setFocusable(false);
 
-        //imgLabel.setPreferredSize(new Dimension(1, 1));
-
+        JPanel buttonPanelLens = new JPanel();
+        buttonPanelLens.setLayout(new GridLayout(0, 5));
+        buttonPanelLens.setBackground(new Color(246, 245, 245));
+        buttonPanelLens.add(imgButton);
 
         searchBar = new JPanel();
-        searchBar.setBorder(new TitledBorder(""));
         searchBar.setLayout(new GridLayout(2, 1));
         searchBar.setPreferredSize(new Dimension(0, 45));
-        searchBar.add(imgButton);
+        searchBar.add(buttonPanelLens);
         searchBar.add(searchBarTextField);
 
 

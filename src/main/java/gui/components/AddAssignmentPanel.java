@@ -12,6 +12,11 @@ import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * @Author: Francesco Ryu/Andras Tarlos
+ * @Date: 15.06.2022
+ * @Version: 8.0
+ */
 
 public class AddAssignmentPanel extends JPanel {
 
