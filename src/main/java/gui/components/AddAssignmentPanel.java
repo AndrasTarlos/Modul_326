@@ -23,7 +23,7 @@ public class AddAssignmentPanel extends JPanel {
     private HRPerson focusedPerson;
 
     public AddAssignmentPanel(boolean enableComboBoxes) {
-        this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
+        //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
 

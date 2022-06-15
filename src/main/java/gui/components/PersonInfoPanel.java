@@ -28,6 +28,7 @@ public class PersonInfoPanel extends JPanel {
         this.add(personNameLabel);
         this.add(nameInputTextField);
         this.add(imagePlaceHolder);
+        this.setBorder(new MatteBorder(0, 0, 2, 0, Color.BLACK));
     }
 
     public void update(Person person) {
