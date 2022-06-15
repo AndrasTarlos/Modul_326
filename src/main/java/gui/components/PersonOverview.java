@@ -54,16 +54,20 @@ public class PersonOverview extends JPanel {
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
 
-        JLabel imgLabel = new JLabel(new ImageIcon(Paths.get(imgPath).toString()));
-        imgLabel.setPreferredSize(new Dimension(1, 1));
+        ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
+        JLabel imgLabel = new JLabel(lensImage);
+        imgLabel.setLayout(new BorderLayout());
+
+        //imgLabel.setPreferredSize(new Dimension(1, 1));
 
 
         searchBar = new JPanel();
         searchBar.setBorder(new TitledBorder(""));
         searchBar.setLayout(new GridLayout(2, 1));
         searchBar.setPreferredSize(new Dimension(0, 45));
-        searchBar.add(searchBarTextField);
         searchBar.add(imgLabel);
+        searchBar.add(searchBarTextField);
+
 
         addButtons();
 

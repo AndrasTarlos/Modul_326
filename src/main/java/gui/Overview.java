@@ -51,8 +51,11 @@ public class Overview extends JPanel {
 
         noneSort = new JRadioButton("Keine");
         noneSort.setSelected(true);
+        noneSort.setFocusable(false);
         AtoZSort = new JRadioButton("A-Z");
+        AtoZSort.setFocusable(false);
         ZToASort = new JRadioButton("Z-A");
+        ZToASort.setFocusable(false);
 
         sortBtnGroup.add(noneSort);
         sortBtnGroup.add(AtoZSort);
