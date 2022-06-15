@@ -126,19 +126,24 @@ public class PersonOverview extends JPanel {
             switch (type) {
                 case "Keine":
                     personList = Menu.fascade.getAllPerson();
+                    removeContentPanelButtons();
+                    addButtonsToContentPanel();
                     break;
                 case "A-Z":
                     personList = Menu.fascade.getAllPersonSortedAZ();
+                    removeContentPanelButtons();
+                    addButtonsToContentPanel();
                     break;
                 case "Z-A":
                     personList = Menu.fascade.getAllPersonSortedZA();
+                    removeContentPanelButtons();
+                    addButtonsToContentPanel();
                     this.repaint();
                     break;
                 default:
                     throw new UnknownSortingTypeException();
             }
-            removeContentPanelButtons();
-            addButtonsToContentPanel();
+
         } catch (UnknownSortingTypeException e) {
             throw new RuntimeException(e);
         }
