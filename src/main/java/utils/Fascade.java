@@ -166,6 +166,8 @@ public class Fascade {
             if (name.equals(j.getDesignation()))
                 return j;
         }
+        Company company1 = new Company();
+        company1.getName();
         return null;
     }
 

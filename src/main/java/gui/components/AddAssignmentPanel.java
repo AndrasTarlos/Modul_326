@@ -12,6 +12,11 @@ import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * @Author: Francesco Ryu/Andras Tarlos
+ * @Date: 15.06.2022
+ * @Version: 8.0
+ */
 
 public class AddAssignmentPanel extends JPanel {
 
@@ -23,7 +28,7 @@ public class AddAssignmentPanel extends JPanel {
     private HRPerson focusedPerson;
 
     public AddAssignmentPanel(boolean enableComboBoxes) {
-        this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
+        //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
 
@@ -79,8 +84,31 @@ public class AddAssignmentPanel extends JPanel {
 
         if (!enableComboBoxes) {
             departmentComboBox.setEnabled(false);
+            departmentComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
+
             functionComboBox.setEnabled(false);
+            functionComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
+
             teamsComboBox.setEnabled(false);
+            teamsComboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public void paint(Graphics g) {
+                    setForeground(Color.BLACK);
+                    super.paint(g);
+                }
+            });
         }
 
         selectionPanel.add(departmentComboBox);

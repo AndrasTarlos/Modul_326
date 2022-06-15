@@ -5,38 +5,91 @@ import employees.HRPerson;
 import employees.Person;
 import utils.Fascade;
 import utils.Menu;
+import utils.ReadWriteJSON;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
+
+/**
+ * @Author: Francesco Ryu/Andras Tarlos
+ * @Date: 15.06.2022
+ * @Version: 15.1
+ */
 
 public class PersonOverview extends JPanel {
     PersonInfoPanel personInfoPanel;
     AddAssignmentPanel addAssignmentPanel;
-    DefaultListModel<String> personListModel;
     List<HRPerson> personList;
     JScrollPane scrollPanePerson;
     Fascade fascade;
+    JPanel searchBar;
+    JTextField searchBarTextField;
 
-    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel) {
+    private static URI imgPath;
+
+    static {
+        try {
+            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/lensImage.png")).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
-        personListModel = new DefaultListModel<>();
         setPersonInfoPanel(personInfoPanel);
         setAddAssignmentPanel(addAssignmentPanel);
+
+        searchBarTextField = new JTextField();
+        searchBarTextField.setColumns(15);
+
+        ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
+        JLabel imgLabel = new JLabel(lensImage);
+        JButton imgButton = new JButton();
+        imgButton.add(imgLabel, BorderLayout.WEST);
+        imgButton.setBorder(null);
+        imgButton.setBorderPainted(false);
+        imgButton.setBackground(new Color(246, 245, 245));
+        imgButton.setFocusable(false);
+
+        JPanel buttonPanelLens = new JPanel();
+        buttonPanelLens.setLayout(new GridLayout(0, 5));
+        buttonPanelLens.setBackground(new Color(246, 245, 245));
+        buttonPanelLens.add(imgButton);
+
+        searchBar = new JPanel();
+        searchBar.setLayout(new GridLayout(2, 1));
+        searchBar.setPreferredSize(new Dimension(0, 45));
+        searchBar.add(buttonPanelLens);
+        searchBar.add(searchBarTextField);
+
 
         addButtons();
 
         this.setPreferredSize(new Dimension(170, 0));
         this.add(scrollPanePerson);
-        this.setBorder(new TitledBorder("   Übersicht:  "));
+        this.add(searchBar, BorderLayout.SOUTH);
+        this.setBorder(new TitledBorder("   Übersicht:   "));
         this.setVisible(true);
+
+        if (!setVisibleSearchBar) {
+            searchBar.setVisible(false);
+        }
     }
 
     public void addButtons() {
@@ -52,12 +105,7 @@ public class PersonOverview extends JPanel {
             button.setBackground(new Color(246, 245, 245));
             button.setFocusable(false);
 
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
-                }
-            });
+            button.addActionListener(e -> updatePanels(fascade.getPersonByFullName(e.getActionCommand())));
             panel.add(button);
         }
 
