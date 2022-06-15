@@ -1,0 +1,261 @@
+Index: src/main/java/gui/Assignment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui;\r\n\r\nimport gui.components.AddAssignmentPanel;\r\nimport gui.components.PersonInfoPanel;\r\nimport gui.components.PersonOverview;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.TitledBorder;\r\nimport java.awt.*;\r\n\r\n/**\r\n * author: Francesco Ryu\r\n * date: 10.06.2022\r\n */\r\n\r\npublic class Assignment extends JPanel {\r\n\r\n    JPanel personEditPanel;\r\n\r\n    PersonOverview personOverviewPanel;\r\n    JPanel personDetailPanel;\r\n    PersonInfoPanel personInfoPanel;\r\n    AddAssignmentPanel personAssignmentPanel;\r\n\r\n    JLabel personEditLabel;\r\n\r\n\r\n    public Assignment() {\r\n        this.setLayout(new BorderLayout());\r\n\r\n        GridLayout personDetailLayout = new GridLayout(2, 0);\r\n\r\n        personEditPanel = new JPanel();\r\n        personInfoPanel = new PersonInfoPanel();\r\n        personAssignmentPanel = new AddAssignmentPanel(true);\r\n        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel);\r\n        personDetailPanel = new JPanel();\r\n\r\n        personEditPanel.setBorder(new TitledBorder(\"Person zuordnen:  \"));\r\n        personEditPanel.setLayout(new BorderLayout());\r\n        personEditLabel = new JLabel(\"  Personen bearbeiten:\");\r\n        personEditPanel.add(personOverviewPanel, BorderLayout.WEST);\r\n\r\n        personDetailPanel.setBorder(new TitledBorder(\"  Detail: \"));\r\n        personDetailPanel.setLayout(personDetailLayout);\r\n        personDetailPanel.add(personInfoPanel);\r\n        personDetailPanel.add(personAssignmentPanel);\r\n\r\n        personEditPanel.add(personDetailPanel, BorderLayout.CENTER);\r\n        this.add(personEditPanel);\r\n        this.setVisible(true);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/Assignment.java b/src/main/java/gui/Assignment.java
+--- a/src/main/java/gui/Assignment.java	(revision 85f140db483d8f4ea56f7b48c05de1a56d029eae)
++++ b/src/main/java/gui/Assignment.java	(date 1655112666310)
+@@ -7,6 +7,7 @@
+ import javax.swing.*;
+ import javax.swing.border.TitledBorder;
+ import java.awt.*;
++import java.io.IOException;
+ 
+ /**
+  * author: Francesco Ryu
+@@ -25,7 +26,7 @@
+     JLabel personEditLabel;
+ 
+ 
+-    public Assignment() {
++    public Assignment() throws IOException {
+         this.setLayout(new BorderLayout());
+ 
+         GridLayout personDetailLayout = new GridLayout(2, 0);
+@@ -33,15 +34,15 @@
+         personEditPanel = new JPanel();
+         personInfoPanel = new PersonInfoPanel();
+         personAssignmentPanel = new AddAssignmentPanel(true);
+-        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel);
++        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel, false);
+         personDetailPanel = new JPanel();
+ 
+-        personEditPanel.setBorder(new TitledBorder("Person zuordnen:  "));
++        personEditPanel.setBorder(new TitledBorder("   Person zuordnen:   "));
+         personEditPanel.setLayout(new BorderLayout());
+-        personEditLabel = new JLabel("  Personen bearbeiten:");
++        personEditLabel = new JLabel("   Personen bearbeiten:   ");
+         personEditPanel.add(personOverviewPanel, BorderLayout.WEST);
+ 
+-        personDetailPanel.setBorder(new TitledBorder("  Detail: "));
++        personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
+         personDetailPanel.setLayout(personDetailLayout);
+         personDetailPanel.add(personInfoPanel);
+         personDetailPanel.add(personAssignmentPanel);
+Index: src/main/java/gui/components/AddAssignmentPanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui.components;\r\n\r\nimport company.Department;\r\nimport company.Team;\r\nimport employees.HRPerson;\r\nimport employees.JobFunction;\r\nimport employees.Participation;\r\nimport utils.Fascade;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\n\r\npublic class AddAssignmentPanel extends JPanel {\r\n\r\n    private final JComboBox<String> departmentComboBox;\r\n    private final JComboBox<String> functionComboBox;\r\n    private final JComboBox<String> teamsComboBox;\r\n\r\n    private final Fascade fascade;\r\n    private HRPerson focusedPerson;\r\n\r\n    public AddAssignmentPanel(boolean enableComboBoxes) {\r\n        //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));\r\n        this.setLayout(new BorderLayout());\r\n        fascade = utils.Menu.fascade;\r\n\r\n        JPanel labelPanel = new JPanel();\r\n        JPanel selectionPanel = new JPanel();\r\n\r\n        JLabel department = new JLabel(\"Abteilung:\");\r\n        department.setBorder(new EmptyBorder(0, 0, 0, 0));\r\n\r\n        JLabel function = new JLabel(\"Funktion:\");\r\n        function.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        JLabel teams = new JLabel(\"Teams:\");\r\n        teams.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        departmentComboBox = new JComboBox<>();\r\n        departmentComboBox.setPreferredSize(new Dimension(224, 20));\r\n        departmentComboBox.setFocusable(false);\r\n        departmentComboBox.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                if (focusedPerson != null) {\r\n                    fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);\r\n                }\r\n                    //focusedPersondepartmentComboBox.getSelectedItem();\r\n            }\r\n        });\r\n\r\n        functionComboBox = new JComboBox<>();\r\n        functionComboBox.setPreferredSize(new Dimension(224, 20));\r\n        functionComboBox.setFocusable(false);\r\n        functionComboBox.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                if (focusedPerson != null) {\r\n                    fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());\r\n                }\r\n            }\r\n        });\r\n\r\n        teamsComboBox = new JComboBox<>();\r\n        teamsComboBox.setPreferredSize(new Dimension(224, 20));\r\n        teamsComboBox.setFocusable(false);\r\n        teamsComboBox.addActionListener(new ActionListener() {\r\n            @Override\r\n            public void actionPerformed(ActionEvent e) {\r\n                if (focusedPerson != null) {\r\n                    fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());\r\n                    focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));\r\n                }\r\n            }\r\n        });\r\n\r\n        if (!enableComboBoxes) {\r\n            departmentComboBox.setEnabled(false);\r\n            functionComboBox.setEnabled(false);\r\n            teamsComboBox.setEnabled(false);\r\n        }\r\n\r\n        selectionPanel.add(departmentComboBox);\r\n        selectionPanel.add(functionComboBox);\r\n        selectionPanel.add(teamsComboBox);\r\n\r\n        labelPanel.add(department);\r\n        labelPanel.add(function);\r\n        labelPanel.add(teams);\r\n\r\n        labelPanel.setPreferredSize(new Dimension(100, 0));\r\n\r\n        loadComboBoxData();\r\n\r\n        this.add(labelPanel, BorderLayout.WEST);\r\n        this.add(selectionPanel, BorderLayout.CENTER);\r\n    }\r\n\r\n    public void loadComboBoxData() {\r\n        for (Team t: fascade.getTeams()) {\r\n            teamsComboBox.addItem(t.getDesignation());\r\n        }\r\n        for (JobFunction f: fascade.getJobFunctions()) {\r\n            functionComboBox.addItem(f.getDesignation());\r\n        }\r\n        for (Department d: fascade.getAllDepartment()) {\r\n            departmentComboBox.addItem(d.getName());\r\n        }\r\n    }\r\n\r\n    public void updateComboBox(HRPerson person) {\r\n        focusedPerson = person;\r\n        Participation p = person.getParticipation();\r\n        teamsComboBox.setSelectedItem(p.getTeam().getDesignation());\r\n        functionComboBox.setSelectedItem(p.getFunction().getDesignation());\r\n        departmentComboBox.setSelectedItem(person.getDepartmentName());\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/components/AddAssignmentPanel.java b/src/main/java/gui/components/AddAssignmentPanel.java
+--- a/src/main/java/gui/components/AddAssignmentPanel.java	(revision 85f140db483d8f4ea56f7b48c05de1a56d029eae)
++++ b/src/main/java/gui/components/AddAssignmentPanel.java	(date 1655108778984)
+@@ -79,8 +79,31 @@
+ 
+         if (!enableComboBoxes) {
+             departmentComboBox.setEnabled(false);
++            departmentComboBox.setRenderer(new DefaultListCellRenderer() {
++                @Override
++                public void paint(Graphics g) {
++                    setForeground(Color.BLACK);
++                    super.paint(g);
++                }
++            });
++
+             functionComboBox.setEnabled(false);
++            functionComboBox.setRenderer(new DefaultListCellRenderer() {
++                @Override
++                public void paint(Graphics g) {
++                    setForeground(Color.BLACK);
++                    super.paint(g);
++                }
++            });
++
+             teamsComboBox.setEnabled(false);
++            teamsComboBox.setRenderer(new DefaultListCellRenderer() {
++                @Override
++                public void paint(Graphics g) {
++                    setForeground(Color.BLACK);
++                    super.paint(g);
++                }
++            });
+         }
+ 
+         selectionPanel.add(departmentComboBox);
+Index: src/main/java/gui/Overview.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui;\r\n\r\nimport gui.components.AddAssignmentPanel;\r\nimport gui.components.PersonInfoPanel;\r\nimport gui.components.PersonOverview;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.EmptyBorder;\r\nimport javax.swing.border.TitledBorder;\r\nimport java.awt.*;\r\n\r\npublic class Overview extends JPanel {\r\n    PersonInfoPanel personInfoPanel;\r\n    AddAssignmentPanel personAssignmentPanel;\r\n    AddAssignmentPanel filterAssignmentPanel;\r\n    PersonOverview personOverview;\r\n\r\n    JPanel personenPanel;\r\n    JPanel personDetailPanel;\r\n    JPanel southPanel;\r\n    JPanel sortPanel;\r\n    JPanel filterPanel;\r\n\r\n    JRadioButton noneSort, AtoZSort, ZToASort;\r\n\r\n    ButtonGroup sortBtnGroup;\r\n\r\n\r\n    public Overview() {\r\n        GridLayout personDetailLayout = new GridLayout(2, 0);\r\n        this.setLayout(new BorderLayout());\r\n\r\n        personenPanel = new JPanel(new BorderLayout());\r\n        personDetailPanel = new JPanel(personDetailLayout);\r\n        personAssignmentPanel = new AddAssignmentPanel(false);\r\n\r\n        personInfoPanel = new PersonInfoPanel();\r\n        personenPanel.setBorder(new TitledBorder(\"Personen:    \"));\r\n\r\n        southPanel = new JPanel();\r\n        southPanel.setLayout(new BorderLayout());\r\n        southPanel.setPreferredSize(new Dimension(0, 120));\r\n\r\n        sortPanel = new JPanel();\r\n        sortPanel.setBorder(new TitledBorder(\"Sortierung:\"));\r\n        sortPanel.setPreferredSize(new Dimension(175, 0));\r\n        sortPanel.setLayout(new BorderLayout());\r\n\r\n        sortBtnGroup = new ButtonGroup();\r\n\r\n        noneSort = new JRadioButton(\"Keine\");\r\n        noneSort.setSelected(true);\r\n        AtoZSort = new JRadioButton(\"A-Z\");\r\n        ZToASort = new JRadioButton(\"Z-A\");\r\n\r\n        sortBtnGroup.add(noneSort);\r\n        sortBtnGroup.add(AtoZSort);\r\n        sortBtnGroup.add(ZToASort);\r\n\r\n        sortPanel.add(noneSort, BorderLayout.NORTH);\r\n        sortPanel.add(AtoZSort, BorderLayout.CENTER);\r\n        sortPanel.add(ZToASort, BorderLayout.SOUTH);\r\n\r\n        filterPanel = new JPanel();\r\n        filterPanel.setBorder(new TitledBorder(\"Filter:\"));\r\n        filterPanel.setLayout(new BorderLayout());\r\n\r\n        JLabel department = new JLabel(\"Abteilung:\");\r\n        department.setBorder(new EmptyBorder(0, 0, 0, 0));\r\n\r\n        JLabel function = new JLabel(\"Funktion:\");\r\n        function.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        JLabel teams = new JLabel(\"Teams:\");\r\n        teams.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        filterAssignmentPanel = new AddAssignmentPanel(true);\r\n\r\n        filterPanel.add(filterAssignmentPanel);\r\n\r\n        southPanel.add(sortPanel, BorderLayout.WEST);\r\n        southPanel.add(filterPanel, BorderLayout.CENTER);\r\n\r\n        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel);\r\n        personOverview.setPreferredSize(new Dimension(170, 0));\r\n\r\n        personDetailPanel.setBorder(new TitledBorder(\"  Detail: \"));\r\n        personDetailPanel.add(personInfoPanel);\r\n        personDetailPanel.add(personAssignmentPanel);\r\n\r\n        personenPanel.add(personOverview, BorderLayout.WEST);\r\n        personenPanel.add(personDetailPanel, BorderLayout.CENTER);\r\n        this.add(southPanel, BorderLayout.SOUTH);\r\n        this.add(personenPanel);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/Overview.java b/src/main/java/gui/Overview.java
+--- a/src/main/java/gui/Overview.java	(revision 85f140db483d8f4ea56f7b48c05de1a56d029eae)
++++ b/src/main/java/gui/Overview.java	(date 1655112666352)
+@@ -8,6 +8,7 @@
+ import javax.swing.border.EmptyBorder;
+ import javax.swing.border.TitledBorder;
+ import java.awt.*;
++import java.io.IOException;
+ 
+ public class Overview extends JPanel {
+     PersonInfoPanel personInfoPanel;
+@@ -26,7 +27,7 @@
+     ButtonGroup sortBtnGroup;
+ 
+ 
+-    public Overview() {
++    public Overview() throws IOException {
+         GridLayout personDetailLayout = new GridLayout(2, 0);
+         this.setLayout(new BorderLayout());
+ 
+@@ -35,14 +36,14 @@
+         personAssignmentPanel = new AddAssignmentPanel(false);
+ 
+         personInfoPanel = new PersonInfoPanel();
+-        personenPanel.setBorder(new TitledBorder("Personen:    "));
++        personenPanel.setBorder(new TitledBorder("   Personen:   "));
+ 
+         southPanel = new JPanel();
+         southPanel.setLayout(new BorderLayout());
+         southPanel.setPreferredSize(new Dimension(0, 120));
+ 
+         sortPanel = new JPanel();
+-        sortPanel.setBorder(new TitledBorder("Sortierung:"));
++        sortPanel.setBorder(new TitledBorder("   Sortierung:   "));
+         sortPanel.setPreferredSize(new Dimension(175, 0));
+         sortPanel.setLayout(new BorderLayout());
+ 
+@@ -62,7 +63,7 @@
+         sortPanel.add(ZToASort, BorderLayout.SOUTH);
+ 
+         filterPanel = new JPanel();
+-        filterPanel.setBorder(new TitledBorder("Filter:"));
++        filterPanel.setBorder(new TitledBorder("   Filter:   "));
+         filterPanel.setLayout(new BorderLayout());
+ 
+         JLabel department = new JLabel("Abteilung:");
+@@ -81,10 +82,10 @@
+         southPanel.add(sortPanel, BorderLayout.WEST);
+         southPanel.add(filterPanel, BorderLayout.CENTER);
+ 
+-        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel);
++        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel, true);
+         personOverview.setPreferredSize(new Dimension(170, 0));
+ 
+-        personDetailPanel.setBorder(new TitledBorder("  Detail: "));
++        personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
+         personDetailPanel.add(personInfoPanel);
+         personDetailPanel.add(personAssignmentPanel);
+ 
+Index: src/main/java/utils/Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utils;\r\n\r\nimport company.Company;\r\nimport gui.*;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\n\r\n/**\r\n * Author: Francesco Ryu\r\n * Date: 08.06.2022\r\n *\r\n */\r\n\r\npublic class Menu extends JFrame {\r\n    public static Fascade fascade;\r\n\r\n    public Menu(Fascade fascade) {\r\n        Menu.fascade = fascade;\r\n\r\n        this.setLayout(new BorderLayout());\r\n        this.setTitle(\"I am looking for\");\r\n        Overview overview = new Overview();\r\n        Assignment assignment = new Assignment();\r\n        Folks folks = new Folks();\r\n        Data data = new Data();\r\n        Logbook logbook = new Logbook();\r\n\r\n        JTabbedPane selectTab = new JTabbedPane();\r\n        selectTab.addTab(\"Übersicht\", overview);\r\n        selectTab.addTab(\"Zuordnung\", assignment);\r\n        selectTab.addTab(\"Person\", folks);\r\n        selectTab.addTab(\"Stammdaten\", data);\r\n        selectTab.addTab(\"Logbuch\", logbook);\r\n\r\n        this.add(selectTab);\r\n\r\n        this.setSize(600, 700);\r\n        this.setVisible(true);\r\n        this.setResizable(false);\r\n        this.setDefaultCloseOperation(EXIT_ON_CLOSE);\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        ReadWriteJSON readWriteJSON = new ReadWriteJSON();\r\n        Fascade fascade = readWriteJSON.readFascadeJSON();\r\n        Company company = readWriteJSON.readCompanyJSON();\r\n        fascade.setCompany(company);\r\n        new Menu(fascade);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/utils/Menu.java b/src/main/java/utils/Menu.java
+--- a/src/main/java/utils/Menu.java	(revision 85f140db483d8f4ea56f7b48c05de1a56d029eae)
++++ b/src/main/java/utils/Menu.java	(date 1655112742242)
+@@ -5,6 +5,7 @@
+ 
+ import javax.swing.*;
+ import java.awt.*;
++import java.io.IOException;
+ 
+ /**
+  * Author: Francesco Ryu
+@@ -15,7 +16,7 @@
+ public class Menu extends JFrame {
+     public static Fascade fascade;
+ 
+-    public Menu(Fascade fascade) {
++    public Menu(Fascade fascade) throws IOException {
+         Menu.fascade = fascade;
+ 
+         this.setLayout(new BorderLayout());
+@@ -41,7 +42,7 @@
+         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+     }
+ 
+-    public static void main(String[] args) {
++    public static void main(String[] args) throws IOException {
+         ReadWriteJSON readWriteJSON = new ReadWriteJSON();
+         Fascade fascade = readWriteJSON.readFascadeJSON();
+         Company company = readWriteJSON.readCompanyJSON();
+Index: src/main/java/gui/components/PersonOverview.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui.components;\r\n\r\nimport company.Team;\r\nimport employees.HRPerson;\r\nimport employees.Person;\r\nimport utils.Fascade;\r\nimport utils.Menu;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.TitledBorder;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\nimport java.util.*;\r\nimport java.util.List;\r\n\r\npublic class PersonOverview extends JPanel {\r\n    PersonInfoPanel personInfoPanel;\r\n    AddAssignmentPanel addAssignmentPanel;\r\n    DefaultListModel<String> personListModel;\r\n    List<HRPerson> personList;\r\n    JScrollPane scrollPanePerson;\r\n    Fascade fascade;\r\n\r\n    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel) {\r\n        this.setLayout(new BorderLayout());\r\n        personList = new ArrayList<>();\r\n        fascade = Menu.fascade;\r\n        personList = fascade.getAllPerson();\r\n        personListModel = new DefaultListModel<>();\r\n        setPersonInfoPanel(personInfoPanel);\r\n        setAddAssignmentPanel(addAssignmentPanel);\r\n\r\n        addButtons();\r\n\r\n        this.setPreferredSize(new Dimension(170, 0));\r\n        this.add(scrollPanePerson);\r\n        this.setBorder(new TitledBorder(\"   Übersicht:  \"));\r\n        this.setVisible(true);\r\n    }\r\n\r\n    public void addButtons() {\r\n        JPanel panel = new JPanel();\r\n        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));\r\n\r\n        for (int i = 0; i < personList.size(); i++) {\r\n            JButton button = new JButton(personList.get(i).getFirstName() + \" \" + personList.get(i).getLastName());\r\n            button.setMinimumSize(new Dimension(170, 25));\r\n            button.setMaximumSize(new Dimension(170, 25));\r\n            button.setBorder(null);\r\n            button.setBorderPainted(false);\r\n            button.setBackground(new Color(246, 245, 245));\r\n            button.setFocusable(false);\r\n\r\n            button.addActionListener(new ActionListener() {\r\n                @Override\r\n                public void actionPerformed(ActionEvent e) {\r\n                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));\r\n                }\r\n            });\r\n            panel.add(button);\r\n        }\r\n\r\n        scrollPanePerson = new JScrollPane(panel);\r\n    }\r\n\r\n    public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {\r\n        this.personInfoPanel = personInfoPanel;\r\n    }\r\n\r\n    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {\r\n        this.addAssignmentPanel = addAssignmentPanel;\r\n    }\r\n\r\n    public void updatePanels(HRPerson person) {\r\n        personInfoPanel.update(person);\r\n        addAssignmentPanel.updateComboBox(person);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/components/PersonOverview.java b/src/main/java/gui/components/PersonOverview.java
+--- a/src/main/java/gui/components/PersonOverview.java	(revision 85f140db483d8f4ea56f7b48c05de1a56d029eae)
++++ b/src/main/java/gui/components/PersonOverview.java	(date 1655113124548)
+@@ -6,11 +6,15 @@
+ import utils.Fascade;
+ import utils.Menu;
+ 
++import javax.imageio.ImageIO;
+ import javax.swing.*;
+ import javax.swing.border.TitledBorder;
+ 
+ import java.awt.*;
+ import java.awt.event.*;
++import java.awt.image.BufferedImage;
++import java.io.File;
++import java.io.IOException;
+ import java.util.*;
+ import java.util.List;
+ 
+@@ -21,8 +25,10 @@
+     List<HRPerson> personList;
+     JScrollPane scrollPanePerson;
+     Fascade fascade;
++    JPanel searchBar;
++    JTextField searchBarTextField;
+ 
+-    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel) {
++    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {
+         this.setLayout(new BorderLayout());
+         personList = new ArrayList<>();
+         fascade = Menu.fascade;
+@@ -31,12 +37,31 @@
+         setPersonInfoPanel(personInfoPanel);
+         setAddAssignmentPanel(addAssignmentPanel);
+ 
++        searchBarTextField = new JTextField();
++        searchBarTextField.setColumns(15);
++
++        JLabel imgLabel = new JLabel(new ImageIcon("img.png"));
++        imgLabel.setPreferredSize(new Dimension(1, 1));
++
++
++        searchBar = new JPanel();
++        searchBar.setBorder(new TitledBorder(""));
++        searchBar.setLayout(new GridLayout(2, 1));
++        searchBar.setPreferredSize(new Dimension(0, 45));
++        searchBar.add(searchBarTextField);
++        searchBar.add(imgLabel);
++
+         addButtons();
+ 
+         this.setPreferredSize(new Dimension(170, 0));
+         this.add(scrollPanePerson);
++        this.add(searchBar, BorderLayout.SOUTH);
+         this.setBorder(new TitledBorder("   Übersicht:  "));
+         this.setVisible(true);
++
++        if (!setVisibleSearchBar) {
++            searchBar.setVisible(false);
++        }
+     }
+ 
+     public void addButtons() {

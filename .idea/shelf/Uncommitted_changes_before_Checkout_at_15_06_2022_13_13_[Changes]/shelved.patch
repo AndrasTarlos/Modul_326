@@ -1,0 +1,65 @@
+Index: src/main/java/gui/Overview.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui;\r\n\r\nimport gui.components.AddAssignmentPanel;\r\nimport gui.components.PersonInfoPanel;\r\nimport gui.components.PersonOverview;\r\n\r\nimport javax.swing.*;\r\nimport javax.swing.border.EmptyBorder;\r\nimport javax.swing.border.TitledBorder;\r\nimport java.awt.*;\r\nimport java.io.IOException;\r\n\r\npublic class Overview extends JPanel {\r\n    PersonInfoPanel personInfoPanel;\r\n    AddAssignmentPanel personAssignmentPanel;\r\n    AddAssignmentPanel filterAssignmentPanel;\r\n    PersonOverview personOverview;\r\n\r\n    JPanel personenPanel;\r\n    JPanel personDetailPanel;\r\n    JPanel southPanel;\r\n    JPanel sortPanel;\r\n    JPanel filterPanel;\r\n\r\n    JRadioButton noneSort, AtoZSort, ZToASort;\r\n\r\n    ButtonGroup sortBtnGroup;\r\n\r\n\r\n    public Overview() throws IOException {\r\n        GridLayout personDetailLayout = new GridLayout(2, 0);\r\n        this.setLayout(new BorderLayout());\r\n\r\n        personenPanel = new JPanel(new BorderLayout());\r\n        personDetailPanel = new JPanel(personDetailLayout);\r\n        personAssignmentPanel = new AddAssignmentPanel(false);\r\n\r\n        personInfoPanel = new PersonInfoPanel();\r\n        personenPanel.setBorder(new TitledBorder(\"Personen:    \"));\r\n\r\n        southPanel = new JPanel();\r\n        southPanel.setLayout(new BorderLayout());\r\n        southPanel.setPreferredSize(new Dimension(0, 120));\r\n\r\n        sortPanel = new JPanel();\r\n        sortPanel.setBorder(new TitledBorder(\"Sortierung:\"));\r\n        sortPanel.setPreferredSize(new Dimension(175, 0));\r\n        sortPanel.setLayout(new BorderLayout());\r\n\r\n        sortBtnGroup = new ButtonGroup();\r\n\r\n        noneSort = new JRadioButton(\"Keine\");\r\n        noneSort.setSelected(true);\r\n        AtoZSort = new JRadioButton(\"A-Z\");\r\n        ZToASort = new JRadioButton(\"Z-A\");\r\n\r\n        sortBtnGroup.add(noneSort);\r\n        sortBtnGroup.add(AtoZSort);\r\n        sortBtnGroup.add(ZToASort);\r\n\r\n        sortPanel.add(noneSort, BorderLayout.NORTH);\r\n        sortPanel.add(AtoZSort, BorderLayout.CENTER);\r\n        sortPanel.add(ZToASort, BorderLayout.SOUTH);\r\n\r\n        filterPanel = new JPanel();\r\n        filterPanel.setBorder(new TitledBorder(\"Filter:\"));\r\n        filterPanel.setLayout(new BorderLayout());\r\n\r\n        JLabel department = new JLabel(\"Abteilung:\");\r\n        department.setBorder(new EmptyBorder(0, 0, 0, 0));\r\n\r\n        JLabel function = new JLabel(\"Funktion:\");\r\n        function.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        JLabel teams = new JLabel(\"Teams:\");\r\n        teams.setBorder(new EmptyBorder(5, 0, 0, 0));\r\n\r\n        filterAssignmentPanel = new AddAssignmentPanel(true);\r\n\r\n        filterPanel.add(filterAssignmentPanel);\r\n\r\n        southPanel.add(sortPanel, BorderLayout.WEST);\r\n        southPanel.add(filterPanel, BorderLayout.CENTER);\r\n\r\n        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel, true);\r\n        personOverview.setPreferredSize(new Dimension(170, 0));\r\n\r\n        personDetailPanel.setBorder(new TitledBorder(\"  Detail: \"));\r\n        personDetailPanel.add(personInfoPanel);\r\n        personDetailPanel.add(personAssignmentPanel);\r\n\r\n        personenPanel.add(personOverview, BorderLayout.WEST);\r\n        personenPanel.add(personDetailPanel, BorderLayout.CENTER);\r\n        this.add(southPanel, BorderLayout.SOUTH);\r\n        this.add(personenPanel);\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/Overview.java b/src/main/java/gui/Overview.java
+--- a/src/main/java/gui/Overview.java	(revision ef091c41bdcfbed4a0103ecb285b8210de141ea1)
++++ b/src/main/java/gui/Overview.java	(date 1655291460841)
+@@ -51,8 +51,11 @@
+ 
+         noneSort = new JRadioButton("Keine");
+         noneSort.setSelected(true);
++        noneSort.setFocusable(false);
+         AtoZSort = new JRadioButton("A-Z");
++        AtoZSort.setFocusable(false);
+         ZToASort = new JRadioButton("Z-A");
++        ZToASort.setFocusable(false);
+ 
+         sortBtnGroup.add(noneSort);
+         sortBtnGroup.add(AtoZSort);
+Index: src/main/java/gui/components/PersonOverview.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package gui.components;\r\n\r\nimport company.Team;\r\nimport employees.HRPerson;\r\nimport employees.Person;\r\nimport utils.Fascade;\r\nimport utils.Menu;\r\n\r\nimport javax.imageio.ImageIO;\r\nimport javax.swing.*;\r\nimport javax.swing.border.TitledBorder;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\nimport java.awt.image.BufferedImage;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.util.*;\r\nimport java.util.List;\r\n\r\npublic class PersonOverview extends JPanel {\r\n    PersonInfoPanel personInfoPanel;\r\n    AddAssignmentPanel addAssignmentPanel;\r\n    DefaultListModel<String> personListModel;\r\n    List<HRPerson> personList;\r\n    JScrollPane scrollPanePerson;\r\n    Fascade fascade;\r\n    JPanel searchBar;\r\n    JTextField searchBarTextField;\r\n\r\n    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {\r\n        this.setLayout(new BorderLayout());\r\n        personList = new ArrayList<>();\r\n        fascade = Menu.fascade;\r\n        personList = fascade.getAllPerson();\r\n        personListModel = new DefaultListModel<>();\r\n        setPersonInfoPanel(personInfoPanel);\r\n        setAddAssignmentPanel(addAssignmentPanel);\r\n\r\n        searchBarTextField = new JTextField();\r\n        searchBarTextField.setColumns(15);\r\n\r\n        JLabel imgLabel = new JLabel(new ImageIcon(\"img.png\"));\r\n        imgLabel.setPreferredSize(new Dimension(1, 1));\r\n\r\n\r\n        searchBar = new JPanel();\r\n        searchBar.setBorder(new TitledBorder(\"\"));\r\n        searchBar.setLayout(new GridLayout(2, 1));\r\n        searchBar.setPreferredSize(new Dimension(0, 45));\r\n        searchBar.add(searchBarTextField);\r\n        searchBar.add(imgLabel);\r\n\r\n        addButtons();\r\n\r\n        this.setPreferredSize(new Dimension(170, 0));\r\n        this.add(scrollPanePerson);\r\n        this.add(searchBar, BorderLayout.SOUTH);\r\n        this.setBorder(new TitledBorder(\"   Übersicht:  \"));\r\n        this.setVisible(true);\r\n\r\n        if (!setVisibleSearchBar) {\r\n            searchBar.setVisible(false);\r\n        }\r\n    }\r\n\r\n    public void addButtons() {\r\n        JPanel panel = new JPanel();\r\n        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));\r\n\r\n        for (int i = 0; i < personList.size(); i++) {\r\n            JButton button = new JButton(personList.get(i).getFirstName() + \" \" + personList.get(i).getLastName());\r\n            button.setMinimumSize(new Dimension(170, 25));\r\n            button.setMaximumSize(new Dimension(170, 25));\r\n            button.setBorder(null);\r\n            button.setBorderPainted(false);\r\n            button.setBackground(new Color(246, 245, 245));\r\n            button.setFocusable(false);\r\n\r\n            button.addActionListener(new ActionListener() {\r\n                @Override\r\n                public void actionPerformed(ActionEvent e) {\r\n                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));\r\n                }\r\n            });\r\n            panel.add(button);\r\n        }\r\n\r\n        scrollPanePerson = new JScrollPane(panel);\r\n    }\r\n\r\n    public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {\r\n        this.personInfoPanel = personInfoPanel;\r\n    }\r\n\r\n    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {\r\n        this.addAssignmentPanel = addAssignmentPanel;\r\n    }\r\n\r\n    public void updatePanels(HRPerson person) {\r\n        personInfoPanel.update(person);\r\n        addAssignmentPanel.updateComboBox(person);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/gui/components/PersonOverview.java b/src/main/java/gui/components/PersonOverview.java
+--- a/src/main/java/gui/components/PersonOverview.java	(revision ef091c41bdcfbed4a0103ecb285b8210de141ea1)
++++ b/src/main/java/gui/components/PersonOverview.java	(date 1655291460851)
+@@ -41,11 +41,9 @@
+         searchBarTextField.setColumns(15);
+ 
+         JLabel imgLabel = new JLabel(new ImageIcon("img.png"));
+-        imgLabel.setPreferredSize(new Dimension(1, 1));
+-
+ 
+         searchBar = new JPanel();
+-        searchBar.setBorder(new TitledBorder(""));
++        //searchBar.setBorder(new TitledBorder(""));
+         searchBar.setLayout(new GridLayout(2, 1));
+         searchBar.setPreferredSize(new Dimension(0, 45));
+         searchBar.add(searchBarTextField);
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ef091c41bdcfbed4a0103ecb285b8210de141ea1)
++++ b/.idea/misc.xml	(date 1655291474741)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
