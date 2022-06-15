@@ -5,6 +5,7 @@ import employees.HRPerson;
 import employees.Person;
 import utils.Fascade;
 import utils.Menu;
+import utils.ReadWriteJSON;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -15,6 +16,9 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
@@ -28,6 +32,16 @@ public class PersonOverview extends JPanel {
     JPanel searchBar;
     JTextField searchBarTextField;
 
+    private static URI imgPath;
+
+    static {
+        try {
+            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/img.png")).toURI();
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
@@ -40,7 +54,7 @@ public class PersonOverview extends JPanel {
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
 
-        JLabel imgLabel = new JLabel(new ImageIcon("img.png"));
+        JLabel imgLabel = new JLabel(new ImageIcon(Paths.get(imgPath).toString()));
         imgLabel.setPreferredSize(new Dimension(1, 1));
 
 

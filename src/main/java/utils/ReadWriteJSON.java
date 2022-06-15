@@ -27,7 +27,6 @@ public class ReadWriteJSON {
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-
     }
     public ReadWriteJSON() {
 
