@@ -12,7 +12,6 @@ import javax.swing.border.TitledBorder;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -41,7 +40,7 @@ public class PersonOverview extends JPanel {
         }
     }
 
-    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) throws IOException {
+    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
         fascade = Menu.fascade;
@@ -66,7 +65,7 @@ public class PersonOverview extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 personList = Menu.fascade.getSearchedPerson(searchBarTextField.getText());
-                updatePersonList();
+                updateButtons();
             }
         });
 
@@ -116,10 +115,15 @@ public class PersonOverview extends JPanel {
         contentPanel.repaint();
     }
 
-    public void removeContentPanelButtons() {
+    public void removeButtonsFromContentPanel() {
         contentPanel.removeAll();
         contentPanel.revalidate();
         contentPanel.repaint();
+    }
+
+    public void updateButtons() {
+        removeButtonsFromContentPanel();
+        addButtonsToContentPanel();
     }
 
 
@@ -128,33 +132,20 @@ public class PersonOverview extends JPanel {
         addAssignmentPanel.updateComboBox(person);
     }
 
-    public void updatePersonList() {
-        removeContentPanelButtons();
-        addButtonsToContentPanel();
-    }
-
-    public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {
-        this.personInfoPanel = personInfoPanel;
-    }
-
-    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {
-        this.addAssignmentPanel = addAssignmentPanel;
-    }
-
     public void sortPerson(@NotNull String type) {
         try {
             switch (type) {
                 case "Keine":
                     personList = Menu.fascade.getAllPerson();
-                    updatePersonList();
+                    updateButtons();
                     break;
                 case "A-Z":
                     personList = Menu.fascade.getAllPersonSortedAZ();
-                    updatePersonList();
+                    updateButtons();
                     break;
                 case "Z-A":
                     personList = Menu.fascade.getAllPersonSortedZA();
-                    updatePersonList();
+                    updateButtons();
                     this.repaint();
                     break;
                 default:
@@ -165,4 +156,15 @@ public class PersonOverview extends JPanel {
             throw new RuntimeException(e);
         }
     }
+
+    // SETTERS
+
+    public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {
+        this.personInfoPanel = personInfoPanel;
+    }
+
+    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {
+        this.addAssignmentPanel = addAssignmentPanel;
+    }
 }
+
