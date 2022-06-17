@@ -62,6 +62,13 @@ public class PersonOverview extends JPanel {
         imgButton.setBorder(null);
         imgButton.setBorderPainted(false);
         imgButton.setFocusable(false);
+        imgButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                personList = Menu.fascade.getSearchedPerson(searchBarTextField.getText());
+                updatePersonList();
+            }
+        });
 
         searchBar = new JPanel();
         searchBar.setBorder(new TitledBorder(""));
@@ -106,10 +113,24 @@ public class PersonOverview extends JPanel {
             contentPanel.add(button);
         }
         contentPanel.revalidate();
+        contentPanel.repaint();
     }
 
     public void removeContentPanelButtons() {
         contentPanel.removeAll();
+        contentPanel.revalidate();
+        contentPanel.repaint();
+    }
+
+
+    public void updatePanels(HRPerson person) {
+        personInfoPanel.update(person);
+        addAssignmentPanel.updateComboBox(person);
+    }
+
+    public void updatePersonList() {
+        removeContentPanelButtons();
+        addButtonsToContentPanel();
     }
 
     public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {
@@ -120,28 +141,20 @@ public class PersonOverview extends JPanel {
         this.addAssignmentPanel = addAssignmentPanel;
     }
 
-    public void updatePanels(HRPerson person) {
-        personInfoPanel.update(person);
-        addAssignmentPanel.updateComboBox(person);
-    }
-
     public void sortPerson(@NotNull String type) {
         try {
             switch (type) {
                 case "Keine":
                     personList = Menu.fascade.getAllPerson();
-                    removeContentPanelButtons();
-                    addButtonsToContentPanel();
+                    updatePersonList();
                     break;
                 case "A-Z":
                     personList = Menu.fascade.getAllPersonSortedAZ();
-                    removeContentPanelButtons();
-                    addButtonsToContentPanel();
+                    updatePersonList();
                     break;
                 case "Z-A":
                     personList = Menu.fascade.getAllPersonSortedZA();
-                    removeContentPanelButtons();
-                    addButtonsToContentPanel();
+                    updatePersonList();
                     this.repaint();
                     break;
                 default:

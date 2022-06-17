@@ -12,6 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Auftrag_4" target="17" />
+      <module name="Modul_326" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

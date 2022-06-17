@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="test exchange">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_06_2022_09_43__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_06_2022_09_43__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_06_2022_13_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_06_2022_13_13__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_10_06_2022_18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_10_06_2022_18_13__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_06_2022_09_45__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_15_06_2022_09_45__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2022_00_05_[Changes]/Assignment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2022_00_05_[Changes]/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2022_00_05_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2022_00_05__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_09_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_09_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_09_44__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_09_44__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_10__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_10__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_10__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_16__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_06_2022_13_16__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Folks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Folks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/AddButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/DeleteButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/buttons/EditButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/Folks.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/Folks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Fascade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Fascade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Fascade.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +65,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Francesco Ryu\Desktop\Modul_326\src\main\java\gui\components" />
@@ -168,6 +187,8 @@
       <workItem from="1655279017210" duration="714000" />
       <workItem from="1655290859890" duration="9767000" />
       <workItem from="1655317001241" duration="1905000" />
+      <workItem from="1655445458316" duration="2608000" />
+      <workItem from="1655452312946" duration="718000" />
     </task>
     <task id="LOCAL-00001" summary="test commit laptop">
       <created>1654812132071</created>
@@ -463,5 +484,26 @@
     <MESSAGE value="added some stuff" />
     <MESSAGE value="test exchange" />
     <option name="LAST_COMMIT_MESSAGE" value="test exchange" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utils/Fascade.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utils/Fascade.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

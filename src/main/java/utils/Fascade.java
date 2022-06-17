@@ -9,6 +9,7 @@ import company.Team;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import employees.Person;
 import lombok.Getter;
@@ -132,6 +133,16 @@ public class Fascade {
         return list;
     }
 
+    public List<HRPerson> getSearchedPerson(String searchTerm) {
+        List<HRPerson> list = new ArrayList<>();
+        for (HRPerson p: getAllPerson()) {
+            if ((getPersonsFullName(p).toUpperCase(Locale.ROOT)).contains(searchTerm.toUpperCase(Locale.ROOT))) {
+                list.add(p);
+            }
+        }
+        return list;
+    }
+
     /**
      * Gets an HRPerson object
      * @param name = "firstname lastname"
@@ -144,6 +155,10 @@ public class Fascade {
             }
         }
         return null;
+    }
+
+    public String getPersonsFullName(HRPerson p) {
+        return p.getFirstName() + " " + p.getLastName();
     }
 
     public void switchPersonDepartmentTo(@NotNull Department newDepartment, HRPerson person) {
