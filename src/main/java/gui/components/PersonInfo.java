@@ -11,7 +11,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Objects;
 
-public class PersonInfoPanel extends JPanel {
+public class PersonInfo extends JPanel {
     JTextField nameInputTextField;
     JLabel personNameLabel;
 
@@ -27,7 +27,7 @@ public class PersonInfoPanel extends JPanel {
         }
     }
 
-    public PersonInfoPanel() {
+    public PersonInfo() {
         personNameLabel = new JLabel("  Name: ");
 
         nameInputTextField = new JTextField();

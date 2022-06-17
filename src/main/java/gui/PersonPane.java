@@ -1,20 +1,19 @@
 package gui;
 
 
-import gui.components.buttons.AddButton;
+import gui.buttons.AddButton;
 
-import gui.components.PersonInfoPanel;
+import gui.components.PersonInfo;
 import gui.components.PersonOverview;
-import gui.components.buttons.AddButton;
-import gui.components.buttons.DeleteButton;
-import gui.components.buttons.EditButton;
+import gui.buttons.DeleteButton;
+import gui.buttons.EditButton;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.io.IOException;
 
-public class Folks extends JPanel {
+public class PersonPane extends JPanel {
     AddButton addButton;
     EditButton editButton;
     DeleteButton deleteButton;
@@ -23,11 +22,11 @@ public class Folks extends JPanel {
     JPanel personDetailPanel;
 
     PersonOverview personOverview;
-    PersonInfoPanel personInfoPanel;
+    PersonInfo personInfo;
 
     JPanel southPanel;
     JPanel buttonPanel;
-    public Folks() throws IOException {
+    public PersonPane() throws IOException {
 
 
 
@@ -36,13 +35,13 @@ public class Folks extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
         personEditPanel.setBorder(new TitledBorder("   Personen bearbeiten:   "));
 
-        personOverview = new PersonOverview(personInfoPanel = new PersonInfoPanel(), null, false);
+        personOverview = new PersonOverview(personInfo = new PersonInfo(), null, false);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
         personDetailPanel = new JPanel();
         personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
         personDetailPanel.setLayout(new GridLayout(2, 1));
-        personDetailPanel.add(personInfoPanel);
+        personDetailPanel.add(personInfo);
 
         southPanel = new JPanel();
         southPanel.setLayout(new BorderLayout());

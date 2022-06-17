@@ -1,10 +1,8 @@
-package gui.components.buttons;
+package gui.buttons;
 
 import utils.ReadWriteJSON;
 
 import javax.swing.*;
-import javax.swing.border.MatteBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.net.URI;
 import java.net.URISyntaxException;

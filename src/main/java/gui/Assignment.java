@@ -1,7 +1,7 @@
 package gui;
 
-import gui.components.AddAssignmentPanel;
-import gui.components.PersonInfoPanel;
+import gui.components.AssignmentSettings;
+import gui.components.PersonInfo;
 import gui.components.PersonOverview;
 
 import javax.swing.*;
@@ -20,8 +20,8 @@ public class Assignment extends JPanel {
 
     PersonOverview personOverviewPanel;
     JPanel personDetailPanel;
-    PersonInfoPanel personInfoPanel;
-    AddAssignmentPanel personAssignmentPanel;
+    PersonInfo personInfo;
+    AssignmentSettings personAssignmentPanel;
 
     JLabel personEditLabel;
 
@@ -32,9 +32,9 @@ public class Assignment extends JPanel {
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
         personEditPanel = new JPanel();
-        personInfoPanel = new PersonInfoPanel();
-        personAssignmentPanel = new AddAssignmentPanel(true);
-        personOverviewPanel = new PersonOverview(personInfoPanel, personAssignmentPanel, false);
+        personInfo = new PersonInfo();
+        personAssignmentPanel = new AssignmentSettings(true);
+        personOverviewPanel = new PersonOverview(personInfo, personAssignmentPanel, false);
         personDetailPanel = new JPanel();
 
         personEditPanel.setBorder(new TitledBorder("   Person zuordnen:   "));
@@ -44,7 +44,7 @@ public class Assignment extends JPanel {
 
         personDetailPanel.setBorder(new TitledBorder("   Detail:   "));
         personDetailPanel.setLayout(personDetailLayout);
-        personDetailPanel.add(personInfoPanel);
+        personDetailPanel.add(personInfo);
         personDetailPanel.add(personAssignmentPanel);
 
         personEditPanel.add(personDetailPanel, BorderLayout.CENTER);

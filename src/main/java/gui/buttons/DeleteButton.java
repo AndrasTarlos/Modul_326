@@ -1,4 +1,4 @@
-package gui.components.buttons;
+package gui.buttons;
 
 import utils.ReadWriteJSON;
 

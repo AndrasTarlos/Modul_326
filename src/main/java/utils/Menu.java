@@ -1,6 +1,7 @@
 package utils;
 
 import company.Company;
+import fascades.Fascade;
 import gui.*;
 
 import javax.swing.*;
@@ -21,18 +22,18 @@ public class Menu extends JFrame {
 
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
-        Overview overview = new Overview();
+        OverviewPane overviewPane = new OverviewPane();
         Assignment assignment = new Assignment();
-        Folks folks = new Folks();
-        Data data = new Data();
-        Logbook logbook = new Logbook();
+        PersonPane personPane = new PersonPane();
+        DataPane dataPane = new DataPane();
+        LogbookPane logbookPane = new LogbookPane();
 
         JTabbedPane selectTab = new JTabbedPane();
-        selectTab.addTab("Übersicht", overview);
+        selectTab.addTab("Übersicht", overviewPane);
         selectTab.addTab("Zuordnung", assignment);
-        selectTab.addTab("Person", folks);
-        selectTab.addTab("Stammdaten", data);
-        selectTab.addTab("Logbuch", logbook);
+        selectTab.addTab("Person", personPane);
+        selectTab.addTab("Stammdaten", dataPane);
+        selectTab.addTab("Logbuch", logbookPane);
 
         this.add(selectTab);
 

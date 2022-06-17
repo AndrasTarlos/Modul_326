@@ -1,4 +1,4 @@
-package gui;
+package gui.popups;
 
 import javax.swing.*;
 

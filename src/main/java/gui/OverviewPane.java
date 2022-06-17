@@ -1,7 +1,7 @@
 package gui;
 
-import gui.components.AddAssignmentPanel;
-import gui.components.PersonInfoPanel;
+import gui.components.AssignmentSettings;
+import gui.components.PersonInfo;
 import gui.components.PersonOverview;
 
 import javax.swing.*;
@@ -12,10 +12,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-public class Overview extends JPanel {
-    PersonInfoPanel personInfoPanel;
-    AddAssignmentPanel personAssignmentPanel;
-    AddAssignmentPanel filterAssignmentPanel;
+public class OverviewPane extends JPanel {
+    PersonInfo personInfo;
+    AssignmentSettings personAssignmentPanel;
+    AssignmentSettings filterAssignmentPanel;
     PersonOverview personOverview;
 
     JPanel personenPanel;
@@ -29,15 +29,15 @@ public class Overview extends JPanel {
     ButtonGroup sortBtnGroup;
 
 
-    public Overview() throws IOException {
+    public OverviewPane() throws IOException {
         GridLayout personDetailLayout = new GridLayout(2, 0);
         this.setLayout(new BorderLayout());
 
         personenPanel = new JPanel(new BorderLayout());
         personDetailPanel = new JPanel(personDetailLayout);
-        personAssignmentPanel = new AddAssignmentPanel(false);
+        personAssignmentPanel = new AssignmentSettings(false);
 
-        personInfoPanel = new PersonInfoPanel();
+        personInfo = new PersonInfo();
         personenPanel.setBorder(new TitledBorder("Personen:    "));
 
         southPanel = new JPanel();
@@ -90,18 +90,18 @@ public class Overview extends JPanel {
         JLabel teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        filterAssignmentPanel = new AddAssignmentPanel(true);
+        filterAssignmentPanel = new AssignmentSettings(true);
 
         filterPanel.add(filterAssignmentPanel);
 
         southPanel.add(sortPanel, BorderLayout.WEST);
         southPanel.add(filterPanel, BorderLayout.CENTER);
 
-        personOverview = new PersonOverview(personInfoPanel, personAssignmentPanel, true);
+        personOverview = new PersonOverview(personInfo, personAssignmentPanel, true);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
         personDetailPanel.setBorder(new TitledBorder("  Detail: "));
-        personDetailPanel.add(personInfoPanel);
+        personDetailPanel.add(personInfo);
         personDetailPanel.add(personAssignmentPanel);
 
         personenPanel.add(personOverview, BorderLayout.WEST);

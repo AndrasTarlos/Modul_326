@@ -5,7 +5,7 @@ import company.Team;
 import employees.HRPerson;
 import employees.JobFunction;
 import employees.Participation;
-import utils.Fascade;
+import fascades.Fascade;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -13,7 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddAssignmentPanel extends JPanel {
+public class AssignmentSettings extends JPanel {
 
     private final JComboBox<String> departmentComboBox;
     private final JComboBox<String> functionComboBox;
@@ -22,7 +22,7 @@ public class AddAssignmentPanel extends JPanel {
     private final Fascade fascade;
     private HRPerson focusedPerson;
 
-    public AddAssignmentPanel(boolean enableComboBoxes) {
+    public AssignmentSettings(boolean enableComboBoxes) {
         //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;

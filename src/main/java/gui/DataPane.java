@@ -2,6 +2,6 @@ package gui;
 
 import javax.swing.*;
 
-public class Data extends JPanel {
+public class DataPane extends JPanel {
 
 }

@@ -1,4 +1,4 @@
-package gui.components;
+package gui.popups;
 
 public class CreatePerson{
 

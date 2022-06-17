@@ -3,7 +3,7 @@ package gui.components;
 import employees.HRPerson;
 import exception.UnknownSortingTypeException;
 import org.jetbrains.annotations.NotNull;
-import utils.Fascade;
+import fascades.Fascade;
 import utils.Menu;
 import utils.ReadWriteJSON;
 
@@ -19,8 +19,8 @@ import java.util.*;
 import java.util.List;
 
 public class PersonOverview extends JPanel {
-    PersonInfoPanel personInfoPanel;
-    AddAssignmentPanel addAssignmentPanel;
+    PersonInfo personInfo;
+    AssignmentSettings assignmentSettings;
     DefaultListModel<String> personListModel;
     List<HRPerson> personList;
     JScrollPane scrollPanePerson;
@@ -40,14 +40,14 @@ public class PersonOverview extends JPanel {
         }
     }
 
-    public PersonOverview(PersonInfoPanel personInfoPanel, AddAssignmentPanel addAssignmentPanel, boolean setVisibleSearchBar) {
+    public PersonOverview(PersonInfo personInfo, AssignmentSettings assignmentSettings, boolean setVisibleSearchBar) {
         this.setLayout(new BorderLayout());
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
         personListModel = new DefaultListModel<>();
-        setPersonInfoPanel(personInfoPanel);
-        setAddAssignmentPanel(addAssignmentPanel);
+        setPersonInfoPanel(personInfo);
+        setAddAssignmentPanel(assignmentSettings);
 
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
@@ -95,7 +95,7 @@ public class PersonOverview extends JPanel {
 
     public void addButtonsToContentPanel() {
         for (int i = 0; i < personList.size(); i++) {
-            JButton button = new JButton(personList.get(i).getFirstName() + " " + personList.get(i).getLastName());
+            JButton button = new JButton(fascade.getPersonsFullName(personList.get(i)));
             button.setMinimumSize(new Dimension(170, 25));
             button.setMaximumSize(new Dimension(170, 25));
             button.setBorder(null);
@@ -128,8 +128,8 @@ public class PersonOverview extends JPanel {
 
 
     public void updatePanels(HRPerson person) {
-        personInfoPanel.update(person);
-        addAssignmentPanel.updateComboBox(person);
+        personInfo.update(person);
+        assignmentSettings.updateComboBox(person);
     }
 
     public void sortPerson(@NotNull String type) {
@@ -159,12 +159,12 @@ public class PersonOverview extends JPanel {
 
     // SETTERS
 
-    public void setPersonInfoPanel(PersonInfoPanel personInfoPanel) {
-        this.personInfoPanel = personInfoPanel;
+    public void setPersonInfoPanel(PersonInfo personInfo) {
+        this.personInfo = personInfo;
     }
 
-    public void setAddAssignmentPanel(AddAssignmentPanel addAssignmentPanel) {
-        this.addAssignmentPanel = addAssignmentPanel;
+    public void setAddAssignmentPanel(AssignmentSettings assignmentSettings) {
+        this.assignmentSettings = assignmentSettings;
     }
 }
 
