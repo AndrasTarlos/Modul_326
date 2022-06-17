@@ -14,7 +14,7 @@ import java.io.IOException;
  * date: 10.06.2022
  */
 
-public class Assignment extends JPanel {
+public class AssignmentPane extends JPanel {
 
     JPanel personEditPanel;
 
@@ -26,7 +26,7 @@ public class Assignment extends JPanel {
     JLabel personEditLabel;
 
 
-    public Assignment() throws IOException {
+    public AssignmentPane() throws IOException {
         this.setLayout(new BorderLayout());
 
         GridLayout personDetailLayout = new GridLayout(2, 0);

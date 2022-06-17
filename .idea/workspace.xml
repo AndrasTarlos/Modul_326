@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Changed method names">
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Assignment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/popups/Authorization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/DataPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Folks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/PersonPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Logbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/LogbookPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Overview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/AddAssignmentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/AssignmentSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/CreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/popups/CreateFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/CreatePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/popups/CreatePerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/AddButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/DeleteButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/EditButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/FascadeLogbook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/FascadeLogbook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Main.java" beforeDir="false" />
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Changed a lot of names">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fascades/FascadeDepartment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fascades/FascadePerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fascades/FascadeTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Assignment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/AssignmentPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ReadWriteJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ReadWriteJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/Assignment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonInfoPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Menu.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,16 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Francesco Ryu\Desktop\Modul_326\src\main\java\gui\components" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="fascades" />
     </key>
   </component>
   <component name="RunManager" selected="Application.utils.Menu">
@@ -187,7 +181,7 @@
       <workItem from="1655290859890" duration="9767000" />
       <workItem from="1655317001241" duration="1905000" />
       <workItem from="1655445458316" duration="2608000" />
-      <workItem from="1655452312946" duration="3075000" />
+      <workItem from="1655452312946" duration="4125000" />
     </task>
     <task id="LOCAL-00001" summary="test commit laptop">
       <created>1654812132071</created>
@@ -455,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655460097747</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Changed a lot of names">
+      <created>1655461336940</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1655461336940</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +474,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test commit laptop" />
     <MESSAGE value="Edited Assignment.java" />
     <MESSAGE value="commit before merge with master" />
     <MESSAGE value="Commit Assignment.java" />
@@ -498,22 +498,7 @@
     <MESSAGE value="test exchange" />
     <MESSAGE value="Added search bar and it has functions" />
     <MESSAGE value="Changed method names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed method names" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fascades/Fascade.java</url>
-          <line>138</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/fascades/Fascade.java</url>
-          <line>139</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Changed a lot of names" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed a lot of names" />
   </component>
 </project>

@@ -23,14 +23,14 @@ public class Menu extends JFrame {
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
         OverviewPane overviewPane = new OverviewPane();
-        Assignment assignment = new Assignment();
+        AssignmentPane assignmentPane = new AssignmentPane();
         PersonPane personPane = new PersonPane();
         DataPane dataPane = new DataPane();
         LogbookPane logbookPane = new LogbookPane();
 
         JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overviewPane);
-        selectTab.addTab("Zuordnung", assignment);
+        selectTab.addTab("Zuordnung", assignmentPane);
         selectTab.addTab("Person", personPane);
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
