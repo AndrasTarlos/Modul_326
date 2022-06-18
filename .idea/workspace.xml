@@ -66,21 +66,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul_326\src\main\resources\DATA" />
@@ -101,7 +86,7 @@
       <recent name="fascades" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FascadeTest">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="utils.Menu" />
       <module name="Auftrag_4" />
@@ -176,8 +161,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="JUnit.FascadeTest" />
-        <item itemvalue="Application.utils.Menu" />
         <item itemvalue="Application.view.components.PersonOverview" />
         <item itemvalue="Application.gui.Menu" />
         <item itemvalue="Application.view.buttons.AddButton" />
