@@ -13,7 +13,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
-
+/**
+ * <h1>PersonAssignmentFiltering</h1>
+ * @author: Andras Tarlos
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * This filtering panel makes the searching in the person list easy. You just have
+ * to select the corresponding filter settings and see the results.
+ */
 public class PersonAssignmentFiltering extends JPanel {
     private final JComboBox<String> departmentComboBox;
     private final JComboBox<String> functionComboBox;
@@ -101,7 +109,6 @@ public class PersonAssignmentFiltering extends JPanel {
             departmentComboBox.addItem(d.getName());
         }
     }
-    // TODO filter person
     public void filterPerson() {
         String dep = (!Objects.equals((String) departmentComboBox.getSelectedItem(), "Keine")) ? (String) departmentComboBox.getSelectedItem() : null;
         String func = (!Objects.equals((String) functionComboBox.getSelectedItem(), "Keine")) ? (String) functionComboBox.getSelectedItem() : null;

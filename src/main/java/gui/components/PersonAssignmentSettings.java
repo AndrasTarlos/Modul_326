@@ -13,6 +13,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * <h1>PersonAssignmentSettings</h1>
+ * @author: Andras Tarlos, Francesco Ryu
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * This is a very similar class to the PersonAssignmentSettings, but with different
+ * functions and action listeners. Here, you can see all the information about
+ * the members of the company.
+ */
 public class PersonAssignmentSettings extends JPanel {
 
     private final JComboBox<String> departmentComboBox;
@@ -22,11 +32,15 @@ public class PersonAssignmentSettings extends JPanel {
     private final Fascade fascade;
     private HRPerson focusedPerson;
 
+    /**
+     * The constructor of the PersonAssignmentSettings class
+     * @param enableComboBoxes a boolean value (if enabled you can change the values of the combo boxes
+     */
     public PersonAssignmentSettings(boolean enableComboBoxes) {
-        //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
 
+        // Initialize the panels needed
         JPanel labelPanel = new JPanel();
         JPanel selectionPanel = new JPanel();
 
@@ -39,16 +53,18 @@ public class PersonAssignmentSettings extends JPanel {
         JLabel teams = new JLabel("Teams:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
+        // create the 3 combo boxes and add action listeners to them
         departmentComboBox = new JComboBox<>();
         departmentComboBox.setPreferredSize(new Dimension(224, 20));
         departmentComboBox.setFocusable(false);
         departmentComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // if there is a person selected from the person list and the department is
+                // changed, change the selected department in the backend (model class) as well
                 if (focusedPerson != null) {
                     fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
                 }
-                    //focusedPersondepartmentComboBox.getSelectedItem();
             }
         });
 
@@ -58,6 +74,8 @@ public class PersonAssignmentSettings extends JPanel {
         functionComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // if there is a person selected from the person list and the job function is
+                // changed, change the selected job function in the backend (model class) as well
                 if (focusedPerson != null) {
                     fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());
                 }
@@ -70,6 +88,8 @@ public class PersonAssignmentSettings extends JPanel {
         teamsComboBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // if there is a person selected from the person list and the department is
+                // changed, change the selected department in the backend (model class) as well
                 if (focusedPerson != null) {
                     fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());
                     focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));
@@ -77,6 +97,7 @@ public class PersonAssignmentSettings extends JPanel {
             }
         });
 
+        // disable the combo boxes if the parameter given in the constructor is false
         if (!enableComboBoxes) {
             departmentComboBox.setEnabled(false);
             departmentComboBox.setRenderer(new DefaultListCellRenderer() {
@@ -116,12 +137,17 @@ public class PersonAssignmentSettings extends JPanel {
 
         labelPanel.setPreferredSize(new Dimension(100, 0));
 
+        // load the data in the combo boxes
         loadComboBoxData();
 
         this.add(labelPanel, BorderLayout.WEST);
         this.add(selectionPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Gets all the data from the fascade and inserts them in
+     * the combo boxes
+     */
     public void loadComboBoxData() {
         for (Team t: fascade.getTeams()) {
             teamsComboBox.addItem(t.getDesignation());
@@ -134,6 +160,12 @@ public class PersonAssignmentSettings extends JPanel {
         }
     }
 
+    /**
+     * If the user selects another person from the member list,
+     * the selected items (Abteilung, Funktion, Team) in the combo boxes are changed to the
+     * ones the person is in.
+     * @param person a member
+     */
     public void updateComboBox(HRPerson person) {
         focusedPerson = person;
         Participation p = person.getParticipation();

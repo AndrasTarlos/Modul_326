@@ -17,11 +17,12 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Fascade
- * author: Tarlos Andras
- * version: 1.0
- * date: 01.12.2022
- * description: This is a Fascade class that is responsible for the data exchange between the model
+ * <h1>Fascade</h1>
+ * @author: Tarlos Andras
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * This is a Fascade class that is responsible for the data exchange between the model
  * and View classes in the wanted format.
  */
 @Getter
@@ -106,6 +107,11 @@ public class Fascade {
         return null;
     }
 
+    /**
+     * Returns the department Object, the person is in
+     * @param person an HRPerson
+     * @return Department
+     */
     public Department getPersonsCurrentDepartment(HRPerson person) {
         for (Department d: getAllDepartment()) {
             if (person.getDepartmentName().equals(d.getName())) {
@@ -130,18 +136,31 @@ public class Fascade {
         return person;
     }
 
+    /**
+     * Returns an A to Z sorted person list
+     * @return List<HRPerson>
+     */
     public List<HRPerson> getAllPersonSortedAZ() {
         List<HRPerson> list = getAllPerson();
         Collections.sort(list, Person.compareAscending());
         return list;
     }
 
+    /**
+     * Returns an Z to A sorted person list
+     * @return List<HRPerson>
+     */
     public List<HRPerson> getAllPersonSortedZA() {
         List<HRPerson> list = getAllPersonSortedAZ();
         Collections.reverse(list);
         return list;
     }
 
+    /**
+     * Returns all the person whose names contain the search term
+     * @param searchTerm the user enters
+     * @return List<HRPerson>
+     */
     public List<HRPerson> getSearchedPerson(String searchTerm) {
         List<HRPerson> list = new ArrayList<>();
         for (HRPerson p: getAllPerson()) {
@@ -152,6 +171,13 @@ public class Fascade {
         return list;
     }
 
+    /**
+     * Returns only the persons who have the filtered attributes (department, team, job function)
+     * @param departmentName selected filter
+     * @param teamName selected filter
+     * @param jobFunctionName selected filter
+     * @return List<HRPerson>
+     */
     public List<HRPerson> getFilteredPerson(String departmentName, String teamName, String jobFunctionName) {
         int type = -1;
         if (departmentName == null && teamName == null && jobFunctionName == null) {
@@ -169,6 +195,7 @@ public class Fascade {
         } else if (jobFunctionName == null) {
             type = 5;
         }
+
         List<HRPerson> list = new ArrayList<>();
         for (HRPerson p: getAllPerson()) {
             switch (type) {
@@ -228,17 +255,33 @@ public class Fascade {
         return null;
     }
 
+    /**
+     * Returns a persons full name (firstname lastname)
+     * @param p an HRPerson
+     * @return String
+     */
     public String getPersonsFullName(HRPerson p) {
         return p.getFirstName() + " " + p.getLastName();
     }
 
+    /**
+     * Changes the persons the department
+     * @param newDepartment Department object
+     * @param person a person
+     */
     public void switchPersonDepartmentTo(@NotNull Department newDepartment, HRPerson person) {
         newDepartment.addMember(person);
         getPersonsCurrentDepartment(person).removeMember(person);
+        person.setDepartmentName(newDepartment.getName());
     }
 
     // Teams
 
+    /**
+     * Returns the by name searched Team
+     * @param name search term
+     * @return Team object
+     */
     public Team getSearchedTeam(String name) {
         for (Team t: getTeams()) {
             if (name.equals(t.getDesignation()))
@@ -247,12 +290,22 @@ public class Fascade {
         return null;
     }
 
-    public void setTeamOfPerson(HRPerson person, String value) {
-        person.getParticipation().setTeam(getSearchedTeam(value));
+    /**
+     * Changes the team the person belongs to
+     * @param person a person
+     * @param newTeam new teams name
+     */
+    public void setTeamOfPerson(HRPerson person, String newTeam) {
+        person.getParticipation().setTeam(getSearchedTeam(newTeam));
     }
 
     // JobFunctions
 
+    /**
+     * Returns a JobFunction object by name
+     * @param name of job function
+     * @return JobFunction
+     */
     public JobFunction getSearchedJobFunction(String name) {
         for (JobFunction j: getJobFunctions()) {
             if (name.equals(j.getDesignation()))
@@ -261,7 +314,12 @@ public class Fascade {
         return null;
     }
 
-    public void setJobFunctionOfPerson(HRPerson person, String value) {
-        person.getParticipation().setFunction(getSearchedJobFunction(value));
+    /**
+     * Changes the job function the selected person has
+     * @param person a perosn
+     * @param newJobFunction the new job functions name
+     */
+    public void setJobFunctionOfPerson(HRPerson person, String newJobFunction) {
+        person.getParticipation().setFunction(getSearchedJobFunction(newJobFunction));
     }
 }

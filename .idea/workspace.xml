@@ -4,27 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Changed a lot of names">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_10_06_2022_18_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_10_06_2022_18_13__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added the last feature to Overview. You can filter now the person list.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/AssignmentPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/AssignmentPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/PersonPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/AddButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/DeleteButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/buttons/EditButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/AssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ReadWriteJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/HRPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employees/HRPerson.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/utils/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/ReadWriteJSON.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +185,8 @@
       <workItem from="1655487850011" duration="6895000" />
       <workItem from="1655496647097" duration="1110000" />
       <workItem from="1655497979585" duration="3135000" />
-      <workItem from="1655546617983" duration="4493000" />
+      <workItem from="1655546617983" duration="9873000" />
+      <workItem from="1655559112384" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="test commit laptop">
       <created>1654812132071</created>
@@ -478,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655463981179</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added the last feature to Overview. You can filter now the person list.">
+      <created>1655552266906</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1655552266906</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,7 +493,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Edited Assignment.java" />
     <MESSAGE value="commit before merge with master" />
     <MESSAGE value="Commit Assignment.java" />
     <MESSAGE value="added package gui.components" />
@@ -521,6 +517,7 @@
     <MESSAGE value="Added search bar and it has functions" />
     <MESSAGE value="Changed method names" />
     <MESSAGE value="Changed a lot of names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed a lot of names" />
+    <MESSAGE value="Added the last feature to Overview. You can filter now the person list." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the last feature to Overview. You can filter now the person list." />
   </component>
 </project>
