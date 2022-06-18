@@ -16,23 +16,53 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
+/**
+ * <h1>DatahandlerJSON</h1>
+ * @author: Tarlos Andras
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ *
+ */
 public class DatahandlerJSON {
-    private static URI companyJsonPath;
-    private static URI fascadeJsonPath;
+    private static final URI companyJsonPath;
+    private static final URI fascadeJsonPath;
 
+    private static DatahandlerJSON instance;
+
+    // Reads the URI path of the needed files
     static {
         try {
-            companyJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../JSON/companyJSON.json")).toURI();
-            fascadeJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../JSON/fascadeJSON.json")).toURI();
+            companyJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../DATA/companyJSON.json")).toURI();
+            fascadeJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../DATA/fascadeJSON.json")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Basic constructor
+     */
     public DatahandlerJSON() {
 
     }
 
+    /**
+     * GetInstance method for the Singleton design pattern
+     * @return DatahandlerJSON object
+     */
+    public static DatahandlerJSON getDatahandlerJSONInstance() {
+        if (instance == null) {
+            instance = new DatahandlerJSON();
+        }
+        return instance;
+    }
+
+    /**
+     * Reads the companyJSON.json file and convert it with ObjectMapper
+     * to Objects
+     * @return Company object
+     */
     protected Company readCompanyJSON() {
         Company[] company;
         try {
@@ -47,8 +77,8 @@ public class DatahandlerJSON {
     }
 
     /**
-     *
-     * @param company
+     * Write to the companyJSON.json file (save changes made in the GUI)
+     * @param company a Company object
      */
     protected void writeCompanyJSON(Company company) {
         List<Company> list = new ArrayList<>();
@@ -68,8 +98,9 @@ public class DatahandlerJSON {
     }
 
     /**
-     *
-     * @return Fascade
+     * Reads the companyJSON.json file and convert it with ObjectMapper
+     * to Objects
+     * @return Fascade object
      */
     protected Fascade readFascadeJSON() {
         Fascade[] fascade;

@@ -44,6 +44,11 @@ public class HRPerson extends Person {
         setPwd(pwd);
     }
 
+    /**
+     * Changes the rights of a
+     * @param person a person
+     * @param modus an int value (0-1-2)
+     */
     public void change(Person person, int modus) {
 
     }
@@ -54,7 +59,7 @@ public class HRPerson extends Person {
      * @param action that the HRPerson did
      * @throws IOException in case of an error
      */
-    public void writeLogEntry(Person person, int action) throws IOException {
+    public void writeLogEntry(HRPerson person, int action) throws IOException {
         UserAction ua = new UserAction(this, person, action);
         LogBook log = LogBook.getLogBookInstance();
         String entry = ua.getEntry();

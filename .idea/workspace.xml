@@ -4,16 +4,61 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added the last feature to Overview. You can filter now the person list.">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added a lot of comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logbook.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DATA/logbook.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exception/UnknownSortingTypeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exception/UnknownSortingTypeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/FascadeDepartment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/FascadePerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/FascadeTeam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/AssignmentPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/DataPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DataPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/LogbookPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LogbookPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/AddButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/DeleteButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/EditButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonAssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/popups/CreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreateFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/popups/CreatePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreatePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log/LogBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log/LogBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log/UserAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/employees/HRPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/employees/HRPerson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/JSON/companyJSON.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DATA/companyJSON.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/JSON/fascadeJSON.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DATA/fascadeJSON.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/JSON/personJSON.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DATA/personJSON.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMAGES/AddButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMAGES/DeleteButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMAGES/EditButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMAGES/lensImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMAGES/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JSON/companyJSON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JSON/fascadeJSON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/JSON/personJSON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/company/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/company/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/company/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/HRPerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/JobFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/Participation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/Person$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/employees/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/exception/UnknownSortingTypeException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/components/PersonOverview.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log/LogBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log/UserAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Menu.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +108,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul_326\src\main\resources\DATA" />
       <recent name="C:\Users\Francesco Ryu\Desktop\Modul_326\src\main\java\gui\components" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -71,11 +117,11 @@
   </component>
   <component name="RunManager" selected="Application.utils.Menu">
     <configuration name="CreateFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.popups.CreateFunction" />
+      <option name="MAIN_CLASS_NAME" value="view.popups.CreateFunction" />
       <module name="Auftrag_4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.popups.*" />
+          <option name="PATTERN" value="view.popups.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,33 +134,7 @@
       <module name="Auftrag_4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.popups.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gui.buttons.AddButton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.buttons.AddButton" />
-      <module name="Auftrag_4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.buttons.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gui.components.PersonOverview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.components.PersonOverview" />
-      <module name="Auftrag_4" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.popups.*" />
+          <option name="PATTERN" value="view.popups.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,6 +148,32 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fascades.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="view.buttons.AddButton" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.buttons.AddButton" />
+      <module name="Auftrag_4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.buttons.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="view.components.PersonOverview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.components.PersonOverview" />
+      <module name="Auftrag_4" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.popups.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,9 +195,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.utils.Menu" />
-        <item itemvalue="Application.gui.components.PersonOverview" />
+        <item itemvalue="Application.view.components.PersonOverview" />
         <item itemvalue="Application.gui.Menu" />
-        <item itemvalue="Application.gui.buttons.AddButton" />
+        <item itemvalue="Application.view.buttons.AddButton" />
       </list>
     </recent_temporary>
   </component>
@@ -187,6 +233,7 @@
       <workItem from="1655497979585" duration="3135000" />
       <workItem from="1655546617983" duration="9873000" />
       <workItem from="1655559112384" duration="691000" />
+      <workItem from="1655563893413" duration="6261000" />
     </task>
     <task id="LOCAL-00001" summary="test commit laptop">
       <created>1654812132071</created>
@@ -475,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655552266906</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Added a lot of comments">
+      <created>1655564202861</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1655564202861</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -493,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit before merge with master" />
     <MESSAGE value="Commit Assignment.java" />
     <MESSAGE value="added package gui.components" />
     <MESSAGE value="updated PersonOverview.java" />
@@ -518,6 +571,7 @@
     <MESSAGE value="Changed method names" />
     <MESSAGE value="Changed a lot of names" />
     <MESSAGE value="Added the last feature to Overview. You can filter now the person list." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the last feature to Overview. You can filter now the person list." />
+    <MESSAGE value="Added a lot of comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a lot of comments" />
   </component>
 </project>

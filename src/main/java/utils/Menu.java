@@ -2,11 +2,13 @@ package utils;
 
 import company.Company;
 import fascades.Fascade;
-import gui.*;
+import view.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 /**
  * <h1>Menu</h1>
@@ -20,15 +22,14 @@ import java.io.IOException;
 
 public class Menu extends JFrame {
     public static Fascade fascade;
+    public static DatahandlerJSON datahandlerJSON;
+
+    public static Company company;
 
     /**
      * The main JFrame is created in this Menu constructor
-     * @param fascade to access information from the model classes
-     * @throws IOException if an error occurs
      */
-    public Menu(Fascade fascade) throws IOException {
-        Menu.fascade = fascade;
-
+    public Menu() {
         this.setLayout(new BorderLayout());
         this.setTitle("I am looking for");
 
@@ -53,20 +54,27 @@ public class Menu extends JFrame {
         this.setVisible(true);
         this.setResizable(false);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        // Add window listener
+        WindowListener wl = new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                // Save everything in the JSON file when the JFrame is closing
+                datahandlerJSON.writeCompanyJSON(company);
+            }
+        };
+        this.addWindowListener(wl);
     }
 
     /**
      * Here starts the execution of the program
      * @param args String args
-     * @throws IOException if an error occurs
      */
-    public static void main(String[] args) throws IOException {
-        DatahandlerJSON datahandlerJSON = new DatahandlerJSON();
-        Fascade fascade = datahandlerJSON.readFascadeJSON();
-        Company company = datahandlerJSON.readCompanyJSON();
+    public static void main(String[] args) {
+        datahandlerJSON = DatahandlerJSON.getDatahandlerJSONInstance();
+        fascade = datahandlerJSON.readFascadeJSON();
+        company = datahandlerJSON.readCompanyJSON();
         fascade.setCompany(company);
-        new Menu(fascade);
-        // TODO wait until the GUI is closed
-        datahandlerJSON.writeCompanyJSON(company);
+        new Menu();
     }
 }

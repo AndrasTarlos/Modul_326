@@ -8,6 +8,14 @@ import java.util.ArrayList;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * <h1>Department</h1>
+ * @author: Andras Tarlos
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * The model class of a department. A company can have multiple different departments.
+ */
 @Getter
 @Setter
 public class Department {

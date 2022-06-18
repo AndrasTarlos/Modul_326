@@ -2,12 +2,14 @@ package company;
 
 import lombok.Getter;
 import lombok.Setter;
+
 /**
- * <h1>Teams</h1>
- * author: Francesco Ryu
- * version: 1.0
- * date: 01.06.2022
- * description: This class includes methods for Teams.
+ * <h1>Department</h1>
+ * @author: Andras Tarlos
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * The model class of a team. A department can have multiple different teams.
  */
 
 @Getter
@@ -15,15 +17,7 @@ import lombok.Setter;
 public class Team {
     private String designation;
     /**
-     * empty constructor
+     * Basic constructor
      */
     public Team() {}
-
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
 }
