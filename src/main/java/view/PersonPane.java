@@ -11,6 +11,8 @@ import view.buttons.EditButton;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PersonPane extends JPanel {
     AddButton addButton;
@@ -66,6 +68,10 @@ public class PersonPane extends JPanel {
         buttonPanel.add(addButton);
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
+
+        addButton.addActionListener(e -> {
+
+        });
 
         southPanel.add(buttonPanel, BorderLayout.WEST);
 

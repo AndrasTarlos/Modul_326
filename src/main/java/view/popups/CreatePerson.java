@@ -1,5 +1,7 @@
 package view.popups;
 
-public class CreatePerson{
+import javax.swing.*;
+
+public class CreatePerson extends JDialog {
 
 }

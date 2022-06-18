@@ -7,6 +7,7 @@
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added a bunch of comments and renamed some stuff.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/CreatePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreatePerson.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +157,8 @@
         <item itemvalue="Application.Menu" />
         <item itemvalue="JUnit.FascadeTest" />
         <item itemvalue="Application.view.components.PersonOverview" />
-        <item itemvalue="Application.gui.Menu" />
         <item itemvalue="Application.view.buttons.AddButton" />
+        <item itemvalue="Application.gui.Menu" />
       </list>
     </recent_temporary>
   </component>
@@ -496,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655570225018</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="added some stuff">
+      <created>1655587308515</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1655587308515</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +539,6 @@
     <MESSAGE value="Added comments" />
     <MESSAGE value="Added image" />
     <MESSAGE value="Added PersonInfoPanel.java" />
-    <MESSAGE value="added some stuff" />
     <MESSAGE value="test exchange" />
     <MESSAGE value="Added search bar and it has functions" />
     <MESSAGE value="Changed method names" />
@@ -539,6 +546,7 @@
     <MESSAGE value="Added the last feature to Overview. You can filter now the person list." />
     <MESSAGE value="Added a lot of comments" />
     <MESSAGE value="Added a bunch of comments and renamed some stuff." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a bunch of comments and renamed some stuff." />
+    <MESSAGE value="added some stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some stuff" />
   </component>
 </project>
