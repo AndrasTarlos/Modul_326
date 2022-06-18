@@ -63,7 +63,7 @@ public class DatahandlerJSON {
      * to Objects
      * @return Company object
      */
-    protected Company readCompanyJSON() {
+    public Company readCompanyJSON() {
         Company[] company;
         try {
             String path = Paths.get(companyJsonPath).toString();
@@ -102,7 +102,7 @@ public class DatahandlerJSON {
      * to Objects
      * @return Fascade object
      */
-    protected Fascade readFascadeJSON() {
+    public Fascade readFascadeJSON() {
         Fascade[] fascade;
         try {
             String path = Paths.get(fascadeJsonPath).toString();

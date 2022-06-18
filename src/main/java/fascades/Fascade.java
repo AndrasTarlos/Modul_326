@@ -85,7 +85,7 @@ public class Fascade {
      * Getter of all names of departments
      * @return List<String>
      */
-    public List<String> getNameOfAllDepartment() {
+    public List<String> getAllDepartmentNames() {
         List<String> names = new ArrayList<>();
         for (Department d: company.getDepartments()) {
             names.add(d.getName());
@@ -132,7 +132,6 @@ public class Fascade {
         for (Department d: company.getDepartments()) {
             person.addAll(d.getMembers());
         }
-
         return person;
     }
 
@@ -142,7 +141,7 @@ public class Fascade {
      */
     public List<HRPerson> getAllPersonSortedAZ() {
         List<HRPerson> list = getAllPerson();
-        Collections.sort(list, Person.compareAscending());
+        list.sort(Person.compareAscending());
         return list;
     }
 
