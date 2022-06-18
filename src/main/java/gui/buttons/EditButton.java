@@ -1,6 +1,6 @@
 package gui.buttons;
 
-import utils.ReadWriteJSON;
+import utils.DatahandlerJSON;
 
 import javax.swing.*;
 
@@ -19,7 +19,7 @@ public class EditButton extends JButton {
     private static URI imgPath;
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/EditButton.png")).toURI();
+            imgPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../IMAGES/EditButton.png")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }

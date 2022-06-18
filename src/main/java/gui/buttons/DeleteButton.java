@@ -1,6 +1,6 @@
 package gui.buttons;
 
-import utils.ReadWriteJSON;
+import utils.DatahandlerJSON;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class DeleteButton extends JButton{
 
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/DeleteButton.png")).toURI();
+            imgPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../IMAGES/DeleteButton.png")).toURI();
 
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);

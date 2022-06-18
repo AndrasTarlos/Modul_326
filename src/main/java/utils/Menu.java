@@ -44,9 +44,9 @@ public class Menu extends JFrame {
     }
 
     public static void main(String[] args) throws IOException {
-        ReadWriteJSON readWriteJSON = new ReadWriteJSON();
-        Fascade fascade = readWriteJSON.readFascadeJSON();
-        Company company = readWriteJSON.readCompanyJSON();
+        DatahandlerJSON datahandlerJSON = new DatahandlerJSON();
+        Fascade fascade = datahandlerJSON.readFascadeJSON();
+        Company company = datahandlerJSON.readCompanyJSON();
         fascade.setCompany(company);
         new Menu(fascade);
     }

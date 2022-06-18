@@ -106,6 +106,15 @@ public class Fascade {
         return null;
     }
 
+    public Department getPersonsCurrentDepartment(HRPerson person) {
+        for (Department d: getAllDepartment()) {
+            if (person.getDepartmentName().equals(d.getName())) {
+                return d;
+            }
+        }
+        return null;
+    }
+
     // Person
 
     /**
@@ -143,10 +152,72 @@ public class Fascade {
         return list;
     }
 
+    public List<HRPerson> getFilteredPerson(String departmentName, String teamName, String jobFunctionName) {
+        int type = -1;
+        if (departmentName == null && teamName == null && jobFunctionName == null) {
+            return getAllPerson();
+        } else if (departmentName == null && teamName == null) {
+            type = 0;
+        } else if (teamName == null && jobFunctionName == null) {
+            type = 1;
+        } else if (departmentName == null && jobFunctionName == null) {
+            type = 2;
+        } else if (departmentName == null) {
+            type = 3;
+        } else if (teamName == null) {
+            type = 4;
+        } else if (jobFunctionName == null) {
+            type = 5;
+        }
+        List<HRPerson> list = new ArrayList<>();
+        for (HRPerson p: getAllPerson()) {
+            switch (type) {
+                case 0 -> {
+                    if (p.getParticipation().getFunction().getDesignation().equals(jobFunctionName)) {
+                        list.add(p);
+                    }
+                }
+                case 1 -> {
+                    if (p.getDepartmentName().equals(departmentName)) {
+                        list.add(p);
+                    }
+                }
+                case 2 -> {
+                    if (p.getParticipation().getTeam().getDesignation().equals(teamName)) {
+                        list.add(p);
+                    }
+                }
+                case 3 -> {
+                    if (p.getParticipation().getFunction().getDesignation().equals(jobFunctionName) &&
+                            p.getParticipation().getTeam().getDesignation().equals(teamName)) {
+                        list.add(p);
+                    }
+                }
+                case 4 -> {
+                    if (p.getParticipation().getFunction().getDesignation().equals(jobFunctionName) &&
+                            p.getDepartmentName().equals(departmentName)) {
+                        list.add(p);
+                    }
+                }
+                case 5 -> {
+                    if (p.getDepartmentName().equals(departmentName) &&
+                            p.getParticipation().getTeam().getDesignation().equals(teamName)) {
+                        list.add(p);
+                    }
+                }
+            }
+            if (p.getDepartmentName().equals(departmentName) && p.getParticipation().getTeam().getDesignation().equals(teamName)
+                    && p.getParticipation().getFunction().getDesignation().equals(jobFunctionName)) {
+                list.add(p);
+            }
+        }
+        return list;
+    }
+
     /**
      * Gets an HRPerson object
      * @param name = "firstname lastname"
-     * @return
+     * @return HRPerson
      */
     public HRPerson getPersonByFullName(String name) {
         for (HRPerson p : getAllPerson()) {
@@ -164,15 +235,6 @@ public class Fascade {
     public void switchPersonDepartmentTo(@NotNull Department newDepartment, HRPerson person) {
         newDepartment.addMember(person);
         getPersonsCurrentDepartment(person).removeMember(person);
-    }
-
-    public Department getPersonsCurrentDepartment(HRPerson person) {
-        for (Department d: getAllDepartment()) {
-            if (person.getDepartmentName().equals(d.getName())) {
-                return d;
-            }
-        }
-        return null;
     }
 
     // Teams

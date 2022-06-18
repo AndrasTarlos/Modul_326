@@ -3,6 +3,7 @@ package gui;
 
 import gui.buttons.AddButton;
 
+import gui.components.PersonAssignmentSettings;
 import gui.components.PersonInfo;
 import gui.components.PersonOverview;
 import gui.buttons.DeleteButton;
@@ -27,10 +28,6 @@ public class PersonPane extends JPanel {
     JPanel southPanel;
     JPanel buttonPanel;
     public PersonPane() throws IOException {
-
-
-
-
         personEditPanel = new JPanel();
         personEditPanel.setLayout(new BorderLayout());
         personEditPanel.setBorder(new TitledBorder("   Personen bearbeiten:   "));

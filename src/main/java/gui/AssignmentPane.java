@@ -1,6 +1,6 @@
 package gui;
 
-import gui.components.AssignmentSettings;
+import gui.components.PersonAssignmentSettings;
 import gui.components.PersonInfo;
 import gui.components.PersonOverview;
 
@@ -21,19 +21,19 @@ public class AssignmentPane extends JPanel {
     PersonOverview personOverviewPanel;
     JPanel personDetailPanel;
     PersonInfo personInfo;
-    AssignmentSettings personAssignmentPanel;
+    PersonAssignmentSettings personAssignmentPanel;
 
     JLabel personEditLabel;
 
 
-    public AssignmentPane() throws IOException {
+    public AssignmentPane() {
         this.setLayout(new BorderLayout());
 
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
         personEditPanel = new JPanel();
         personInfo = new PersonInfo();
-        personAssignmentPanel = new AssignmentSettings(true);
+        personAssignmentPanel = new PersonAssignmentSettings(true);
         personOverviewPanel = new PersonOverview(personInfo, personAssignmentPanel, false);
         personDetailPanel = new JPanel();
 

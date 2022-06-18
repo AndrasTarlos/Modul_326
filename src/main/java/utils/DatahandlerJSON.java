@@ -17,19 +17,19 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class ReadWriteJSON {
+public class DatahandlerJSON {
     private static URI companyJsonPath;
     private static URI fascadeJsonPath;
 
     static {
         try {
-            companyJsonPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/companyJSON.json")).toURI();
-            fascadeJsonPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../JSON/fascadeJSON.json")).toURI();
+            companyJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../JSON/companyJSON.json")).toURI();
+            fascadeJsonPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../JSON/fascadeJSON.json")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
-    public ReadWriteJSON() {
+    public DatahandlerJSON() {
 
     }
 

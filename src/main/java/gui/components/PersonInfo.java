@@ -1,7 +1,7 @@
 package gui.components;
 
 import employees.Person;
-import utils.ReadWriteJSON;
+import utils.DatahandlerJSON;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
@@ -21,7 +21,7 @@ public class PersonInfo extends JPanel {
 
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/profile.png")).toURI();
+            imgPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../IMAGES/profile.png")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }

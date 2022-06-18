@@ -5,7 +5,7 @@ import exception.UnknownSortingTypeException;
 import org.jetbrains.annotations.NotNull;
 import fascades.Fascade;
 import utils.Menu;
-import utils.ReadWriteJSON;
+import utils.DatahandlerJSON;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -19,35 +19,37 @@ import java.util.*;
 import java.util.List;
 
 public class PersonOverview extends JPanel {
-    PersonInfo personInfo;
-    AssignmentSettings assignmentSettings;
-    DefaultListModel<String> personListModel;
-    List<HRPerson> personList;
-    JScrollPane scrollPanePerson;
+    private PersonInfo personInfo;
+    private PersonAssignmentSettings personAssignmentSettings;
+    private DefaultListModel<String> personListModel;
+    private List<HRPerson> personList;
+    private JScrollPane scrollPanePerson;
 
-    JPanel contentPanel;
-    Fascade fascade;
-    JPanel searchBar;
-    JTextField searchBarTextField;
+    private final JPanel contentPanel;
+    private final Fascade fascade;
+    private JPanel searchBar;
+    private final JTextField searchBarTextField;
 
     private static final URI imgPath;
 
     static {
         try {
-            imgPath = Objects.requireNonNull(ReadWriteJSON.class.getResource("../IMAGES/lensImage.png")).toURI();
+            imgPath = Objects.requireNonNull(DatahandlerJSON.class.getResource("../IMAGES/lensImage.png")).toURI();
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public PersonOverview(PersonInfo personInfo, AssignmentSettings assignmentSettings, boolean setVisibleSearchBar) {
+    public PersonOverview(PersonInfo personInfo, PersonAssignmentSettings personAssignmentSettings, boolean setVisibleSearchBar) {
         this.setLayout(new BorderLayout());
+
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
         personListModel = new DefaultListModel<>();
+
         setPersonInfoPanel(personInfo);
-        setAddAssignmentPanel(assignmentSettings);
+        setAddAssignmentPanel(personAssignmentSettings);
 
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
@@ -129,7 +131,7 @@ public class PersonOverview extends JPanel {
 
     public void updatePanels(HRPerson person) {
         personInfo.update(person);
-        assignmentSettings.updateComboBox(person);
+        personAssignmentSettings.updateComboBox(person);
     }
 
     public void sortPerson(@NotNull String type) {
@@ -163,8 +165,12 @@ public class PersonOverview extends JPanel {
         this.personInfo = personInfo;
     }
 
-    public void setAddAssignmentPanel(AssignmentSettings assignmentSettings) {
-        this.assignmentSettings = assignmentSettings;
+    public void setAddAssignmentPanel(PersonAssignmentSettings personAssignmentSettings) {
+        this.personAssignmentSettings = personAssignmentSettings;
+    }
+
+    public void setPersonList(List<HRPerson> personList) {
+        this.personList = personList;
     }
 }
 
