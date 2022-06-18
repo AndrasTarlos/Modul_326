@@ -19,12 +19,17 @@ public class PersonPane extends JPanel {
 
     JPanel personEditPanel;
     JPanel personDetailPanel;
+    JPanel checkBoxPanel;
+
+    JCheckBox HRPersonCheckBox;
+    JCheckBox administratorCheckBox;
 
     PersonOverview personOverview;
     PersonInfo personInfo;
 
     JPanel southPanel;
     JPanel buttonPanel;
+
     public PersonPane() {
         personEditPanel = new JPanel();
         personEditPanel.setLayout(new BorderLayout());
@@ -42,6 +47,17 @@ public class PersonPane extends JPanel {
         southPanel.setLayout(new BorderLayout());
         buttonPanel = new JPanel();
 
+        checkBoxPanel = new JPanel();
+
+        HRPersonCheckBox = new JCheckBox("HR-Mitarbeiter ");
+        HRPersonCheckBox.setFocusable(false);
+        administratorCheckBox = new JCheckBox("Aministrator ");
+        administratorCheckBox.setFocusable(false);
+        checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.Y_AXIS));
+        checkBoxPanel.add(HRPersonCheckBox);
+        checkBoxPanel.add(administratorCheckBox);
+
+        personDetailPanel.add(checkBoxPanel);
 
         addButton = new AddButton();
         editButton = new EditButton();
