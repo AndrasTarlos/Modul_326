@@ -2,6 +2,7 @@ package utils;
 
 import company.Company;
 import fascades.Fascade;
+import fascades.FascadeLogbook;
 import view.*;
 
 import javax.swing.*;
@@ -22,6 +23,8 @@ import java.awt.event.WindowListener;
 
 public class Menu extends JFrame {
     public static Fascade fascade;
+
+    public static FascadeLogbook fascadeLogbook;
     public static DatahandlerJSON datahandlerJSON;
 
     public static Company company;

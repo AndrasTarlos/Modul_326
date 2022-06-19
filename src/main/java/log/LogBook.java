@@ -1,5 +1,7 @@
 package log;
 
+import lombok.Getter;
+import lombok.Setter;
 import utils.DatahandlerJSON;
 
 import java.io.*;
@@ -15,8 +17,10 @@ import java.util.Vector;
  * @date: 18.06.2022
  * <h2>Description</h2>
  * The model class of logbook. Every change is saved in this class in
- * form of a Vector String
+ * form of a Vector String.
  */
+@Getter
+@Setter
 public class LogBook {
     private final Vector<String> entries = new Vector<>();
     private static LogBook instance;
