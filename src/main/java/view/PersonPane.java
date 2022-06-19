@@ -8,6 +8,7 @@ import view.components.PersonInfo;
 import view.components.PersonOverview;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
+import view.popups.CreatePerson;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -27,6 +28,7 @@ public class PersonPane extends JPanel {
 
     PersonOverview personOverview;
     PersonInfo personInfo;
+    CreatePerson createPerson;
 
     JPanel southPanel;
     JPanel buttonPanel;
@@ -74,8 +76,11 @@ public class PersonPane extends JPanel {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
-        addButton.addActionListener(e -> {
+        createPerson = new CreatePerson();
+        createPerson.setVisible(false);
 
+        addButton.addActionListener(e -> {
+            createPerson.setVisible(true);
         });
 
         southPanel.add(buttonPanel, BorderLayout.WEST);
