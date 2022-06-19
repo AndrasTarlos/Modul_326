@@ -6,6 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import fascades.Fascade;
 import utils.Menu;
 import utils.DatahandlerJSON;
+import view.PersonPane;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -24,7 +25,7 @@ public class PersonOverview extends JPanel {
     private DefaultListModel<String> personListModel;
     private List<HRPerson> personList;
     private JScrollPane scrollPanePerson;
-
+    private PersonPane personPane;
     private final JPanel contentPanel;
     private final Fascade fascade;
     private JPanel searchBar;
@@ -40,7 +41,7 @@ public class PersonOverview extends JPanel {
         }
     }
 
-    public PersonOverview(PersonInfo personInfo, PersonAssignmentSettings personAssignmentSettings, boolean setVisibleSearchBar) {
+    public PersonOverview(PersonInfo personInfo, PersonAssignmentSettings personAssignmentSettings, PersonPane personPane, boolean setVisibleSearchBar) {
         this.setLayout(new BorderLayout());
 
         personList = new ArrayList<>();
@@ -50,6 +51,7 @@ public class PersonOverview extends JPanel {
 
         setPersonInfoPanel(personInfo);
         setAddAssignmentPanel(personAssignmentSettings);
+        setPersonPane(personPane);
 
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
@@ -93,6 +95,9 @@ public class PersonOverview extends JPanel {
         if (!setVisibleSearchBar) {
             searchBar.setVisible(false);
         }
+
+        // Automatically select the first person in the list and show his/hers info
+        updatePanels(personList.get(0));
     }
 
     public void addButtonsToContentPanel() {
@@ -131,7 +136,10 @@ public class PersonOverview extends JPanel {
 
     public void updatePanels(HRPerson person) {
         personInfo.update(person);
-        personAssignmentSettings.updateComboBox(person);
+        if (personAssignmentSettings != null)
+            personAssignmentSettings.updateComboBox(person);
+        if (personPane != null)
+            personPane.updateCheckBox(person);
     }
 
     public void sortPerson(@NotNull String type) {
@@ -153,7 +161,6 @@ public class PersonOverview extends JPanel {
                 default:
                     throw new UnknownSortingTypeException();
             }
-
         } catch (UnknownSortingTypeException e) {
             throw new RuntimeException(e);
         }
@@ -171,6 +178,10 @@ public class PersonOverview extends JPanel {
 
     public void setPersonList(List<HRPerson> personList) {
         this.personList = personList;
+    }
+
+    public void setPersonPane(PersonPane personPane) {
+        this.personPane = personPane;
     }
 }
 

@@ -38,7 +38,7 @@ public class OverviewPane extends JPanel {
 
         personInfo = new PersonInfo();
         personAssignmentPanel = new PersonAssignmentSettings(false);
-        personOverview = new PersonOverview(personInfo, personAssignmentPanel, true);
+        personOverview = new PersonOverview(personInfo, personAssignmentPanel, null, true);
         personenPanel = new JPanel(new BorderLayout());
         personDetailPanel = new JPanel(personDetailLayout);
         filterAssignmentPanel = new PersonAssignmentFiltering(personOverview);
