@@ -27,12 +27,12 @@ public class PersonInfo extends JPanel {
         }
     }
 
-    public PersonInfo() {
+    public PersonInfo(boolean textFieldEditable) {
         personNameLabel = new JLabel("  Name: ");
 
         nameInputTextField = new JTextField();
         nameInputTextField.setColumns(25);
-        nameInputTextField.setEditable(false);
+        nameInputTextField.setEditable(true);
 
         ImageIcon profileImage = new ImageIcon(Paths.get(imgPath).toString());
 
@@ -44,7 +44,11 @@ public class PersonInfo extends JPanel {
         this.add(nameInputTextField);
         this.add(imagePlaceHolder);
         this.setBorder(new MatteBorder(0, 0, 2, 0, Color.BLACK));
+        if (!textFieldEditable) {
+            nameInputTextField.setEditable(false);
+        }
     }
+
 
     public void update(Person person) {
         nameInputTextField.setText(person.getFirstName() + " " + person.getLastName());

@@ -36,7 +36,7 @@ public class OverviewPane extends JPanel {
         GridLayout personDetailLayout = new GridLayout(2, 0);
         this.setLayout(new BorderLayout());
 
-        personInfo = new PersonInfo();
+        personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(false);
         personOverview = new PersonOverview(personInfo, personAssignmentPanel, null, true);
         personenPanel = new JPanel(new BorderLayout());

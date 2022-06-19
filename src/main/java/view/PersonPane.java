@@ -54,7 +54,7 @@ public class PersonPane extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
         personEditPanel.setBorder(new TitledBorder("   Personen bearbeiten:   "));
 
-        personOverview = new PersonOverview(personInfo = new PersonInfo(), null, this,  false);
+        personOverview = new PersonOverview(personInfo = new PersonInfo(true), null, this,  false);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
         personDetailPanel = new JPanel();

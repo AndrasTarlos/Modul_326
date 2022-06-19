@@ -31,7 +31,7 @@ public class AssignmentPane extends JPanel {
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
         personEditPanel = new JPanel();
-        personInfo = new PersonInfo();
+        personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(true);
         personOverviewPanel = new PersonOverview(personInfo, personAssignmentPanel, null,  false);
         personDetailPanel = new JPanel();

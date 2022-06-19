@@ -13,7 +13,7 @@ public class CreatePerson extends JDialog {
     JPanel checkBoxButtonPanel;
     JPanel checkBoxPanel;
     public CreatePerson() {
-        personInfoPanel = new PersonInfo();
+        personInfoPanel = new PersonInfo(true);
 
         HRPersonCheckBox = new JCheckBox("HR-Mitarbeiter");
 
