@@ -3,11 +3,14 @@ package view.components;
 import view.buttons.AddButton;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
+import view.popups.CreateFunction;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DataInfoPanel extends JPanel {
     DefaultListModel defaultListModel;
@@ -23,6 +26,8 @@ public class DataInfoPanel extends JPanel {
     EditButton editButton;
     DeleteButton deleteButton;
 
+    CreateFunction createFunction;
+
     public DataInfoPanel(String labelName) {
 
         label = new JLabel(labelName);
@@ -34,6 +39,12 @@ public class DataInfoPanel extends JPanel {
         addButton = new AddButton();
         editButton = new EditButton();
         deleteButton = new DeleteButton();
+
+        createFunction = new CreateFunction();
+        createFunction.setVisible(false);
+
+        addButton.addActionListener(e -> createFunction.setVisible(true));
+        editButton.addActionListener(e -> createFunction.setVisible(true));
 
         FlowLayout flowLayout = new FlowLayout();
 

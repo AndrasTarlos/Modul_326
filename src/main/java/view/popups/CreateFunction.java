@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class CreateFunction extends JFrame {
     private JButton speichern = new JButton("Speichern");
-    private javax.swing.JButton abbrechen = new JButton("Abbrechen");
+    private JButton abbrechen = new JButton("Abbrechen");
     private JTextField txt = new JTextField("Text eingeben");
     JLabel label = new JLabel("Abteilung:");
     JLabel label2 = new JLabel("");
@@ -21,20 +21,17 @@ public class CreateFunction extends JFrame {
         panel1.add(label);
         panel1.add(txt);
 
+        abbrechen.addActionListener(e -> this.setVisible(false));
+
         panel2.setLayout(new GridLayout(1,3));
         panel2.add(label2);
         panel2.add(abbrechen);
         panel2.add(speichern);
 
-        setSize(300, 150);
+        setSize(350, 150);
         setTitle("Funktion erfassen/bearbeiten");
         setVisible(true);
-        setResizable(true);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
-    }
-    public static void main(String[] args) {
-        CreateFunction gui = new CreateFunction();
-        gui.setSize(300, 120);
     }
 }
