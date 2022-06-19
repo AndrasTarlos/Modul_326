@@ -5,6 +5,8 @@ import view.buttons.DeleteButton;
 import view.buttons.EditButton;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 public class DataInfoPanel extends JPanel {
@@ -13,13 +15,17 @@ public class DataInfoPanel extends JPanel {
     JScrollPane jScrollPane;
 
     JPanel buttonPanel;
+    JPanel buttonScrollPanePanel;
+
+    JLabel label;
 
     AddButton addButton;
     EditButton editButton;
     DeleteButton deleteButton;
 
-    public DataInfoPanel() {
-        this.setLayout(new BorderLayout());
+    public DataInfoPanel(String labelName) {
+
+        label = new JLabel(labelName);
 
         defaultListModel = new DefaultListModel();
         jList = new JList(defaultListModel);
@@ -29,12 +35,19 @@ public class DataInfoPanel extends JPanel {
         editButton = new EditButton();
         deleteButton = new DeleteButton();
 
-        buttonPanel = new JPanel(new GridLayout(1, 4));
+        FlowLayout flowLayout = new FlowLayout();
+
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(flowLayout);
         buttonPanel.add(addButton);
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
-        this.add(jScrollPane, BorderLayout.CENTER);
-        this.add(buttonPanel, BorderLayout.SOUTH);
+        buttonScrollPanePanel = new JPanel(new BorderLayout());
+        buttonScrollPanePanel.add(jScrollPane, BorderLayout.CENTER);
+        buttonScrollPanePanel.add(buttonPanel, BorderLayout.SOUTH);
+        this.add(label);
+        this.add(buttonScrollPanePanel);
+
     }
 }
