@@ -22,7 +22,6 @@ import java.util.List;
 public class PersonOverview extends JPanel {
     private PersonInfo personInfo;
     private PersonAssignmentSettings personAssignmentSettings;
-    private DefaultListModel<String> personListModel;
     private List<HRPerson> personList;
     private JScrollPane scrollPanePerson;
     private PersonPane personPane;
@@ -43,11 +42,9 @@ public class PersonOverview extends JPanel {
 
     public PersonOverview(PersonInfo personInfo, PersonAssignmentSettings personAssignmentSettings, PersonPane personPane, boolean setVisibleSearchBar) {
         this.setLayout(new BorderLayout());
-
         personList = new ArrayList<>();
         fascade = Menu.fascade;
         personList = fascade.getAllPerson();
-        personListModel = new DefaultListModel<>();
 
         setPersonInfoPanel(personInfo);
         setAddAssignmentPanel(personAssignmentSettings);
@@ -100,6 +97,9 @@ public class PersonOverview extends JPanel {
         updatePanels(personList.get(0));
     }
 
+    /**
+     *
+     */
     public void addButtonsToContentPanel() {
         for (int i = 0; i < personList.size(); i++) {
             JButton button = new JButton(fascade.getPersonsFullName(personList.get(i)));

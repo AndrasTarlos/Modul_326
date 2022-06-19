@@ -13,26 +13,28 @@ import view.popups.CreatePerson;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-
+/**
+ * <h1>PersonPane</h1>
+ * @author: Francesco Ryu
+ * @version: 1.0
+ * @date: 19.06.2022
+ * <h2>Description</h2>
+ * // TODO write description Ryu
+ */
 public class PersonPane extends JPanel {
     AddButton addButton;
     EditButton editButton;
     DeleteButton deleteButton;
-
     JPanel personEditPanel;
     JPanel personDetailPanel;
     JPanel checkBoxPanel;
-
     JCheckBox hrPersonCheckBox;
     JCheckBox administratorCheckBox;
-
     PersonOverview personOverview;
     PersonInfo personInfo;
     CreatePerson createPerson;
-
     JPanel southPanel;
     JPanel buttonPanel;
-
     HRPerson focusedPerson;
 
     public PersonPane() {
@@ -95,6 +97,10 @@ public class PersonPane extends JPanel {
         this.setVisible(true);
     }
 
+    /**
+     * Updates the content of check box
+     * @param person the checkbox get the information from
+     */
     public void updateCheckBox(HRPerson person) {
         setFocusedPerson(person);
 
@@ -106,6 +112,10 @@ public class PersonPane extends JPanel {
         }
     }
 
+    /**
+     * Sets the currently focused person
+     * @param person HRPerson
+     */
     public void setFocusedPerson(HRPerson person) {
         this.focusedPerson = person;
     }
