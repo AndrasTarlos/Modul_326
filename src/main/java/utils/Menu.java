@@ -3,6 +3,7 @@ package utils;
 import company.Company;
 import fascades.Fascade;
 import fascades.FascadeLogbook;
+import log.LogBook;
 import view.*;
 
 import javax.swing.*;
@@ -75,8 +76,10 @@ public class Menu extends JFrame {
      */
     public static void main(String[] args) {
         datahandlerJSON = DatahandlerJSON.getDatahandlerJSONInstance();
-        fascade = datahandlerJSON.readFascadeJSON();
         company = datahandlerJSON.readCompanyJSON();
+
+        fascade = datahandlerJSON.readFascadeJSON();
+        fascadeLogbook = new FascadeLogbook();
         fascade.setCompany(company);
         new Menu();
     }
