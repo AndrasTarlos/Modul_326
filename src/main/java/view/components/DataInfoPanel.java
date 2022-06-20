@@ -14,6 +14,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author: Francesco Ryu/Andras Tarlos
+ * @Version: 9.0
+ * @date: 20.06.2022
+ */
+
 public class DataInfoPanel extends JPanel {
     DefaultListModel<String> defaultListModel;
     JList jList;

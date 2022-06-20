@@ -14,7 +14,7 @@ import java.awt.*;
  * @version: 1.0
  * @date: 18.06.2022
  * <h2>Description</h2>
- * // TODO write description Ryu
+ * // GUI for assigning person. Generates a tab in the Menu.java
  */
 
 public class AssignmentPane extends JPanel {

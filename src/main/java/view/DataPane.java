@@ -10,6 +10,15 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import utils.Menu;
 
+/**
+ * <h1>DataPane</h1>
+ * @author: Francesco Ryu/Andras Tarlos
+ * @version: 1.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * // GUI for "Stammdaten". Generates a panel for the specific tab in the Menu.java
+ */
+
 public class DataPane extends JPanel {
     DataInfoPanel dataInfoPanel;
     JPanel componentsPanel;

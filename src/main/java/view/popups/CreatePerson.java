@@ -5,6 +5,12 @@ import view.components.PersonInfo;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author: Francesco Ryu
+ * @Version: 3.0
+ * @date: 20.06.2022
+ */
+
 public class CreatePerson extends JDialog {
     PersonInfo personInfoPanel;
     JCheckBox HRPersonCheckBox;

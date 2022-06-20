@@ -13,7 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
+ * <h1>OverviewPane</h1>
+ * @author: Francesco Ryu/Andras Tarlos
+ * @version: 13.0
+ * @date: 18.06.2022
+ * <h2>Description</h2>
+ * // GUI for Overview. Generates a panel for the specific tab in the Menu.java
  */
 public class OverviewPane extends JPanel {
     PersonInfo personInfo;

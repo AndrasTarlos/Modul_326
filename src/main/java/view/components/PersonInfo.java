@@ -11,6 +11,12 @@ import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Objects;
 
+/**
+ * @author: Francesco Ryu/Andras Tarlos
+ * @Version: 5.0
+ * @date: 20.06.2022
+ */
+
 public class PersonInfo extends JPanel {
     JTextField nameInputTextField;
     JLabel personNameLabel;

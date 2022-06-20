@@ -19,6 +19,12 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.List;
 
+/**
+ * @author: Francesco Ryu/Andras Tarlos
+ * @Version: 17.0
+ * @date: 20.06.2022
+ */
+
 public class PersonOverview extends JPanel {
     private PersonInfo personInfo;
     private PersonAssignmentSettings personAssignmentSettings;
