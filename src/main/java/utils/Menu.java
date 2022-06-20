@@ -5,6 +5,7 @@ import fascades.Fascade;
 import fascades.FascadeLogbook;
 import log.LogBook;
 import view.*;
+import view.popups.Authorization;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +44,7 @@ public class Menu extends JFrame {
         PersonPane personPane = new PersonPane();
         DataPane dataPane = new DataPane();
         LogbookPane logbookPane = new LogbookPane();
-
+        Authorization authorization = new Authorization();
         // Menu bar
         JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overviewPane);
@@ -51,6 +52,10 @@ public class Menu extends JFrame {
         selectTab.addTab("Person", personPane);
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
+
+        authorization.setVisible(false);
+
+        selectTab.addChangeListener(e -> authorization.setVisible(true));
 
         this.add(selectTab);
 

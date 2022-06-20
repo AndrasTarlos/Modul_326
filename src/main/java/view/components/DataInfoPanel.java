@@ -53,7 +53,7 @@ public class DataInfoPanel extends JPanel {
 
         contentPanel = new JPanel();
 
-        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));               //new BoxLayout(contentPanel, BoxLayout.Y_AXIS)
+        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));      //new BoxLayout(contentPanel, BoxLayout.Y_AXIS)
 
         jScrollPane = new JScrollPane(contentPanel);
         jScrollPane.setPreferredSize(new Dimension(200, 150));
