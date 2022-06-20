@@ -72,6 +72,8 @@ public class DataInfoPanel extends JPanel {
         buttonScrollPanePanel = new JPanel(new BorderLayout());
         buttonScrollPanePanel.add(jScrollPane, BorderLayout.CENTER);
         buttonScrollPanePanel.add(buttonPanel, BorderLayout.SOUTH);
+
+        this.setLayout(new GridLayout(1, 2));
         this.add(label);
         this.add(buttonScrollPanePanel);
     }
