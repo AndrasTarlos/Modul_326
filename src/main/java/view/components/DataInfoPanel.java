@@ -46,8 +46,11 @@ public class DataInfoPanel extends JPanel {
         }
 
         contentPanel = new JPanel();
-        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
+
+        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));               //new BoxLayout(contentPanel, BoxLayout.Y_AXIS)
+
         jScrollPane = new JScrollPane(contentPanel);
+        jScrollPane.setPreferredSize(new Dimension(200, 150));
 
         addButton = new AddButton();
         editButton = new EditButton();
@@ -69,9 +72,9 @@ public class DataInfoPanel extends JPanel {
 
         addButtons();
 
-        buttonScrollPanePanel = new JPanel(new BorderLayout());
-        buttonScrollPanePanel.add(jScrollPane, BorderLayout.CENTER);
-        buttonScrollPanePanel.add(buttonPanel, BorderLayout.SOUTH);
+        buttonScrollPanePanel = new JPanel();
+        buttonScrollPanePanel.add(jScrollPane);
+        buttonScrollPanePanel.add(buttonPanel);
 
         this.setLayout(new GridLayout(1, 2));
         this.add(label);

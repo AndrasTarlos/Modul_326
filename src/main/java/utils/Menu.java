@@ -57,6 +57,7 @@ public class Menu extends JFrame {
         this.setSize(600, 700);
         this.setVisible(true);
         this.setResizable(false);
+        this.setLocation(500, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         // Add window listener
