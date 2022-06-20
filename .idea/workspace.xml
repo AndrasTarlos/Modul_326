@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="added comments">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="added Authorization">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -204,14 +202,7 @@
       <workItem from="1655546617983" duration="9873000" />
       <workItem from="1655559112384" duration="691000" />
       <workItem from="1655563893413" duration="17244000" />
-      <workItem from="1655751079500" duration="1146000" />
-    </task>
-    <task id="LOCAL-00002" summary="test commit laptop">
-      <created>1654812347371</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1654812347371</updated>
+      <workItem from="1655751079500" duration="2087000" />
     </task>
     <task id="LOCAL-00003" summary="test commit laptop">
       <created>1654812455178</created>
@@ -549,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655743846814</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="added Authorization">
+      <created>1655752253678</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1655752253678</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added AddAssignmentPanel.java, Changed structure from GUI" />
     <MESSAGE value="changed some stuff" />
     <MESSAGE value="added filter panel" />
     <MESSAGE value="Test change commit" />
@@ -592,6 +589,7 @@
     <MESSAGE value="edited some stuff" />
     <MESSAGE value="some changes" />
     <MESSAGE value="added comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="added comments" />
+    <MESSAGE value="added Authorization" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Authorization" />
   </component>
 </project>

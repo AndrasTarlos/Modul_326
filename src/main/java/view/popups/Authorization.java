@@ -1,7 +1,9 @@
 package view.popups;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -28,6 +30,8 @@ public class Authorization extends JDialog {
 
     public Authorization() {
 
+        EmptyBorder emptyBorder = new EmptyBorder(5, 5, 5, 5);
+
         namePanel = new JPanel();
         namePanel.setLayout(new BorderLayout());
         nameLabel = new JLabel("Name:");
@@ -35,15 +39,32 @@ public class Authorization extends JDialog {
         selectPerson.setPreferredSize(new Dimension(200, 19));
         namePanel.add(nameLabel, BorderLayout.WEST);
         namePanel.add(selectPerson, BorderLayout.EAST);
+        namePanel.setBorder(emptyBorder);
 
-        mainPanel = new JPanel();
+        codePanel = new JPanel();
+        codePanel.setLayout(new BorderLayout());
+        codeLabel = new JLabel("Code:");
+        inputCode = new JTextField();
+        inputCode.setPreferredSize(new Dimension(200, 15));
+        codePanel.add(codeLabel, BorderLayout.WEST);
+        codePanel.add(inputCode, BorderLayout.EAST);
+        codePanel.setBorder(emptyBorder);
 
-        mainPanel.setLayout(new BorderLayout());
-        mainPanel.add(namePanel, BorderLayout.NORTH);
-        mainPanel.setBorder(new LineBorder(Color.BLACK));
-        this.add(mainPanel);
+        buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BorderLayout());
+        quitButton = new JButton(" Abbrechen ");
+        continueButton = new JButton(" Weiter ");
+        buttonPanel.add(quitButton, BorderLayout.WEST);
+        buttonPanel.add(continueButton, BorderLayout.EAST);
+        buttonPanel.setBorder(emptyBorder);
+
+        this.setTitle("Authentifizierung");
+        this.add(namePanel, BorderLayout.NORTH);
+        this.add(codePanel, BorderLayout.CENTER);
+        this.add(buttonPanel, BorderLayout.SOUTH);
         this.setResizable(false);
-        this.setSize(350, 250);
+        this.setSize(300, 150);
+        this.setLocation(250, 250);
 
 
     }
