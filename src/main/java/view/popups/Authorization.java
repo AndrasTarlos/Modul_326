@@ -15,7 +15,7 @@ import java.awt.event.WindowEvent;
 import java.util.Objects;
 
 /**
- * @author: Francesco Ryu
+ * @author: Francesco Ryu/Andras Tarlos
  * @Version: 1.0
  * @date: 20.06.2022
  */
@@ -74,17 +74,17 @@ public class Authorization extends JDialog {
 
         continueButton.addActionListener(e -> {
             HRPerson p = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
-            for (int i = 0; i < 3; i++) {
-                System.out.println(i);
-            }
+
 
             if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
                 setVisible(false);
                 loggedIn = true;
+                JOptionPane.showMessageDialog(this, "Login successful!");
             }
             if (!inputCode.getText().equals(fascade.getPersonsPassword(p))) {
                 System.out.println("failed");
                 tabbedPane.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(this, "Invalid password/username");
             }
         });
 

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Fixed some stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -564,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test change commit" />
     <MESSAGE value="i love github" />
     <MESSAGE value="changed stuff" />
     <MESSAGE value="bild" />
@@ -589,6 +588,7 @@
     <MESSAGE value="added Authorization" />
     <MESSAGE value="Some fixes" />
     <MESSAGE value="added closing to Authorization.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added closing to Authorization.java" />
+    <MESSAGE value="edited Authorization.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited Authorization.java" />
   </component>
 </project>
