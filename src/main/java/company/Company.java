@@ -26,7 +26,7 @@ public class Company {
     public Company() {}
 
     /**
-     * Advanced constructor of Company
+     * Advanced constructor of company
      * @param name of the company
      */
     public Company(String name){

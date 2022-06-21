@@ -10,9 +10,14 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 /**
- * @Author: Francesco Ryu
- * @Date: 15.06.2022
- * @Version: 1.0
+ * <h1>DeleteButton</h1>
+ * @author: Francesco Ryu
+ * @date: 15.06.2022
+ * @version: 1.0
+ * <h2>Description</h2>
+ * This class is extended by JButton and used to
+ * delete items/elements from a list. The button is
+ * recognisable by the x sign as its icon in its middle.
  */
 public class DeleteButton extends JButton {
     private static URI imgPath;

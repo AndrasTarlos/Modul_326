@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Stammdaten finished">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added some comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employees/JobFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/JobFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employees/Participation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/Participation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employees/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/AddButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/DeleteButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/EditButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -204,13 +213,6 @@
       <workItem from="1655751079500" duration="2701000" />
       <workItem from="1655818739730" duration="5493000" />
       <workItem from="1655826862170" duration="5223000" />
-    </task>
-    <task id="LOCAL-00008" summary="Commit Assignment.java">
-      <created>1654849055608</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1654849055608</updated>
     </task>
     <task id="LOCAL-00009" summary="added package gui.components">
       <created>1654850762927</created>
@@ -548,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655832645025</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added some comments">
+      <created>1655834437713</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1655834437713</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bild" />
     <MESSAGE value="Added comments" />
     <MESSAGE value="Added image" />
     <MESSAGE value="Added PersonInfoPanel.java" />
@@ -591,6 +599,7 @@
     <MESSAGE value="Fixed package problem" />
     <MESSAGE value="Some changes" />
     <MESSAGE value="added fixed login" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fixed login" />
+    <MESSAGE value="Added some comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some comments" />
   </component>
 </project>

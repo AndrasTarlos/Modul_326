@@ -100,7 +100,6 @@ public class Menu extends JFrame {
     public static void main(String[] args) {
         datahandlerJSON = DatahandlerJSON.getDatahandlerJSONInstance();
         company = datahandlerJSON.readCompanyJSON();
-
         fascade = datahandlerJSON.readFascadeJSON();
         fascadeLogbook = new FascadeLogbook();
         fascade.setCompany(company);

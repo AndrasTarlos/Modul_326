@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * <h1>PersonOverview</h1>
  * @author: Francesco Ryu/Andras Tarlos
- * @Version: 17.0
+ * @version: 17.0
  * @date: 20.06.2022
  * <h2>Description</h2>
  * This class contains a JScrollPane with all the workers/persons
