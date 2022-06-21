@@ -4,7 +4,11 @@ import view.components.PersonInfo;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.*;
 
 /**
  * @author: Francesco Ryu
@@ -17,23 +21,56 @@ public class CreatePerson extends JDialog {
     JCheckBox HRPersonCheckBox;
     JCheckBox administratorCheckBox;
 
+
     JPanel checkBoxPanel;
     JPanel buttonPanel;
 
+    JPanel pwdPanel;
+
+    JLabel pwdLabel;
+
+    JTextField pwdTextField;
     JButton quitButton;
     JButton saveButton;
 
     public CreatePerson() {
         personInfoPanel = new PersonInfo(true);
 
+        pwdPanel = new JPanel();
+        pwdLabel = new JLabel();
+        pwdLabel.setText("Passwort hinzufügen:");
+        pwdTextField = new JTextField();
+        pwdTextField.setEnabled(false);
+        pwdTextField.setColumns(15);
+        pwdPanel.add(pwdLabel);
+        pwdPanel.add(pwdTextField);
+        pwdPanel.setVisible(true);
+
         HRPersonCheckBox = new JCheckBox("HR-Mitarbeiter");
+            HRPersonCheckBox.addItemListener(e -> {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    pwdTextField.setEnabled(true);
+                }
+                else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                    pwdTextField.setEnabled(false);
+                }
+            });
 
         administratorCheckBox = new JCheckBox("Administrator");
+        administratorCheckBox.addItemListener(e -> {
+            if (e.getStateChange() == ItemEvent.SELECTED) {
+                pwdTextField.setEnabled(true);
+            }
+            else if (e.getStateChange() == ItemEvent.DESELECTED) {
+                pwdTextField.setEnabled(false);
+            }
+        });
 
         checkBoxPanel = new JPanel();
         checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.Y_AXIS));
-        checkBoxPanel.add(HRPersonCheckBox);
-        checkBoxPanel.add(administratorCheckBox);
+        checkBoxPanel.add(HRPersonCheckBox, BorderLayout.NORTH);
+        checkBoxPanel.add(administratorCheckBox, BorderLayout.CENTER);
+        checkBoxPanel.add(pwdPanel, BorderLayout.SOUTH);
 
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
