@@ -1,9 +1,10 @@
 package view.popups;
 
+import employees.HRPerson;
+import utils.Menu;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -23,7 +24,7 @@ public class Authorization extends JDialog {
 
     JTextField inputCode;
 
-    JComboBox selectPerson;
+    JComboBox<Object> selectPerson;
 
     JButton quitButton;
     JButton continueButton;
@@ -35,7 +36,8 @@ public class Authorization extends JDialog {
         namePanel = new JPanel();
         namePanel.setLayout(new BorderLayout());
         nameLabel = new JLabel("Name:");
-        selectPerson = new JComboBox();
+        selectPerson = new JComboBox<>();
+        addComboBoxContent();
         selectPerson.setPreferredSize(new Dimension(200, 19));
         namePanel.add(nameLabel, BorderLayout.WEST);
         namePanel.add(selectPerson, BorderLayout.EAST);
@@ -65,7 +67,11 @@ public class Authorization extends JDialog {
         this.setResizable(false);
         this.setSize(300, 150);
         this.setLocation(250, 250);
+    }
 
-
+    private void addComboBoxContent() {
+        for (HRPerson p: Menu.fascade.getAllPerson()) {
+            selectPerson.addItem(p.getFirstName() + " " + p.getLastName());
+        }
     }
 }

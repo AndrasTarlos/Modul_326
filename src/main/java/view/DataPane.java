@@ -8,6 +8,9 @@ import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 import utils.Menu;
 
 /**
@@ -35,6 +38,15 @@ public class DataPane extends JPanel {
         companylabel = new JLabel("Firma:");
         companyTextField = new JTextField(fascade.getCompanyName());
         companyTextField.setColumns(15);
+        companyTextField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+                    fascade.setCompanyName(companyTextField.getText());
+                }
+            }
+        });
+
         companyPanel.add(companylabel);
         companyPanel.add(companyTextField);
 

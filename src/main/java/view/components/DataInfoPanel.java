@@ -115,8 +115,6 @@ public class DataInfoPanel extends JPanel {
         jScrollPane.repaint();
     }
 
-
-
     public void setLabelName(String labelName) {
         this.labelName = labelName;
     }
