@@ -32,12 +32,11 @@ public class CreateEditPerson extends JDialog {
     JButton quitButton;
     JButton saveButton;
 
-    public CreateEditPerson(PersonOverview personOverview) {
+    public CreateEditPerson(PersonOverview personOverview, String type, HRPerson focusedPerson) {
         personInfoPanel = new PersonInfo(true);
 
         pwdPanel = new JPanel();
         pwdLabel = new JLabel();
-        pwdLabel.setText("Passwort hinzufügen:");
         pwdTextField = new JTextField();
         pwdTextField.setEnabled(false);
         pwdTextField.setColumns(15);
@@ -74,7 +73,7 @@ public class CreateEditPerson extends JDialog {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
         quitButton = new JButton(" Abbrechen ");
-        quitButton.addActionListener(e -> this.setVisible(false));
+        quitButton.addActionListener(e -> this.dispose());
         saveButton = new JButton(" Speichern ");
         buttonPanel.add(saveButton, BorderLayout.EAST);
         buttonPanel.add(quitButton, BorderLayout.WEST);
@@ -82,7 +81,7 @@ public class CreateEditPerson extends JDialog {
 
         saveButton.addActionListener(e -> {
             // Only accept the "speichern" button, if the user has entered a name
-            if (!personInfoPanel.getName().equals("")) {
+            if (!personInfoPanel.getName().equals("") && focusedPerson == null) {
                 HRPerson p = new HRPerson();
 
                 // Set the modus or / and the password if needed
@@ -103,13 +102,53 @@ public class CreateEditPerson extends JDialog {
                     p.setLastName(nameSplit[1]);
 
                 utils.Menu.fascade.createPerson(p);
-                personOverview.updateButtons();
-                this.setVisible(false);
+                this.dispose();
+            } else {
+                // Change the name of the person
+                String[] nameSplit = personInfoPanel.getName().split(" ");
+                focusedPerson.setFirstName(nameSplit[0]);
+                if (nameSplit.length > 1)
+                    focusedPerson.setLastName(nameSplit[1]);
+                // Change the modus or / and the password if needed
+                if (administratorCheckBox.isSelected()) {
+                    focusedPerson.setModus(2);
+                    focusedPerson.setPwd(pwdTextField.getText());
+                } else if (hrPersonCheckBox.isSelected()) {
+                    focusedPerson.setModus(1);
+                    focusedPerson.setPwd(pwdTextField.getText());
+                } else {
+                    focusedPerson.setModus(0);
+                    focusedPerson.setPwd(null);
+                }
+                this.dispose();
             }
+            personOverview.updateButtons();
         });
 
+        // Differences between edit and create
+        if (type.equals("Create")) {
+            this.setTitle("Person erfassen");
+            pwdLabel.setText("Passwort hinzufügen:");
+        } else if (type.equals("Edit")){
+            this.setTitle("Person bearbeiten");
+            pwdLabel.setText("Passwort bearbeiten:");
+        }
+
+        // If bearbeiten is active
+        if (focusedPerson != null) {
+            personInfoPanel.setName(focusedPerson.getFirstName() + " " + focusedPerson.getLastName());
+            if (focusedPerson.isHRPerson()) {
+                hrPersonCheckBox.setSelected(true);
+                pwdTextField.setText(focusedPerson.getPwd());
+            }
+            if (focusedPerson.isAdmin()) {
+                administratorCheckBox.setSelected(true);
+                pwdTextField.setText(focusedPerson.getPwd());
+            }
+            this.dispose();
+        }
+
         this.setLayout(new BorderLayout());
-        this.setTitle("Person erfassen");
         this.add(personInfoPanel, BorderLayout.NORTH);
         this.add(checkBoxPanel, BorderLayout.CENTER);
         this.add(buttonPanel, BorderLayout.SOUTH);

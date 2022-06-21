@@ -66,4 +66,8 @@ public class PersonInfo extends JPanel {
     public String getName() {
         return nameInputTextField.getText();
     }
+
+    public void setName(String s) {
+        nameInputTextField.setText(s);
+    }
 }

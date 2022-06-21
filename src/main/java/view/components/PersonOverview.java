@@ -140,6 +140,7 @@ public class PersonOverview extends JPanel {
 
             button.addActionListener(e -> {
                 updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
+                personPane.setFocusedPerson(fascade.getPersonByFullName(e.getActionCommand()));
             });
             contentPanel.add(button);
         }

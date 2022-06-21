@@ -190,10 +190,6 @@ public class Fascade {
         getAllDepartment().get(0).addMember(p);
     }
 
-    public void editPerson() {
-
-    }
-
     public void deletePerson(HRPerson person) {
         getSearchedDepartment(person.getDepartmentName()).removeMember(person);
     }

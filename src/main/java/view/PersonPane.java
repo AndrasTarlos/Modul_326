@@ -34,7 +34,6 @@ public class PersonPane extends JPanel {
     JCheckBox administratorCheckBox;
     PersonOverview personOverview;
     PersonInfo personInfo;
-    CreateEditPerson createEditPerson;
     JPanel southPanel;
     JPanel buttonPanel;
     HRPerson focusedPerson;
@@ -84,15 +83,8 @@ public class PersonPane extends JPanel {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
-        createEditPerson = new CreateEditPerson(personOverview);
-        createEditPerson.setVisible(false);
-
-        addButton.addActionListener(e -> {
-            createEditPerson.setVisible(true);
-        });
-        editButton.addActionListener(e -> {
-
-        });
+        addButton.addActionListener(e -> new CreateEditPerson(personOverview, "Create", null).setVisible(true));
+        editButton.addActionListener(e -> new CreateEditPerson(personOverview, "Edit", focusedPerson).setVisible(true));
         deleteButton.addActionListener(e -> {
             fascade.deletePerson(focusedPerson);
             personOverview.updateButtons();
