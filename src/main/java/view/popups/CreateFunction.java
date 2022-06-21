@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import org.jdesktop.swingx.prompt.PromptSupport;
+
 /**
  * @author: Julian Janik
  * @Version: 9.0

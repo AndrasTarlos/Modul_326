@@ -51,6 +51,7 @@ public class Authorization extends JDialog {
         codeLabel.setBorder(new EmptyBorder(20, 0, 0, 0));
         labelPanel.add(nameLabel);
         labelPanel.add(codeLabel);
+        labelPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         interactionPanel = new JPanel();
         interactionPanel.setLayout(new BoxLayout(interactionPanel, BoxLayout.Y_AXIS));
@@ -60,6 +61,7 @@ public class Authorization extends JDialog {
         inputCode = new JPasswordField();
 
         interactionPanel.add(inputCode);
+        interactionPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
 
 
         buttonPanel = new JPanel();
