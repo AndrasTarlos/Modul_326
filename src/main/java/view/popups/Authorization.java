@@ -72,18 +72,19 @@ public class Authorization extends JDialog {
         buttonPanel.add(continueButton, BorderLayout.EAST);
         buttonPanel.setBorder(emptyBorder);
 
-        continueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                HRPerson p = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
-                if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
-                    setVisible(false);
-                    loggedIn = true;
-                }
-                else {
-                    System.out.println("failed");
-                    tabbedPane.setSelectedIndex(0);
-                }
+        continueButton.addActionListener(e -> {
+            HRPerson p = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
+            for (int i = 0; i < 3; i++) {
+                System.out.println(i);
+            }
+
+            if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
+                setVisible(false);
+                loggedIn = true;
+            }
+            if (!inputCode.getText().equals(fascade.getPersonsPassword(p))) {
+                System.out.println("failed");
+                tabbedPane.setSelectedIndex(0);
             }
         });
 
