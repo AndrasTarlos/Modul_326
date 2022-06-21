@@ -114,4 +114,25 @@ public class DatahandlerJSON {
         }
         return fascade[0];
     }
+
+    /**
+     * Write to the fascadeJSON.json file (save changes made in the GUI)
+     * @param fascade a Fascade object
+     */
+    protected void writeFascadeJSON(Fascade fascade) {
+        List<Fascade> list = new ArrayList<>();
+        list.add(fascade);
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        try {
+            fileOutputStream = new FileOutputStream(Paths.get(fascadeJsonPath).toString());
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, list);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 }

@@ -2,12 +2,14 @@ package view.components;
 
 import company.Department;
 import company.Team;
+import employees.HRPerson;
 import employees.JobFunction;
 import fascades.Fascade;
 import view.buttons.AddButton;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
 import view.popups.CreateFunction;
+import view.popups.EditFunction;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,9 +17,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @author: Francesco Ryu/Andras Tarlos
- * @Version: 9.0
- * @date: 20.06.2022
+ * @author: Francesco Ryu / Andras Tarlos
+ * @version: 9.0
+ * @date: 21.06.2022
  */
 
 public class DataInfoPanel extends JPanel {
@@ -25,20 +27,20 @@ public class DataInfoPanel extends JPanel {
     JList jList;
     JPanel contentPanel;
     JScrollPane jScrollPane;
-
     JPanel buttonPanel;
     JPanel buttonScrollPanePanel;
-
     JLabel label;
     Object[] itemList;
     String labelName;
-
     AddButton addButton;
     EditButton editButton;
     DeleteButton deleteButton;
     Fascade fascade;
-
     CreateFunction createFunction;
+    EditFunction editFunction;
+    String departmentFocusedItem;
+    String jobFunctionFocusedItem;
+    String teamFocusedItem;
 
     public DataInfoPanel(String labelName) {
         fascade = utils.Menu.fascade;
@@ -53,14 +55,17 @@ public class DataInfoPanel extends JPanel {
             case "Abteilung:" -> {
                 itemList = fascade.getAllDepartment().toArray();
                 addButton.addActionListener(e -> createFunction = new CreateFunction("Abteilung"));
+                editButton.addActionListener(e -> editFunction = new EditFunction("Abteilung", departmentFocusedItem));
             }
             case "Funktionen:" -> {
                 itemList = fascade.getJobFunctions().toArray();
                 addButton.addActionListener(e -> createFunction = new CreateFunction("Funktion"));
+                editButton.addActionListener(e -> editFunction = new EditFunction("Funktion", jobFunctionFocusedItem));
             }
             case "Teams:" -> {
                 itemList = fascade.getTeams().toArray();
                 addButton.addActionListener(e -> createFunction = new CreateFunction("Team"));
+                editButton.addActionListener(e -> editFunction = new EditFunction("Team", teamFocusedItem));
             }
         }
 
@@ -108,7 +113,7 @@ public class DataInfoPanel extends JPanel {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
+                    System.out.println(e.getActionCommand());
                 }
             });
             contentPanel.add(button);

@@ -59,9 +59,7 @@ public class Menu extends JFrame {
                     selectTab.getSelectedIndex() == 2 ||
                     selectTab.getSelectedIndex() == 3 ||
                     selectTab.getSelectedIndex() == 4) {
-
                 new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-
             }
         });
 
@@ -79,6 +77,7 @@ public class Menu extends JFrame {
             public void windowClosing(WindowEvent e) {
                 // Save everything in the JSON file when the JFrame is closing
                 datahandlerJSON.writeCompanyJSON(company);
+                datahandlerJSON.writeFascadeJSON(fascade);
             }
         };
         this.addWindowListener(wl);

@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Fixed some stuff">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_action_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_autocomplete_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_common_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_core_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_graphics_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_painters_1_6_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_swinglabs_swingx_swingx_plaf_1_6_5_1.xml" beforeDir="false" />
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Fixed package problem">
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/popups/EditFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/CreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreateFunction.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -73,7 +70,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
@@ -215,14 +211,7 @@
       <workItem from="1655559112384" duration="691000" />
       <workItem from="1655563893413" duration="17244000" />
       <workItem from="1655751079500" duration="2701000" />
-      <workItem from="1655818739730" duration="248000" />
-    </task>
-    <task id="LOCAL-00005" summary="test commit laptop">
-      <created>1654812622362</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654812622362</updated>
+      <workItem from="1655818739730" duration="4009000" />
     </task>
     <task id="LOCAL-00006" summary="Edited Assignment.java">
       <created>1654840973657</created>
@@ -560,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655791038384</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fixed package problem">
+      <created>1655819144170</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1655819144170</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test change commit" />
     <MESSAGE value="i love github" />
     <MESSAGE value="changed stuff" />
     <MESSAGE value="bild" />
@@ -603,6 +598,7 @@
     <MESSAGE value="added Authorization" />
     <MESSAGE value="Some fixes" />
     <MESSAGE value="added closing to Authorization.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added closing to Authorization.java" />
+    <MESSAGE value="Fixed package problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed package problem" />
   </component>
 </project>

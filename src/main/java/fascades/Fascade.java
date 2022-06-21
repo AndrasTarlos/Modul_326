@@ -74,6 +74,16 @@ public class Fascade {
     // Department
 
     /**
+     * Create a new department
+     * @param name of Department
+     */
+    public void createDepartment(String name) {
+        Department d = new Department();
+        company.addDepartment(d);
+        d.setName(name);
+    }
+
+    /**
      * Getter of all departments
      * @return ArrayList<Department>
      */
@@ -295,6 +305,16 @@ public class Fascade {
     // Teams
 
     /**
+     * Creates a new Team
+     * @param name of Team
+     */
+    public void createTeam(String name) {
+        Team t = new Team();
+        t.setDesignation(name);
+        teams.add(t);
+    }
+
+    /**
      * Returns the by name searched Team
      * @param name search term
      * @return Team object
@@ -317,6 +337,16 @@ public class Fascade {
     }
 
     // JobFunctions
+
+    /**
+     * Create new job function
+     * @param name of JobFunction
+     */
+    public void createJobFunction(String name) {
+        JobFunction j = new JobFunction();
+        j.setDesignation(name);
+        jobFunctions.add(j);
+    }
 
     /**
      * Returns a JobFunction object by name

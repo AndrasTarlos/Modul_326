@@ -3,22 +3,21 @@ package view.popups;
 import javax.swing.*;
 import java.awt.*;
 
-import org.jdesktop.swingx.prompt.PromptSupport;
 import utils.Menu;
 
 /**
- * <h1>CreateFunction</h1>
- * @author: Julian Janik, Andras Tarlos
+ * <h1>EditFunction</h1>
+ * @author: Andras Tarlos
  * @version: 1.0
- * @date: 10.06.2022
+ * @date: 21.06.2022
  * <h2>Description</h2>
- * This little popup GUI is responsible for the creation of new data.
+ * This little popup GUI is responsible for the editing of new data.
  */
 
-public class CreateFunction extends JFrame {
+public class EditFunction extends JFrame {
     JLabel label2 = new JLabel();
 
-    public CreateFunction(String title){
+    public EditFunction(String title, String currentName){
         getContentPane().setLayout(new BorderLayout());
         JPanel panel1 = new JPanel();
         getContentPane().add(panel1, BorderLayout.NORTH);
@@ -28,9 +27,7 @@ public class CreateFunction extends JFrame {
         panel1.setLayout(new GridLayout(1,2));
         panel1.add(new JLabel(title));
 
-        JTextField txt = new JTextField();
-        PromptSupport.setPrompt("Text eingeben", txt);
-        PromptSupport.setFocusBehavior(PromptSupport.FocusBehavior.SHOW_PROMPT, txt);
+        JTextField txt = new JTextField(currentName);
         panel1.add(txt);
 
         JButton abbrechen = new JButton("Abbrechen");
