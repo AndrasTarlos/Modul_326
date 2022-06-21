@@ -54,6 +54,28 @@ public class HRPerson extends Person {
     }
 
     /**
+     * Check if the person is an HRPerson
+     * @return boolean value
+     */
+    public boolean isHRPerson() {
+        if (getPwd() != null && modus == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Check if the person is an admin
+     * @return boolean value
+     */
+    public boolean isAdmin() {
+        if (getPwd() != null && modus == 2) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Writes logs in the logbook
      * @param person a member of a department
      * @param action that the HRPerson did

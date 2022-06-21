@@ -22,7 +22,7 @@ public class Authorization extends JDialog {
     JLabel nameLabel;
     JLabel codeLabel;
 
-    JTextField inputCode;
+    JPasswordField inputCode;
 
     JComboBox<Object> selectPerson;
 
@@ -46,7 +46,7 @@ public class Authorization extends JDialog {
         codePanel = new JPanel();
         codePanel.setLayout(new BorderLayout());
         codeLabel = new JLabel("Code:");
-        inputCode = new JTextField();
+        inputCode = new JPasswordField();
         inputCode.setPreferredSize(new Dimension(200, 15));
         codePanel.add(codeLabel, BorderLayout.WEST);
         codePanel.add(inputCode, BorderLayout.EAST);
