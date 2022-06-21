@@ -58,17 +58,13 @@ public class Menu extends JFrame {
 
         AtomicBoolean check = new AtomicBoolean(true);
 
-
         selectTab.addChangeListener(e -> {
-            if (check.get()) {
                 if (selectTab.getSelectedIndex() == 1 ||
                         selectTab.getSelectedIndex() == 2 ||
                         selectTab.getSelectedIndex() == 3 ||
                         selectTab.getSelectedIndex() == 4) {
                     new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 }
-            }
-            check.set(false);
         });
 
         this.add(selectTab);
