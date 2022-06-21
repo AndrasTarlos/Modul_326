@@ -5,6 +5,7 @@ import java.awt.*;
 
 import org.jdesktop.swingx.prompt.PromptSupport;
 import utils.Menu;
+import view.components.DataInfoPanel;
 
 /**
  * <h1>CreateFunction</h1>
@@ -18,7 +19,7 @@ import utils.Menu;
 public class CreateFunction extends JFrame {
     JLabel label2 = new JLabel();
 
-    public CreateFunction(String title){
+    public CreateFunction(String title, DataInfoPanel dataInfoPanel) {
         getContentPane().setLayout(new BorderLayout());
         JPanel panel1 = new JPanel();
         getContentPane().add(panel1, BorderLayout.NORTH);
@@ -47,6 +48,7 @@ public class CreateFunction extends JFrame {
                     case "Team" -> Menu.fascade.createTeam(txt.getText());
                 }
                 this.setVisible(false);
+                dataInfoPanel.updateButtons();
             }
         });
 

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 import utils.Menu;
+import view.components.DataInfoPanel;
 
 /**
  * <h1>EditFunction</h1>
@@ -17,7 +18,7 @@ import utils.Menu;
 public class EditFunction extends JFrame {
     JLabel label2 = new JLabel();
 
-    public EditFunction(String title, String currentName){
+    public EditFunction(String title, String currentName, DataInfoPanel dataInfoPanel){
         getContentPane().setLayout(new BorderLayout());
         JPanel panel1 = new JPanel();
         getContentPane().add(panel1, BorderLayout.NORTH);
@@ -39,11 +40,12 @@ public class EditFunction extends JFrame {
         speichern.addActionListener(e -> {
             if (!txt.getText().equals("")) {
                 switch (title) {
-                    case "Abteilung" -> Menu.fascade.createDepartment(txt.getText());
-                    case "Funktion" -> Menu.fascade.createJobFunction(txt.getText());
-                    case "Team" -> Menu.fascade.createTeam(txt.getText());
+                    case "Abteilung" -> Menu.fascade.editDepartmentName(txt.getText(), currentName);
+                    case "Funktion" -> Menu.fascade.editJobFunctionName(txt.getText(), currentName);
+                    case "Team" -> Menu.fascade.editTeamName(txt.getText(), currentName);
                 }
                 this.setVisible(false);
+                dataInfoPanel.updateButtons();
             }
         });
 

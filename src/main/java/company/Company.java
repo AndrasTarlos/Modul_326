@@ -77,10 +77,10 @@ public class Company {
 
     /**
      * Removes a department from department list
-     * @param index in list where the department gets removed
+     * @param department an object of Department
      */
-    public void removeDepartment(int index){
-        departments.remove(index);
+    public void removeDepartment(Department department){
+        departments.remove(department);
     }
 
     /**

@@ -84,6 +84,23 @@ public class Fascade {
     }
 
     /**
+     * Edits the name of a department
+     * @param newName of the Department
+     * @param oldName of the Department
+     */
+    public void editDepartmentName(String newName, String oldName) {
+        getSearchedDepartment(oldName).setName(newName);
+    }
+
+    /**
+     * Deletes a department by name
+     * @param name of the Department
+     */
+    public void deleteDepartment(String name) {
+        company.removeDepartment(getSearchedDepartment(name));
+    }
+
+    /**
      * Getter of all departments
      * @return ArrayList<Department>
      */
@@ -315,6 +332,23 @@ public class Fascade {
     }
 
     /**
+     * Edits the name of a team
+     * @param newName of a Team
+     * @param oldName of a Team
+     */
+    public void editTeamName(String newName, String oldName) {
+        getSearchedTeam(oldName).setDesignation(newName);
+    }
+
+    /**
+     * Deletes a team by name
+     * @param name of the Team
+     */
+    public void deleteTeam(String name) {
+        teams.remove(getSearchedTeam(name));
+    }
+
+    /**
      * Returns the by name searched Team
      * @param name search term
      * @return Team object
@@ -346,6 +380,23 @@ public class Fascade {
         JobFunction j = new JobFunction();
         j.setDesignation(name);
         jobFunctions.add(j);
+    }
+
+    /**
+     * Edits the name of a job function
+     * @param newName of the JobFunction
+     * @param oldName of the JobFunction
+     */
+    public void editJobFunctionName(String newName, String oldName) {
+        getSearchedJobFunction(oldName).setDesignation(newName);
+    }
+
+    /**
+     * Deletes a job function by name
+     * @param name of the JobFunction
+     */
+    public void deleteJobFunction(String name) {
+        jobFunctions.remove(getSearchedJobFunction(name));
     }
 
     /**

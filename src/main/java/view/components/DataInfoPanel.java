@@ -2,9 +2,9 @@ package view.components;
 
 import company.Department;
 import company.Team;
-import employees.HRPerson;
 import employees.JobFunction;
 import fascades.Fascade;
+import utils.Menu;
 import view.buttons.AddButton;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
@@ -13,8 +13,6 @@ import view.popups.EditFunction;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * @author: Francesco Ryu / Andras Tarlos
@@ -38,9 +36,7 @@ public class DataInfoPanel extends JPanel {
     Fascade fascade;
     CreateFunction createFunction;
     EditFunction editFunction;
-    String departmentFocusedItem;
-    String jobFunctionFocusedItem;
-    String teamFocusedItem;
+    String focusedItem;
 
     public DataInfoPanel(String labelName) {
         fascade = utils.Menu.fascade;
@@ -53,27 +49,58 @@ public class DataInfoPanel extends JPanel {
 
         switch (labelName) {
             case "Abteilung:" -> {
-                itemList = fascade.getAllDepartment().toArray();
-                addButton.addActionListener(e -> createFunction = new CreateFunction("Abteilung"));
-                editButton.addActionListener(e -> editFunction = new EditFunction("Abteilung", departmentFocusedItem));
+                addButton.addActionListener(e -> {
+                    createFunction = new CreateFunction("Abteilung", this);
+                });
+                editButton.addActionListener(e -> {
+                    if (focusedItem != null)
+                        editFunction = new EditFunction("Abteilung", focusedItem, this);
+                    updateButtons();
+                });
+                deleteButton.addActionListener(e -> {
+                    if (focusedItem != null) {
+                        Menu.fascade.deleteDepartment(focusedItem);
+                        focusedItem = null;
+                    }
+                    updateButtons();
+                });
             }
             case "Funktionen:" -> {
-                itemList = fascade.getJobFunctions().toArray();
-                addButton.addActionListener(e -> createFunction = new CreateFunction("Funktion"));
-                editButton.addActionListener(e -> editFunction = new EditFunction("Funktion", jobFunctionFocusedItem));
+                addButton.addActionListener(e -> {
+                    createFunction = new CreateFunction("Funktion", this);
+                });
+                editButton.addActionListener(e -> {
+                    if (focusedItem != null)
+                        editFunction = new EditFunction("Funktion", focusedItem, this);
+                });
+                deleteButton.addActionListener(e -> {
+                    if (focusedItem != null) {
+                        Menu.fascade.deleteJobFunction(focusedItem);
+                        focusedItem = null;
+                    }
+                    updateButtons();
+                });
             }
             case "Teams:" -> {
-                itemList = fascade.getTeams().toArray();
-                addButton.addActionListener(e -> createFunction = new CreateFunction("Team"));
-                editButton.addActionListener(e -> editFunction = new EditFunction("Team", teamFocusedItem));
+                addButton.addActionListener(e -> {
+                    createFunction = new CreateFunction("Team", this);
+                });
+                editButton.addActionListener(e -> {
+                    if (focusedItem != null)
+                        editFunction = new EditFunction("Team", focusedItem, this);
+                });
+                deleteButton.addActionListener(e -> {
+                    if (focusedItem != null) {
+                        Menu.fascade.deleteTeam(focusedItem);
+                        focusedItem = null;
+                    }
+                    updateButtons();
+                });
             }
         }
 
         contentPanel = new JPanel();
-
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
-        //contentPanel.setPreferredSize(new Dimension(180, 150));
-
 
         jScrollPane = new JScrollPane(contentPanel);
         jScrollPane.setPreferredSize(new Dimension(200, 150));
@@ -98,6 +125,12 @@ public class DataInfoPanel extends JPanel {
     }
 
     public void addButtons() {
+        switch (labelName) {
+            case "Abteilung:" -> itemList = fascade.getAllDepartment().toArray();
+            case "Funktionen:" -> itemList = fascade.getJobFunctions().toArray();
+            case "Teams:" -> itemList = fascade.getTeams().toArray();
+        }
+
         for (int i = 0; i < itemList.length; i++) {
             String name = null;
             switch (labelName) {
@@ -105,32 +138,31 @@ public class DataInfoPanel extends JPanel {
                 case "Funktionen:" -> name = ((JobFunction) itemList[i]).getDesignation();
                 case "Teams:" -> name = ((Team) itemList[i]).getDesignation();
             }
+
             JButton button = new JButton(name);
             button.setMaximumSize(new Dimension(180, 30));
-            //button.setMinimumSize(new Dimension(200, 100));
             button.setPreferredSize(new Dimension(180, 30));
-
-
 
             button.setBorder(null);
             button.setBorderPainted(false);
             button.setBackground(new Color(246, 245, 245, 255));
             button.setFocusable(false);
 
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println(e.getActionCommand());
-                }
+            button.addActionListener(e -> {
+                focusedItem = e.getActionCommand();
             });
             contentPanel.add(button);
         }
-        jScrollPane.revalidate();
-        jScrollPane.repaint();
+        contentPanel.revalidate();
+        contentPanel.repaint();
+    }
+
+    public void updateButtons() {
+        contentPanel.removeAll();
+        addButtons();
     }
 
     public void setLabelName(String labelName) {
         this.labelName = labelName;
     }
-
 }
