@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Some fixes">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,20 +203,6 @@
       <workItem from="1655559112384" duration="691000" />
       <workItem from="1655563893413" duration="17244000" />
       <workItem from="1655751079500" duration="2701000" />
-    </task>
-    <task id="LOCAL-00005" summary="test commit laptop">
-      <created>1654812622362</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1654812622362</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Edited Assignment.java">
-      <created>1654840973657</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1654840973657</updated>
     </task>
     <task id="LOCAL-00007" summary="commit before merge with master">
       <created>1654841444109</created>
@@ -550,7 +533,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655791038384</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Fixed fascade">
+      <created>1655791870302</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1655791870302</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Bug fix">
+      <created>1655792134582</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1655792134582</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added filter panel" />
-    <MESSAGE value="Test change commit" />
     <MESSAGE value="i love github" />
     <MESSAGE value="changed stuff" />
     <MESSAGE value="bild" />
@@ -593,6 +588,8 @@
     <MESSAGE value="added comments" />
     <MESSAGE value="added Authorization" />
     <MESSAGE value="Some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some fixes" />
+    <MESSAGE value="Fixed fascade" />
+    <MESSAGE value="Bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix" />
   </component>
 </project>
