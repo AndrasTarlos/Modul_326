@@ -108,6 +108,7 @@ public class PersonOverview extends JPanel {
      * with the persons name on them
      */
     public void addButtonsToContentPanel() {
+        personList = fascade.getAllPerson();
         for (int i = 0; i < personList.size(); i++) {
             JButton button = new JButton(fascade.getPersonsFullName(personList.get(i)));
             button.setMinimumSize(new Dimension(170, 25));

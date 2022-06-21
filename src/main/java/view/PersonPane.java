@@ -2,6 +2,8 @@ package view;
 
 
 import employees.HRPerson;
+import fascades.Fascade;
+import utils.Menu;
 import view.buttons.AddButton;
 
 import view.components.PersonInfo;
@@ -37,7 +39,11 @@ public class PersonPane extends JPanel {
     JPanel buttonPanel;
     HRPerson focusedPerson;
 
+    Fascade fascade;
+
     public PersonPane() {
+        fascade = Menu.fascade;
+
         hrPersonCheckBox = new JCheckBox("HR-Mitarbeiter ");
         hrPersonCheckBox.setFocusable(false);
         hrPersonCheckBox.setEnabled(false);
@@ -56,7 +62,7 @@ public class PersonPane extends JPanel {
         personEditPanel.setLayout(new BorderLayout());
         personEditPanel.setBorder(new TitledBorder("   Personen bearbeiten:   "));
 
-        personOverview = new PersonOverview(personInfo = new PersonInfo(true), null, this,  false);
+        personOverview = new PersonOverview(personInfo = new PersonInfo(false), null, this,  false);
         personOverview.setPreferredSize(new Dimension(170, 0));
 
         personDetailPanel = new JPanel();
@@ -78,7 +84,7 @@ public class PersonPane extends JPanel {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
-        createEditPerson = new CreateEditPerson();
+        createEditPerson = new CreateEditPerson(personOverview);
         createEditPerson.setVisible(false);
 
         addButton.addActionListener(e -> {
@@ -88,7 +94,8 @@ public class PersonPane extends JPanel {
 
         });
         deleteButton.addActionListener(e -> {
-
+            fascade.deletePerson(focusedPerson);
+            personOverview.updateButtons();
         });
 
         southPanel.add(buttonPanel, BorderLayout.WEST);

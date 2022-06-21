@@ -10,10 +10,11 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
 import java.util.Objects;
+import org.jdesktop.swingx.prompt.PromptSupport;
 
 /**
- * @author: Francesco Ryu/Andras Tarlos
- * @Version: 5.0
+ * @author: Francesco Ryu / Andras Tarlos
+ * @version: 5.0
  * @date: 20.06.2022
  */
 
@@ -40,6 +41,9 @@ public class PersonInfo extends JPanel {
         nameInputTextField.setColumns(25);
         nameInputTextField.setEditable(true);
 
+        PromptSupport.setPrompt("Vorname und Nachname eingeben", nameInputTextField);
+        PromptSupport.setFocusBehavior(PromptSupport.FocusBehavior.SHOW_PROMPT, nameInputTextField);
+
         ImageIcon profileImage = new ImageIcon(Paths.get(imgPath).toString());
 
         imagePlaceHolder = new JLabel(profileImage);
@@ -55,8 +59,11 @@ public class PersonInfo extends JPanel {
         }
     }
 
-
     public void update(Person person) {
         nameInputTextField.setText(person.getFirstName() + " " + person.getLastName());
+    }
+
+    public String getName() {
+        return nameInputTextField.getText();
     }
 }

@@ -6,6 +6,7 @@ import employees.HRPerson;
 import employees.JobFunction;
 import employees.Participation;
 import fascades.Fascade;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -57,43 +58,32 @@ public class PersonAssignmentSettings extends JPanel {
         departmentComboBox = new JComboBox<>();
         departmentComboBox.setPreferredSize(new Dimension(224, 20));
         departmentComboBox.setFocusable(false);
-        departmentComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // if there is a person selected from the person list and the department is
-                // changed, change the selected department in the backend (model class) as well
-                if (focusedPerson != null) {
-                    fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
-                }
-            }
+        departmentComboBox.addActionListener(e -> {
+            // if there is a person selected from the person list and the department is
+            // changed, change the selected department in the backend (model class) as well
+            //if (focusedPerson != null)
+                //fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
         });
 
         functionComboBox = new JComboBox<>();
         functionComboBox.setPreferredSize(new Dimension(224, 20));
         functionComboBox.setFocusable(false);
-        functionComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // if there is a person selected from the person list and the job function is
-                // changed, change the selected job function in the backend (model class) as well
-                if (focusedPerson != null) {
-                    fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());
-                }
-            }
+        functionComboBox.addActionListener(e -> {
+            // if there is a person selected from the person list and the job function is
+            // changed, change the selected job function in the backend (model class) as well
+            if (focusedPerson != null)
+                fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());
         });
 
         teamsComboBox = new JComboBox<>();
         teamsComboBox.setPreferredSize(new Dimension(224, 20));
         teamsComboBox.setFocusable(false);
-        teamsComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // if there is a person selected from the person list and the department is
-                // changed, change the selected department in the backend (model class) as well
-                if (focusedPerson != null) {
-                    fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());
-                    focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));
-                }
+        teamsComboBox.addActionListener(e -> {
+            // if there is a person selected from the person list and the department is
+            // changed, change the selected department in the backend (model class) as well
+            if (focusedPerson != null) {
+                fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());
+                focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));
             }
         });
 

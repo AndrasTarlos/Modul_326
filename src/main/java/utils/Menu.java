@@ -53,9 +53,6 @@ public class Menu extends JFrame {
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
 
-        AtomicBoolean check = new AtomicBoolean(true);
-
-
         selectTab.addChangeListener(e -> {
             if (!fascade.isAHRPersonLoggedIn()) {
                 if (selectTab.getSelectedIndex() == 1 ||

@@ -12,6 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
+import employees.Participation;
 import employees.Person;
 import lombok.Getter;
 import lombok.Setter;
@@ -177,6 +178,27 @@ public class Fascade {
     }
 
     /**
+     * Adds a person
+     * @param p is an HRPerson object
+     */
+    public void createPerson(HRPerson p) {
+        Participation participation = new Participation();
+        participation.setTeam(getTeams().get(0));
+        participation.setFunction(getJobFunctions().get(0));
+        p.setParticipation(participation);
+        p.setDepartmentName(getAllDepartment().get(0).getName());
+        getAllDepartment().get(0).addMember(p);
+    }
+
+    public void editPerson() {
+
+    }
+
+    public void deletePerson(HRPerson person) {
+        getSearchedDepartment(person.getDepartmentName()).removeMember(person);
+    }
+
+    /**
      * Gets all Person objects
      * @return List<HRPerson>
      */
@@ -321,7 +343,7 @@ public class Fascade {
      * @param newDepartment Department object
      * @param person a person
      */
-    public void switchPersonDepartmentTo(@NotNull Department newDepartment, HRPerson person) {
+    public void switchPersonDepartmentTo(Department newDepartment, HRPerson person) {
         newDepartment.addMember(person);
         getPersonsCurrentDepartment(person).removeMember(person);
         person.setDepartmentName(newDepartment.getName());
