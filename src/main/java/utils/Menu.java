@@ -14,9 +14,11 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * <h1>Menu</h1>
+ *
  * @author: Francesco Ryu, Andras Tarlos
  * @version: 1.0
  * @date: 08.06.2022
@@ -54,13 +56,19 @@ public class Menu extends JFrame {
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
 
+        AtomicBoolean check = new AtomicBoolean(true);
+
+
         selectTab.addChangeListener(e -> {
-            if (selectTab.getSelectedIndex() == 1 ||
-                    selectTab.getSelectedIndex() == 2 ||
-                    selectTab.getSelectedIndex() == 3 ||
-                    selectTab.getSelectedIndex() == 4) {
-                new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            if (check.get()) {
+                if (selectTab.getSelectedIndex() == 1 ||
+                        selectTab.getSelectedIndex() == 2 ||
+                        selectTab.getSelectedIndex() == 3 ||
+                        selectTab.getSelectedIndex() == 4) {
+                    new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                }
             }
+            check.set(false);
         });
 
         this.add(selectTab);
@@ -86,6 +94,7 @@ public class Menu extends JFrame {
 
     /**
      * Here starts the execution of the program
+     *
      * @param args String args
      */
     public static void main(String[] args) {
