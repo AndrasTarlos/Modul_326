@@ -54,9 +54,10 @@ public class EditFunction extends JDialog {
         panel2.add(abbrechen);
         panel2.add(speichern);
 
-        setSize(350, 150);
-        setTitle(title + " bearbeiten");
-        setVisible(true);
-        setResizable(false);
+        this.setTitle(title + " bearbeiten");
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setSize(350, 150);
+        this.setLocation(250, 250);
     }
 }
