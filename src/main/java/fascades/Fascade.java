@@ -124,6 +124,14 @@ public class Fascade {
     // Person
 
     /**
+     * Returns the Persons password
+     * @return String
+     */
+    public String getPersonsPassword(HRPerson p) {
+        return p.getPwd();
+    }
+
+    /**
      * Gets all Person objects
      * @return List<HRPerson>
      */

@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="added Authorization">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/DataPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DataPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Some fixes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/HRPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -35,7 +34,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -208,13 +206,6 @@
       <workItem from="1655559112384" duration="691000" />
       <workItem from="1655563893413" duration="17244000" />
       <workItem from="1655751079500" duration="2701000" />
-    </task>
-    <task id="LOCAL-00004" summary="test commit laptop">
-      <created>1654812487102</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1654812487102</updated>
     </task>
     <task id="LOCAL-00005" summary="test commit laptop">
       <created>1654812622362</created>
@@ -552,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655753198389</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Some fixes">
+      <created>1655791038383</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1655791038384</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed some stuff" />
     <MESSAGE value="added filter panel" />
     <MESSAGE value="Test change commit" />
     <MESSAGE value="i love github" />
@@ -595,6 +592,7 @@
     <MESSAGE value="some changes" />
     <MESSAGE value="added comments" />
     <MESSAGE value="added Authorization" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Authorization" />
+    <MESSAGE value="Some fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some fixes" />
   </component>
 </project>

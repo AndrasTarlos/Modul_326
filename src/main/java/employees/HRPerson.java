@@ -1,5 +1,6 @@
 package employees;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import log.LogBook;
 import log.UserAction;
 
@@ -51,6 +52,30 @@ public class HRPerson extends Person {
      */
     public void change(Person person, int modus) {
 
+    }
+
+    /**
+     * Check if the person is an HRPerson
+     * @return boolean value
+     */
+    @JsonIgnore
+    public boolean isHRPerson() {
+        if (getPwd() != null && modus == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Check if the person is an admin
+     * @return boolean value
+     */
+    @JsonIgnore
+    public boolean isAdmin() {
+        if (getPwd() != null && modus == 2) {
+            return true;
+        }
+        return false;
     }
 
     /**
