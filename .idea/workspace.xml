@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Added some comments">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/CreateFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreateFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/EditFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/EditFunction.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
     <list id="ccd9d3ff-b23d-463b-a2a2-110f45ab2ebd" name="Changes by Medox36" comment="" />
@@ -33,6 +35,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -160,7 +163,6 @@
       <list>
         <item itemvalue="Application.Menu" />
         <item itemvalue="JUnit.FascadeTest" />
-        <item itemvalue="Application.view.components.PersonOverview" />
         <item itemvalue="Application.view.buttons.AddButton" />
         <item itemvalue="Application.view.popups.CreateFunction" />
       </list>
@@ -202,13 +204,6 @@
       <workItem from="1655751079500" duration="2701000" />
       <workItem from="1655818739730" duration="5493000" />
       <workItem from="1655826862170" duration="5223000" />
-    </task>
-    <task id="LOCAL-00010" summary="updated PersonOverview.java">
-      <created>1654853526137</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1654853526137</updated>
     </task>
     <task id="LOCAL-00011" summary="Wallah personList is loading">
       <created>1654859731740</created>
@@ -546,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655836295160</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="some stuff">
+      <created>1655839968545</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1655839968545</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -564,7 +566,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added image" />
     <MESSAGE value="Added PersonInfoPanel.java" />
     <MESSAGE value="test exchange" />
     <MESSAGE value="Added search bar and it has functions" />
@@ -589,6 +590,7 @@
     <MESSAGE value="added fixed login" />
     <MESSAGE value="Added some comments" />
     <MESSAGE value="added fascade method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fascade method" />
+    <MESSAGE value="some stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="some stuff" />
   </component>
 </project>

@@ -16,7 +16,7 @@ import view.components.DataInfoPanel;
  * This little popup GUI is responsible for the creation of new data.
  */
 
-public class CreateFunction extends JFrame {
+public class CreateFunction extends JDialog {
     JLabel label2 = new JLabel();
 
     public CreateFunction(String title, DataInfoPanel dataInfoPanel) {

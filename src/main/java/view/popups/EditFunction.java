@@ -15,7 +15,7 @@ import view.components.DataInfoPanel;
  * This little popup GUI is responsible for the editing of new data.
  */
 
-public class EditFunction extends JFrame {
+public class EditFunction extends JDialog {
     JLabel label2 = new JLabel();
 
     public EditFunction(String title, String currentName, DataInfoPanel dataInfoPanel){
