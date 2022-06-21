@@ -3,13 +3,10 @@ package utils;
 import company.Company;
 import fascades.Fascade;
 import fascades.FascadeLogbook;
-import log.LogBook;
 import view.*;
 import view.popups.Authorization;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -65,6 +62,8 @@ public class Menu extends JFrame {
                         selectTab.getSelectedIndex() == 4) {
                     new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 }
+                }
+            }
         });
 
         this.add(selectTab);
