@@ -12,10 +12,7 @@ import view.popups.CreateFunction;
 import view.popups.EditFunction;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -24,7 +21,8 @@ import java.awt.*;
  * @version: 9.0
  * @date: 21.06.2022
  * <h2>Description</h2>
- *
+ * Creates GUI to display the 3 editable scrollpanes for function, department and teams.
+ * You can add, delete and edit the mentioned lists.
  */
 
 public class DataInfoPanel extends JPanel {

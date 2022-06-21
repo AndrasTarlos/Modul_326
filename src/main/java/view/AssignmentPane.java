@@ -30,6 +30,10 @@ public class AssignmentPane extends JPanel {
 
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
+        /**
+         * Generates imported components
+         */
+
         personEditPanel = new JPanel();
         personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(true);

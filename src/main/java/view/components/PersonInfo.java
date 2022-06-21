@@ -13,8 +13,10 @@ import java.util.Objects;
 
 /**
  * @author: Francesco Ryu/Andras Tarlos
- * @Version: 5.0
+ * @version: 5.0
  * @date: 20.06.2022
+ * <h2>Description</h2>
+ * Creates personInfo with nameInputTextField, personNameLabel and imagePlaceHolder
  */
 
 public class PersonInfo extends JPanel {
@@ -33,12 +35,25 @@ public class PersonInfo extends JPanel {
         }
     }
 
+    /**
+     * The constructor of the PersonInfo class
+     * @param textFieldEditable a boolean value (if true then you can write the name inside the textField)
+     */
+
     public PersonInfo(boolean textFieldEditable) {
         personNameLabel = new JLabel("  Name: ");
+
+        /**
+         * Creates TextField to display/edit person name
+         */
 
         nameInputTextField = new JTextField();
         nameInputTextField.setColumns(25);
         nameInputTextField.setEditable(true);
+
+        /**
+         * Creates image to the panel
+         */
 
         ImageIcon profileImage = new ImageIcon(Paths.get(imgPath).toString());
 

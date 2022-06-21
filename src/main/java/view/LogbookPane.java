@@ -27,6 +27,10 @@ public class LogbookPane extends JPanel {
     public LogbookPane() {
         fascadeLogbook = Menu.fascadeLogbook;
 
+        /**
+         * Generates a simple list attached to a scrollbar to visualize the logbook
+         */
+
         defaultListModel = fascadeLogbook.getAllEntries();
 
         jList = new JList(defaultListModel);

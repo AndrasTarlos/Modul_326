@@ -30,7 +30,6 @@ public class PersonAssignmentFiltering extends JPanel {
     private final Fascade fascade;
 
     public PersonAssignmentFiltering(PersonOverview personOverview) {
-        //this.setBorder(new MatteBorder(2, 0, 0, 0, Color.BLACK));
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
         setPersonOverview(personOverview);

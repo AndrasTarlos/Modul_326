@@ -41,6 +41,10 @@ public class OverviewPane extends JPanel {
         GridLayout personDetailLayout = new GridLayout(2, 0);
         this.setLayout(new BorderLayout());
 
+        /**
+         * Generates imported components
+         */
+
         personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(false);
         personOverview = new PersonOverview(personInfo, personAssignmentPanel, null, true);
@@ -67,6 +71,10 @@ public class OverviewPane extends JPanel {
                 personOverview.sortPerson(aButton.getText());
             }
         };
+
+        /**
+         * sort functions to display the people in desired order
+         */
 
         noneSort = new JRadioButton("Keine");
         noneSort.addActionListener(sortActionListener);

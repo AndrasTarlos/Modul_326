@@ -38,6 +38,7 @@ public class PersonPane extends JPanel {
     HRPerson focusedPerson;
 
     public PersonPane() {
+
         hrPersonCheckBox = new JCheckBox("HR-Mitarbeiter ");
         hrPersonCheckBox.setFocusable(false);
         hrPersonCheckBox.setEnabled(false);
@@ -81,9 +82,11 @@ public class PersonPane extends JPanel {
         createEditPerson = new CreateEditPerson();
         createEditPerson.setVisible(false);
 
-        addButton.addActionListener(e -> {
-            createEditPerson.setVisible(true);
-        });
+        /**
+         * these buttons make some dialogs visible to add, edit and delete people
+         */
+
+        addButton.addActionListener(e -> createEditPerson.setVisible(true));
         editButton.addActionListener(e -> {
 
         });

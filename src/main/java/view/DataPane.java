@@ -54,6 +54,10 @@ public class DataPane extends JPanel {
         componentsPanel = new JPanel();
         componentsPanel.setLayout(new BoxLayout(componentsPanel, BoxLayout.Y_AXIS));
 
+        /**
+         * Generates dataInfoPanel 3 times with the matching labelName
+         */
+
         String[] labelNames = {"Abteilung:", "Funktionen:", "Teams:"};
 
         for (int i = 0; i < 3; i++) {

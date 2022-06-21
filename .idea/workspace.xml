@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="some stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/DataPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DataPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/LogbookPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LogbookPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentFiltering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
@@ -203,13 +212,6 @@
       <workItem from="1655751079500" duration="2701000" />
       <workItem from="1655818739730" duration="5493000" />
       <workItem from="1655826862170" duration="5223000" />
-    </task>
-    <task id="LOCAL-00012" summary="edited Assignment.java">
-      <created>1654862379074</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1654862379074</updated>
     </task>
     <task id="LOCAL-00013" summary="edited Assignment.java">
       <created>1654875725930</created>
@@ -547,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655840433613</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="edited Authorization.java">
+      <created>1655842876317</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1655842876317</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added PersonInfoPanel.java" />
     <MESSAGE value="test exchange" />
     <MESSAGE value="Added search bar and it has functions" />
     <MESSAGE value="Changed method names" />
@@ -590,6 +598,7 @@
     <MESSAGE value="Added some comments" />
     <MESSAGE value="added fascade method" />
     <MESSAGE value="some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="some stuff" />
+    <MESSAGE value="edited Authorization.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited Authorization.java" />
   </component>
 </project>
