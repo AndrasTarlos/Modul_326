@@ -71,7 +71,9 @@ public class DataInfoPanel extends JPanel {
 
         contentPanel = new JPanel();
 
-        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));      //new BoxLayout(contentPanel, BoxLayout.Y_AXIS)
+        contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
+        //contentPanel.setPreferredSize(new Dimension(180, 150));
+
 
         jScrollPane = new JScrollPane(contentPanel);
         jScrollPane.setPreferredSize(new Dimension(200, 150));
@@ -104,7 +106,12 @@ public class DataInfoPanel extends JPanel {
                 case "Teams:" -> name = ((Team) itemList[i]).getDesignation();
             }
             JButton button = new JButton(name);
-            button.setMaximumSize(new Dimension(200, 25));
+            button.setMaximumSize(new Dimension(180, 30));
+            //button.setMinimumSize(new Dimension(200, 100));
+            button.setPreferredSize(new Dimension(180, 30));
+
+
+
             button.setBorder(null);
             button.setBorderPainted(false);
             button.setBackground(new Color(246, 245, 245, 255));
