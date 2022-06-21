@@ -150,6 +150,10 @@ public class Fascade {
 
     // Person
 
+    /**
+     * Returns all the HRPerson in the company
+     * @return List<HRPerson>
+     */
     public List<HRPerson> getAllHRPerson() {
         List<HRPerson> list = new ArrayList<>();
         for (HRPerson p: getAllPerson()) {

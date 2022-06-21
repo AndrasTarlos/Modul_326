@@ -15,14 +15,15 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
+ * <h1>DataInfoPanel</h1>
  * @author: Francesco Ryu / Andras Tarlos
  * @version: 9.0
  * @date: 21.06.2022
+ * <h2>Description</h2>
+ *
  */
 
 public class DataInfoPanel extends JPanel {
-    DefaultListModel<String> defaultListModel;
-    JList jList;
     JPanel contentPanel;
     JScrollPane jScrollPane;
     JPanel buttonPanel;

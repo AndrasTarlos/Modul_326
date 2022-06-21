@@ -7,7 +7,7 @@ import lombok.Setter;
  * <h1>Participation</h1>
  * author: Tarlos Andras
  * version: 1.0
- * date: 01.12.2022
+ * date: 21.06.2022
  * description: This class includes methods for JobFunctions.
  */
 @Getter

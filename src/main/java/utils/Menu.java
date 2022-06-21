@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  *
  * @author: Francesco Ryu, Andras Tarlos
  * @version: 1.0
- * @date: 08.06.2022
+ * @date: 21.06.2022
  * <h2>Description</h2>
  * This is the main class of our software. The main method has to started
  * to start the GUI as well to activate the fascades and the model classes.
@@ -95,7 +95,6 @@ public class Menu extends JFrame {
     public static void main(String[] args) {
         datahandlerJSON = DatahandlerJSON.getDatahandlerJSONInstance();
         company = datahandlerJSON.readCompanyJSON();
-
         fascade = datahandlerJSON.readFascadeJSON();
         fascadeLogbook = new FascadeLogbook();
         fascade.setCompany(company);
