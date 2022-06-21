@@ -12,7 +12,6 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -20,9 +19,13 @@ import java.util.*;
 import java.util.List;
 
 /**
+ * <h1>PersonOverview</h1>
  * @author: Francesco Ryu/Andras Tarlos
  * @Version: 17.0
  * @date: 20.06.2022
+ * <h2>Description</h2>
+ * This class contains a JScrollPane with all the workers/persons
+ * of the company.
  */
 
 public class PersonOverview extends JPanel {
@@ -53,7 +56,7 @@ public class PersonOverview extends JPanel {
         personList = fascade.getAllPerson();
 
         setPersonInfoPanel(personInfo);
-        setAddAssignmentPanel(personAssignmentSettings);
+        setAddAssignmentSettings(personAssignmentSettings);
         setPersonPane(personPane);
 
         searchBarTextField = new JTextField();
@@ -68,12 +71,9 @@ public class PersonOverview extends JPanel {
         imgButton.setBorder(null);
         imgButton.setBorderPainted(false);
         imgButton.setFocusable(false);
-        imgButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                personList = Menu.fascade.getSearchedPerson(searchBarTextField.getText());
-                updateButtons();
-            }
+        imgButton.addActionListener(e -> {
+            personList = Menu.fascade.getSearchedPerson(searchBarTextField.getText());
+            updateButtons();
         });
 
         searchBar = new JPanel();
@@ -104,7 +104,8 @@ public class PersonOverview extends JPanel {
     }
 
     /**
-     *
+     * Fills the contentPanel with JButtons
+     * with the persons name on them
      */
     public void addButtonsToContentPanel() {
         for (int i = 0; i < personList.size(); i++) {
@@ -116,11 +117,8 @@ public class PersonOverview extends JPanel {
             button.setBackground(new Color(246, 245, 245, 255));
             button.setFocusable(false);
 
-            button.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
-                }
+            button.addActionListener(e -> {
+                updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
             });
             contentPanel.add(button);
         }
@@ -128,18 +126,19 @@ public class PersonOverview extends JPanel {
         contentPanel.repaint();
     }
 
-    public void removeButtonsFromContentPanel() {
-        contentPanel.removeAll();
-        contentPanel.revalidate();
-        contentPanel.repaint();
-    }
-
+    /**
+     * Updates and refreshes the buttons inside the JScrollPane
+     */
     public void updateButtons() {
-        removeButtonsFromContentPanel();
+        contentPanel.removeAll();
         addButtonsToContentPanel();
     }
 
-
+    /**
+     * When a Person in a JButton is selected,
+     * the other JPanels get updates
+     * @param person the selected Person
+     */
     public void updatePanels(HRPerson person) {
         personInfo.update(person);
         if (personAssignmentSettings != null)
@@ -148,6 +147,10 @@ public class PersonOverview extends JPanel {
             personPane.updateCheckBox(person);
     }
 
+    /**
+     * Sorts the JButtons in an order
+     * @param type the type of the sorting (A-Z, Z-A, Keine)
+     */
     public void sortPerson(@NotNull String type) {
         try {
             switch (type) {
@@ -174,18 +177,34 @@ public class PersonOverview extends JPanel {
 
     // SETTERS
 
+    /**
+     * Setter of PersonInfoPanel
+     * @param personInfo object of PersonInfo
+     */
     public void setPersonInfoPanel(PersonInfo personInfo) {
         this.personInfo = personInfo;
     }
 
-    public void setAddAssignmentPanel(PersonAssignmentSettings personAssignmentSettings) {
+    /**
+     * Setter of AddAssignmentSettings
+     * @param personAssignmentSettings an object
+     */
+    public void setAddAssignmentSettings(PersonAssignmentSettings personAssignmentSettings) {
         this.personAssignmentSettings = personAssignmentSettings;
     }
 
+    /**
+     * Setter of personList
+     * @param personList a List<HRPerson>
+     */
     public void setPersonList(List<HRPerson> personList) {
         this.personList = personList;
     }
 
+    /**
+     * Setter of personPane
+     * @param personPane a PersonPane object
+     */
     public void setPersonPane(PersonPane personPane) {
         this.personPane = personPane;
     }
