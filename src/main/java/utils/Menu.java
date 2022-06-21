@@ -55,16 +55,18 @@ public class Menu extends JFrame {
 
         AtomicBoolean check = new AtomicBoolean(true);
 
+
         selectTab.addChangeListener(e -> {
+            if (!fascade.isAHRPersonLoggedIn()) {
                 if (selectTab.getSelectedIndex() == 1 ||
                         selectTab.getSelectedIndex() == 2 ||
                         selectTab.getSelectedIndex() == 3 ||
                         selectTab.getSelectedIndex() == 4) {
                     new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 }
-                }
             }
         });
+
 
         this.add(selectTab);
 

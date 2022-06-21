@@ -1,5 +1,6 @@
 package fascades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import company.Company;
 import company.Department;
 import employees.HRPerson;
@@ -31,6 +32,9 @@ public class Fascade {
     private Company company = new Company();
     private ArrayList<Team> teams = new ArrayList<>();
     private ArrayList<JobFunction> jobFunctions = new ArrayList<>();
+
+    @JsonIgnore
+    boolean isAHRPersonLoggedIn;
 
     /**
      * Default constructor of Fascade
@@ -423,5 +427,15 @@ public class Fascade {
      */
     public void setJobFunctionOfPerson(HRPerson person, String newJobFunction) {
         person.getParticipation().setFunction(getSearchedJobFunction(newJobFunction));
+    }
+
+    @JsonIgnore
+    public boolean isAHRPersonLoggedIn() {
+        return isAHRPersonLoggedIn;
+    }
+
+    @JsonIgnore
+    public void setAHRPersonLoggedIn(boolean AHRPersonLoggedIn) {
+        isAHRPersonLoggedIn = AHRPersonLoggedIn;
     }
 }

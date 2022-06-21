@@ -81,6 +81,7 @@ public class Authorization extends JDialog {
             if (inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
                 setVisible(false);
                 loggedIn = true;
+                fascade.setAHRPersonLoggedIn(true);
                 JOptionPane.showMessageDialog(this, "Login erfolgreich");
             }
             if (!inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
