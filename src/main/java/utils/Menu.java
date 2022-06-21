@@ -46,7 +46,6 @@ public class Menu extends JFrame {
         PersonPane personPane = new PersonPane();
         DataPane dataPane = new DataPane();
         LogbookPane logbookPane = new LogbookPane();
-        Authorization authorization = new Authorization();
         // Menu bar
         JTabbedPane selectTab = new JTabbedPane();
         selectTab.addTab("Übersicht", overviewPane);
@@ -61,11 +60,10 @@ public class Menu extends JFrame {
                     selectTab.getSelectedIndex() == 3 ||
                     selectTab.getSelectedIndex() == 4) {
 
-                authorization.setVisible(true);
+                new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
             }
         });
-
-        authorization.setVisible(false);
 
         this.add(selectTab);
 
@@ -74,6 +72,7 @@ public class Menu extends JFrame {
         this.setResizable(false);
         this.setLocation(500, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        selectTab.setSelectedIndex(0);
         // Add window listener
         WindowListener wl = new WindowAdapter() {
             @Override

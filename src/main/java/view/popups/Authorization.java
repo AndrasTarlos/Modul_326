@@ -1,5 +1,6 @@
 package view.popups;
 
+import com.sun.tools.javac.Main;
 import employees.HRPerson;
 import fascades.Fascade;
 import utils.Menu;
@@ -7,6 +8,10 @@ import utils.Menu;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Objects;
 
 /**
@@ -30,9 +35,12 @@ public class Authorization extends JDialog {
     JButton quitButton;
     JButton continueButton;
 
-    public Authorization() {
-        Fascade fascade = new Fascade();
-        HRPerson p;
+    private boolean loggedIn = false;
+
+    public Authorization(Menu menu, JTabbedPane tabbedPane) {
+        super(menu, true);
+
+        Fascade fascade = Menu.fascade;
 
         EmptyBorder emptyBorder = new EmptyBorder(5, 5, 5, 5);
 
@@ -51,12 +59,6 @@ public class Authorization extends JDialog {
         addComboBoxContent();
         inputCode = new JPasswordField();
 
-        p = new HRPerson();
-
-        if (inputCode.getText().equals(Menu.fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString()))) {
-            continueButton.addActionListener(e -> continueButton.setEnabled(true));
-        }
-
         interactionPanel.add(inputCode);
 
 
@@ -68,7 +70,36 @@ public class Authorization extends JDialog {
         buttonPanel.add(continueButton, BorderLayout.EAST);
         buttonPanel.setBorder(emptyBorder);
 
-        continueButton.setEnabled(false);
+        continueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HRPerson p = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
+                if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
+                    setVisible(false);
+                    loggedIn = true;
+                }
+                else {
+                    System.out.println("failed");
+                    tabbedPane.setSelectedIndex(0);
+                }
+            }
+        });
+
+        quitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tabbedPane.setSelectedIndex(0);
+                dispose();
+            }
+        });
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                if (!loggedIn) {
+                    tabbedPane.setSelectedIndex(0);
+                }
+            }
+        });
 
         this.setTitle("Authentifizierung");
         this.add(labelPanel, BorderLayout.WEST);
@@ -77,10 +108,11 @@ public class Authorization extends JDialog {
         this.setResizable(false);
         this.setSize(300, 150);
         this.setLocation(250, 250);
+        this.setVisible(true);
     }
 
     private void addComboBoxContent() {
-        for (HRPerson p: Menu.fascade.getAllPerson()) {
+        for (HRPerson p: Menu.fascade.getAllHRPerson()) {
             selectPerson.addItem(p.getFirstName() + " " + p.getLastName());
         }
     }
