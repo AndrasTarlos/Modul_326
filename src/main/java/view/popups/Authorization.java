@@ -53,17 +53,19 @@ public class Authorization extends JDialog {
         codeLabel.setBorder(new EmptyBorder(20, 0, 0, 0));
         labelPanel.add(nameLabel);
         labelPanel.add(codeLabel);
-        labelPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        labelPanel.setBorder(new EmptyBorder(10, 10, 0, 10));
 
         interactionPanel = new JPanel();
         interactionPanel.setLayout(new BoxLayout(interactionPanel, BoxLayout.Y_AXIS));
         selectPerson = new JComboBox<>();
+        selectPerson.setBorder(new EmptyBorder(5, 0, 10, 0));
         interactionPanel.add(selectPerson);
         addComboBoxContent();
         inputCode = new JPasswordField();
 
+
         interactionPanel.add(inputCode);
-        interactionPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+        interactionPanel.setBorder(new EmptyBorder(5, 20, 20, 20));
 
 
         buttonPanel = new JPanel();
