@@ -79,12 +79,12 @@ public class Authorization extends JDialog {
             if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
                 setVisible(false);
                 loggedIn = true;
-                JOptionPane.showMessageDialog(this, "Login successful!");
+                JOptionPane.showMessageDialog(this, "Login erfolgreich");
             }
             if (!inputCode.getText().equals(fascade.getPersonsPassword(p))) {
                 System.out.println("failed");
                 tabbedPane.setSelectedIndex(0);
-                JOptionPane.showMessageDialog(this, "Invalid password/username");
+                JOptionPane.showMessageDialog(this, "Ungültiger Code und/oder Name");
             }
         });
 
