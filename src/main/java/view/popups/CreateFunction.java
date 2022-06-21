@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 import org.jdesktop.swingx.prompt.PromptSupport;
 /**
- * @author: Julian Janik
+ * @author: Julian Janik, Andras Tarlos
  * @Version: 9.0
  * @date: 20.06.2022
  */
