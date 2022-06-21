@@ -8,6 +8,8 @@ import view.*;
 import view.popups.Authorization;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -53,9 +55,17 @@ public class Menu extends JFrame {
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
 
-        authorization.setVisible(false);
+        selectTab.addChangeListener(e -> {
+            if (selectTab.getSelectedIndex() == 1 ||
+                    selectTab.getSelectedIndex() == 2 ||
+                    selectTab.getSelectedIndex() == 3 ||
+                    selectTab.getSelectedIndex() == 4) {
 
-        selectTab.addChangeListener(e -> authorization.setVisible(true));
+                authorization.setVisible(true);
+            }
+        });
+
+        authorization.setVisible(false);
 
         this.add(selectTab);
 
@@ -64,7 +74,6 @@ public class Menu extends JFrame {
         this.setResizable(false);
         this.setLocation(500, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
         // Add window listener
         WindowListener wl = new WindowAdapter() {
             @Override
@@ -74,6 +83,7 @@ public class Menu extends JFrame {
             }
         };
         this.addWindowListener(wl);
+
     }
 
     /**

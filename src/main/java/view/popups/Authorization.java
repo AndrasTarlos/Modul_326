@@ -1,5 +1,7 @@
 package view.popups;
 
+import fascades.Fascade;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -30,6 +32,8 @@ public class Authorization extends JDialog {
 
     public Authorization() {
 
+        Fascade fascade = new Fascade();
+
         EmptyBorder emptyBorder = new EmptyBorder(5, 5, 5, 5);
 
         namePanel = new JPanel();
@@ -45,9 +49,9 @@ public class Authorization extends JDialog {
         codePanel.setLayout(new BorderLayout());
         codeLabel = new JLabel("Code:");
         inputCode = new JTextField();
-        inputCode.setPreferredSize(new Dimension(200, 15));
+
         codePanel.add(codeLabel, BorderLayout.WEST);
-        codePanel.add(inputCode, BorderLayout.EAST);
+        codePanel.add(inputCode);
         codePanel.setBorder(emptyBorder);
 
         buttonPanel = new JPanel();
