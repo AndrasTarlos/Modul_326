@@ -16,8 +16,10 @@ import java.util.Objects;
 
 /**
  * @author: Francesco Ryu/Andras Tarlos
- * @Version: 1.0
- * @date: 20.06.2022
+ * @version: 3.0
+ * @date: 21.06.2022
+ * <h2>Description</h2>
+ * Creates the login for HRPerson and admin.
  */
 
 public class Authorization extends JDialog {

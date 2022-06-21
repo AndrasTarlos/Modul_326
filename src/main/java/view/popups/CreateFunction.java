@@ -57,9 +57,10 @@ public class CreateFunction extends JDialog {
         panel2.add(abbrechen);
         panel2.add(speichern);
 
-        setSize(350, 150);
         setTitle(title + " erfassen");
         setVisible(true);
         setResizable(false);
+        setSize(350, 150);
+        this.setLocation(250, 250);
     }
 }
