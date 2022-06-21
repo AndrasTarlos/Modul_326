@@ -4,9 +4,6 @@ import view.components.PersonInfo;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.MatteBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -16,7 +13,7 @@ import java.awt.event.*;
  * @date: 20.06.2022
  */
 
-public class CreatePerson extends JDialog {
+public class CreateEditPerson extends JDialog {
     PersonInfo personInfoPanel;
     JCheckBox HRPersonCheckBox;
     JCheckBox administratorCheckBox;
@@ -33,7 +30,7 @@ public class CreatePerson extends JDialog {
     JButton quitButton;
     JButton saveButton;
 
-    public CreatePerson() {
+    public CreateEditPerson() {
         personInfoPanel = new PersonInfo(true);
 
         pwdPanel = new JPanel();

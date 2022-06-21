@@ -8,7 +8,7 @@ import view.components.PersonInfo;
 import view.components.PersonOverview;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
-import view.popups.CreatePerson;
+import view.popups.CreateEditPerson;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -32,7 +32,7 @@ public class PersonPane extends JPanel {
     JCheckBox administratorCheckBox;
     PersonOverview personOverview;
     PersonInfo personInfo;
-    CreatePerson createPerson;
+    CreateEditPerson createEditPerson;
     JPanel southPanel;
     JPanel buttonPanel;
     HRPerson focusedPerson;
@@ -78,11 +78,17 @@ public class PersonPane extends JPanel {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
-        createPerson = new CreatePerson();
-        createPerson.setVisible(false);
+        createEditPerson = new CreateEditPerson();
+        createEditPerson.setVisible(false);
 
         addButton.addActionListener(e -> {
-            createPerson.setVisible(true);
+            createEditPerson.setVisible(true);
+        });
+        editButton.addActionListener(e -> {
+
+        });
+        deleteButton.addActionListener(e -> {
+
         });
 
         southPanel.add(buttonPanel, BorderLayout.WEST);

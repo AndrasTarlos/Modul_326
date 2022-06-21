@@ -84,12 +84,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Menu">
-    <configuration name="CreateFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.popups.CreateFunction" />
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.Menu" />
       <module name="Auftrag_4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.popups.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -97,12 +97,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="utils.Menu" />
+    <configuration name="PersonOverview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.components.PersonOverview" />
       <module name="Auftrag_4" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value=".*" />
+          <option name="PATTERN" value="view.popups.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,8 +123,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="view.components.PersonOverview" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.components.PersonOverview" />
+    <configuration name="view.popups.CreateFunction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.popups.CreateFunction" />
       <module name="Auftrag_4" />
       <extension name="coverage">
         <pattern>
@@ -162,7 +162,7 @@
         <item itemvalue="JUnit.FascadeTest" />
         <item itemvalue="Application.view.components.PersonOverview" />
         <item itemvalue="Application.view.buttons.AddButton" />
-        <item itemvalue="Application.CreateFunction" />
+        <item itemvalue="Application.view.popups.CreateFunction" />
       </list>
     </recent_temporary>
   </component>

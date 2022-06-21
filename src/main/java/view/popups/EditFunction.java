@@ -55,7 +55,7 @@ public class EditFunction extends JFrame {
         panel2.add(speichern);
 
         setSize(350, 150);
-        setTitle(title + " erfassen");
+        setTitle(title + " bearbeiten");
         setVisible(true);
         setResizable(false);
     }
