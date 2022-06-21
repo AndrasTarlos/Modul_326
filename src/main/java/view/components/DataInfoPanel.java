@@ -12,6 +12,10 @@ import view.popups.CreateFunction;
 import view.popups.EditFunction;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -28,6 +32,8 @@ public class DataInfoPanel extends JPanel {
     JScrollPane jScrollPane;
     JPanel buttonPanel;
     JPanel buttonScrollPanePanel;
+    JPanel placeHolder;
+    JPanel labelPanel;
     JLabel label;
     Object[] itemList;
     String labelName;
@@ -104,12 +110,10 @@ public class DataInfoPanel extends JPanel {
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 
         jScrollPane = new JScrollPane(contentPanel);
-        jScrollPane.setPreferredSize(new Dimension(200, 150));
-
-        FlowLayout flowLayout = new FlowLayout();
+        jScrollPane.setPreferredSize(new Dimension(200, 140));
 
         buttonPanel = new JPanel();
-        buttonPanel.setLayout(flowLayout);
+        buttonPanel.setLayout(new FlowLayout());
         buttonPanel.add(addButton);
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
@@ -119,10 +123,17 @@ public class DataInfoPanel extends JPanel {
         buttonScrollPanePanel = new JPanel();
         buttonScrollPanePanel.add(jScrollPane);
         buttonScrollPanePanel.add(buttonPanel);
+        buttonScrollPanePanel.setPreferredSize(new Dimension(300, 195));
 
-        this.setLayout(new GridLayout(1, 2));
-        this.add(label);
+        placeHolder = new JPanel();
+
+        labelPanel = new JPanel();
+        labelPanel.add(label, BorderLayout.CENTER);
+        label.setPreferredSize(new Dimension(150, 150));
+
+        this.add(labelPanel);
         this.add(buttonScrollPanePanel);
+        this.setBorder(new LineBorder(Color.BLACK));
     }
 
     public void addButtons() {

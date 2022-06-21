@@ -6,6 +6,7 @@ import view.components.DataInfoPanel;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.MatteBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
@@ -58,7 +59,6 @@ public class DataPane extends JPanel {
         for (int i = 0; i < 3; i++) {
             dataInfoPanel = new DataInfoPanel(labelNames[i]);
             componentsPanel.add(dataInfoPanel);
-            dataInfoPanel.setBorder(new TitledBorder(""));
         }
 
         this.setLayout(new BorderLayout());
