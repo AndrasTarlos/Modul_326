@@ -37,6 +37,8 @@ public class Authorization extends JDialog {
 
     private boolean loggedIn = false;
 
+    public static HRPerson currentUser;
+
     public Authorization(Menu menu, JTabbedPane tabbedPane) {
         super(menu, true);
 
@@ -73,15 +75,15 @@ public class Authorization extends JDialog {
         buttonPanel.setBorder(emptyBorder);
 
         continueButton.addActionListener(e -> {
-            HRPerson p = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
+            currentUser = fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString());
 
 
-            if (inputCode.getText().equals(fascade.getPersonsPassword(p))) {
+            if (inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
                 setVisible(false);
                 loggedIn = true;
                 JOptionPane.showMessageDialog(this, "Login erfolgreich");
             }
-            if (!inputCode.getText().equals(fascade.getPersonsPassword(p))) {
+            if (!inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
                 System.out.println("failed");
                 tabbedPane.setSelectedIndex(0);
                 JOptionPane.showMessageDialog(this, "Ungültiger Code und/oder Name");
