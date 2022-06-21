@@ -45,10 +45,23 @@ public class DataInfoPanel extends JPanel {
         label = new JLabel(labelName);
         setLabelName(labelName);
 
+        addButton = new AddButton();
+        editButton = new EditButton();
+        deleteButton = new DeleteButton();
+
         switch (labelName) {
-            case "Abteilung:" -> itemList = fascade.getAllDepartment().toArray();
-            case "Funktionen:" -> itemList = fascade.getJobFunctions().toArray();
-            case "Teams:" -> itemList = fascade.getTeams().toArray();
+            case "Abteilung:" -> {
+                itemList = fascade.getAllDepartment().toArray();
+                addButton.addActionListener(e -> createFunction = new CreateFunction("Abteilung"));
+            }
+            case "Funktionen:" -> {
+                itemList = fascade.getJobFunctions().toArray();
+                addButton.addActionListener(e -> createFunction = new CreateFunction("Funktion"));
+            }
+            case "Teams:" -> {
+                itemList = fascade.getTeams().toArray();
+                addButton.addActionListener(e -> createFunction = new CreateFunction("Team"));
+            }
         }
 
         contentPanel = new JPanel();
@@ -57,16 +70,6 @@ public class DataInfoPanel extends JPanel {
 
         jScrollPane = new JScrollPane(contentPanel);
         jScrollPane.setPreferredSize(new Dimension(200, 150));
-
-        addButton = new AddButton();
-        editButton = new EditButton();
-        deleteButton = new DeleteButton();
-
-        createFunction = new CreateFunction();
-        createFunction.setVisible(false);
-
-        addButton.addActionListener(e -> createFunction.setVisible(true));
-        editButton.addActionListener(e -> createFunction.setVisible(true));
 
         FlowLayout flowLayout = new FlowLayout();
 
@@ -96,8 +99,7 @@ public class DataInfoPanel extends JPanel {
                 case "Teams:" -> name = ((Team) itemList[i]).getDesignation();
             }
             JButton button = new JButton(name);
-            button.setMinimumSize(new Dimension(170, 25));
-            button.setMaximumSize(new Dimension(170, 25));
+            button.setMaximumSize(new Dimension(200, 25));
             button.setBorder(null);
             button.setBorderPainted(false);
             button.setBackground(new Color(246, 245, 245, 255));

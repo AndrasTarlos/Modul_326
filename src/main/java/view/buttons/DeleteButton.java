@@ -14,7 +14,7 @@ import java.util.Objects;
  * @Date: 15.06.2022
  * @Version: 1.0
  */
-public class DeleteButton extends JButton{
+public class DeleteButton extends JButton {
     private static URI imgPath;
 
     static {

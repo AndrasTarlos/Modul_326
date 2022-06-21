@@ -41,7 +41,7 @@ public class DataPane extends JPanel {
         companyTextField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode()==KeyEvent.VK_ENTER) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     fascade.setCompanyName(companyTextField.getText());
                 }
             }
@@ -60,12 +60,9 @@ public class DataPane extends JPanel {
             componentsPanel.add(dataInfoPanel);
             dataInfoPanel.setBorder(new TitledBorder(""));
         }
+
         this.setLayout(new BorderLayout());
         this.add(companyPanel, BorderLayout.NORTH);
         this.add(componentsPanel, BorderLayout.CENTER);
-    }
-
-    public static void hel() {
-
     }
 }

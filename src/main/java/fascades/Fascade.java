@@ -123,6 +123,16 @@ public class Fascade {
 
     // Person
 
+    public List<HRPerson> getAllHRPerson() {
+        List<HRPerson> list = new ArrayList<>();
+        for (HRPerson p: getAllPerson()) {
+            if (p.isHRPerson() || p.isAdmin()) {
+                list.add(p);
+            }
+        }
+        return list;
+    }
+
     /**
      * Returns the Persons password
      * @return String
