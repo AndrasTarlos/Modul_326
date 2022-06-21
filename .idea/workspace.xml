@@ -66,11 +66,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andra\OneDrive - Bildungszentrum Zürichsee\BZZ\Probst\Modul_326\src\main\resources\DATA" />
@@ -166,10 +166,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Menu" />
         <item itemvalue="JUnit.FascadeTest" />
         <item itemvalue="Application.view.components.PersonOverview" />
         <item itemvalue="Application.view.buttons.AddButton" />
+        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.CreateFunction" />
       </list>
     </recent_temporary>
