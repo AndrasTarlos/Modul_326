@@ -1,11 +1,13 @@
 package view.popups;
 
 import employees.HRPerson;
+import fascades.Fascade;
 import utils.Menu;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.Objects;
 
 /**
  * @author: Francesco Ryu
@@ -14,8 +16,8 @@ import java.awt.*;
  */
 
 public class Authorization extends JDialog {
-    JPanel namePanel;
-    JPanel codePanel;
+    JPanel labelPanel;
+    JPanel interactionPanel;
     JPanel buttonPanel;
     JPanel mainPanel;
 
@@ -23,34 +25,40 @@ public class Authorization extends JDialog {
     JLabel codeLabel;
 
     JPasswordField inputCode;
-
     JComboBox<Object> selectPerson;
 
     JButton quitButton;
     JButton continueButton;
 
     public Authorization() {
+        Fascade fascade = new Fascade();
+        HRPerson p;
 
         EmptyBorder emptyBorder = new EmptyBorder(5, 5, 5, 5);
 
-        namePanel = new JPanel();
-        namePanel.setLayout(new BorderLayout());
+        labelPanel = new JPanel();
+        labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.Y_AXIS));
         nameLabel = new JLabel("Name:");
-        selectPerson = new JComboBox<>();
-        addComboBoxContent();
-        selectPerson.setPreferredSize(new Dimension(200, 19));
-        namePanel.add(nameLabel, BorderLayout.WEST);
-        namePanel.add(selectPerson, BorderLayout.EAST);
-        namePanel.setBorder(emptyBorder);
-
-        codePanel = new JPanel();
-        codePanel.setLayout(new BorderLayout());
         codeLabel = new JLabel("Code:");
+        codeLabel.setBorder(new EmptyBorder(20, 0, 0, 0));
+        labelPanel.add(nameLabel);
+        labelPanel.add(codeLabel);
+
+        interactionPanel = new JPanel();
+        interactionPanel.setLayout(new BoxLayout(interactionPanel, BoxLayout.Y_AXIS));
+        selectPerson = new JComboBox<>();
+        interactionPanel.add(selectPerson);
+        addComboBoxContent();
         inputCode = new JPasswordField();
-        inputCode.setPreferredSize(new Dimension(200, 15));
-        codePanel.add(codeLabel, BorderLayout.WEST);
-        codePanel.add(inputCode, BorderLayout.EAST);
-        codePanel.setBorder(emptyBorder);
+
+        p = new HRPerson();
+
+        if (inputCode.getText().equals(Menu.fascade.getPersonByFullName(Objects.requireNonNull(selectPerson.getSelectedItem()).toString()))) {
+            continueButton.addActionListener(e -> continueButton.setEnabled(true));
+        }
+
+        interactionPanel.add(inputCode);
+
 
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
@@ -60,9 +68,11 @@ public class Authorization extends JDialog {
         buttonPanel.add(continueButton, BorderLayout.EAST);
         buttonPanel.setBorder(emptyBorder);
 
+        continueButton.setEnabled(false);
+
         this.setTitle("Authentifizierung");
-        this.add(namePanel, BorderLayout.NORTH);
-        this.add(codePanel, BorderLayout.CENTER);
+        this.add(labelPanel, BorderLayout.WEST);
+        this.add(interactionPanel, BorderLayout.CENTER);
         this.add(buttonPanel, BorderLayout.SOUTH);
         this.setResizable(false);
         this.setSize(300, 150);
