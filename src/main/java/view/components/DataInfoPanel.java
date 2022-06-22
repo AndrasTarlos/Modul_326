@@ -26,22 +26,22 @@ import java.awt.*;
  */
 
 public class DataInfoPanel extends JPanel {
-    JPanel contentPanel;
-    JScrollPane jScrollPane;
-    JPanel buttonPanel;
-    JPanel buttonScrollPanePanel;
-    JPanel placeHolder;
-    JPanel labelPanel;
-    JLabel label;
-    Object[] itemList;
-    String labelName;
-    AddButton addButton;
-    EditButton editButton;
-    DeleteButton deleteButton;
-    Fascade fascade;
+    private JPanel contentPanel;
+    private JScrollPane jScrollPane;
+    private JPanel buttonPanel;
+    private JPanel buttonScrollPanePanel;
+    private JPanel placeHolder;
+    private JPanel labelPanel;
+    private JLabel label;
+    private Object[] itemList;
+    private String labelName;
+    private AddButton addButton;
+    private EditButton editButton;
+    private DeleteButton deleteButton;
+    private Fascade fascade;
     CreateFunction createFunction;
     EditFunction editFunction;
-    String focusedItem;
+    private String focusedItem;
 
     public DataInfoPanel(String labelName) {
         fascade = utils.Menu.fascade;

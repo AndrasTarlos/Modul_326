@@ -91,7 +91,7 @@ public class LogBook {
 
     /**
      * Get the size of
-     * @return
+     * @return entries
      */
     public int getSize() {
         return entries.size();

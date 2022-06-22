@@ -8,11 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="haha">
-      <change afterPath="$PROJECT_DIR$/src/main/test/DataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/CreateEditPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreateEditPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/FascadeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/FascadeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/log/LogBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/log/LogBook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
     <list id="ccd9d3ff-b23d-463b-a2a2-110f45ab2ebd" name="Changes by Medox36" comment="" />
@@ -98,7 +99,7 @@
       <recent name="fascades" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FascadeTest">
+  <component name="RunManager" selected="Application.Menu">
     <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="utils.Menu" />
       <module name="Auftrag_4" />
@@ -169,9 +170,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Menu" />
         <item itemvalue="JUnit.FascadeTest" />
         <item itemvalue="JUnit.DataTest" />
-        <item itemvalue="Application.Menu" />
         <item itemvalue="Application.view.popups.CreateFunction" />
         <item itemvalue="Application.view.buttons.AddButton" />
       </list>

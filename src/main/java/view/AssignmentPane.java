@@ -18,11 +18,11 @@ import java.awt.*;
  */
 
 public class AssignmentPane extends JPanel {
-    JPanel personEditPanel;
-    PersonOverview personOverviewPanel;
-    JPanel personDetailPanel;
-    PersonInfo personInfo;
-    PersonAssignmentSettings personAssignmentPanel;
+    private JPanel personEditPanel;
+    private PersonOverview personOverviewPanel;
+    private JPanel personDetailPanel;
+    private PersonInfo personInfo;
+    private PersonAssignmentSettings personAssignmentPanel;
     JLabel personEditLabel;
 
     public AssignmentPane() {
