@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="some stuff">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="edited combobox color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" afterDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
     <list id="ccd9d3ff-b23d-463b-a2a2-110f45ab2ebd" name="Changes by Medox36" comment="" />
@@ -208,14 +208,7 @@
       <workItem from="1655751079500" duration="2701000" />
       <workItem from="1655818739730" duration="5493000" />
       <workItem from="1655826862170" duration="5223000" />
-      <workItem from="1655880131515" duration="612000" />
-    </task>
-    <task id="LOCAL-00014" summary="Created PersonNameImagePanel.java">
-      <created>1654877578551</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1654877578551</updated>
+      <workItem from="1655880131515" duration="1372000" />
     </task>
     <task id="LOCAL-00015" summary="Added placeholders">
       <created>1654897140514</created>
@@ -553,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655880353899</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="edited combobox color">
+      <created>1655880764975</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1655880764975</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test exchange" />
     <MESSAGE value="Added search bar and it has functions" />
     <MESSAGE value="Changed method names" />
     <MESSAGE value="Changed a lot of names" />
@@ -596,7 +595,8 @@
     <MESSAGE value="added fascade method" />
     <MESSAGE value="Added add and delete function to CreateEditPerson" />
     <MESSAGE value="some stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="some stuff" />
+    <MESSAGE value="edited combobox color" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited combobox color" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

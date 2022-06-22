@@ -5,7 +5,12 @@ import utils.DatahandlerJSON;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
+import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.Paths;
@@ -50,6 +55,8 @@ public class PersonInfo extends JPanel {
         imagePlaceHolder.setPreferredSize(new Dimension(200, 200));
         imagePlaceHolder.setBorder(new MatteBorder(2, 2, 2, 2, Color.BLACK));
 
+
+
         this.add(personNameLabel);
         this.add(nameInputTextField);
         this.add(imagePlaceHolder);
@@ -57,6 +64,24 @@ public class PersonInfo extends JPanel {
         if (!textFieldEditable) {
             nameInputTextField.setEditable(false);
         }
+        if (textFieldEditable) {
+            imagePlaceHolder.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    System.out.println("TEST");
+                    JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+                    int returnValue = jfc.showOpenDialog(null);
+                    // int returnValue = jfc.showSaveDialog(null);
+
+                    if (returnValue == JFileChooser.APPROVE_OPTION) {
+                        File selectedFile = jfc.getSelectedFile();
+                        System.out.println(selectedFile.getAbsolutePath());
+                    }
+                }
+            });
+        }
+
+
     }
 
     public void update(Person person) {
