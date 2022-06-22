@@ -127,4 +127,12 @@ public class PersonPane extends JPanel {
         this.focusedPerson = person;
     }
 
+    /**
+     * Getter of PersonOverview
+     * @return PersonOverview object
+     */
+    public PersonOverview getPersonOverview() {
+        return personOverview;
+    }
+
 }

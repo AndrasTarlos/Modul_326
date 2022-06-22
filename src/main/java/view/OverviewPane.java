@@ -124,4 +124,8 @@ public class OverviewPane extends JPanel {
         this.add(southPanel, BorderLayout.SOUTH);
         this.add(personenPanel);
     }
+
+    public PersonOverview getPersonOverview() {
+        return personOverview;
+    }
 }

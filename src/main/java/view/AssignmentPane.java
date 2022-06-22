@@ -54,4 +54,12 @@ public class AssignmentPane extends JPanel {
         this.add(personEditPanel);
         this.setVisible(true);
     }
+
+    /**
+     * Getter of PersonOverview
+     * @return PersonOverview object
+     */
+    public PersonOverview getPersonOverviewPanel() {
+        return personOverviewPanel;
+    }
 }

@@ -62,6 +62,11 @@ public class Menu extends JFrame {
                     new Authorization(this, selectTab).setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 }
             }
+
+            // Update the list contents every time the user changes a tab
+            overviewPane.getPersonOverview().updateButtons();
+            personPane.getPersonOverview().updateButtons();
+            assignmentPane.getPersonOverviewPanel().updateButtons();
         });
 
 
