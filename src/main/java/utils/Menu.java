@@ -53,6 +53,8 @@ public class Menu extends JFrame {
         selectTab.addTab("Stammdaten", dataPane);
         selectTab.addTab("Logbuch", logbookPane);
 
+        //Sets a ChangeListener to display the authorization
+
         selectTab.addChangeListener(e -> {
             if (!fascade.isAHRPersonLoggedIn()) {
                 if (selectTab.getSelectedIndex() == 1 ||
