@@ -131,7 +131,7 @@ public class PersonAssignmentSettings extends JPanel {
         labelPanel.add(function);
         labelPanel.add(teams);
 
-        labelPanel.setPreferredSize(new Dimension(100, 0));
+        labelPanel.setPreferredSize(new Dimension(95, 0));
 
         // load the data in the combo boxes
         loadComboBoxData();

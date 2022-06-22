@@ -94,7 +94,7 @@ public class CreateEditPerson extends JDialog {
 
         saveButton.addActionListener(e -> {
             // Only accept the "Speichern" button, if the user has entered a name
-            if (!personInfoPanel.getName().equals("") && focusedPerson == null) {
+            if (!personInfoPanel.getName().equals("") && focusedPerson == null && type.equals("Create")) {
                 HRPerson p = new HRPerson();
 
                 // Set the modus or / and the password if needed
@@ -121,7 +121,8 @@ public class CreateEditPerson extends JDialog {
                     throw new RuntimeException(ex);
                 }
                 this.dispose();
-            } else {
+            }
+            if (type.equals("Edit")) {
                 // Change the name of the person
                 String[] nameSplit = personInfoPanel.getName().split(" ");
                 focusedPerson.setFirstName(nameSplit[0]);
