@@ -28,27 +28,27 @@ class FascadeTest {
     }
 
     @Test
-    @DisplayName("Check if department list is not null")
+    @DisplayName("T01 Check if department list is not null")
     void getAllDepartment1() {
         ArrayList<Department> list = fascade.getAllDepartment();
         assertNotNull(list);
     }
 
     @Test
-    @DisplayName("Check if department list contains items")
+    @DisplayName("T02 Check if department list contains items")
     void getAllDepartment2() {
         ArrayList<Department> list = fascade.getAllDepartment();
         assertTrue(list.size() > 0);
     }
 
     @Test
-    @DisplayName("Check if the company name is correctly saved in the JSON file")
+    @DisplayName("T03 Check if the company name is correctly saved in the JSON file")
     void getCompanyName() {
         assertEquals(company.getCompanyName(), "Our company");
     }
 
     @Test
-    @DisplayName("Check if getAllDepartmentNames() returns the correct Strings")
+    @DisplayName("T04 Check if getAllDepartmentNames() returns the correct Strings")
     void getAllDepartmentNames() {
         List<String> stringList = fascade.getAllDepartmentNames();
         ArrayList<Department> departmentList = fascade.getAllDepartment();
@@ -58,25 +58,25 @@ class FascadeTest {
     }
 
     @Test
-    @DisplayName("Check if fascade method returns the correct department of the person")
+    @DisplayName("T05 Check if fascade method returns the correct department of the person")
     void getPersonsCurrentDepartment() {
         assertEquals(fascade.getPersonsCurrentDepartment(fascade.getPersonByFullName("admin admin")), fascade.getSearchedDepartment("Management"));
     }
 
     @Test
-    @DisplayName("Check if getAllPerson() returns a not null value")
+    @DisplayName("T06 Check if getAllPerson() returns a not null value")
     void getAllPerson1() {
         assertNotNull(fascade.getAllPerson());
     }
 
     @Test
-    @DisplayName("Check if getAllPerson() returns has items")
+    @DisplayName("T07 Check if getAllPerson() returns has items")
     void getAllPerson2() {
         assertTrue(fascade.getAllPerson().size() > 0);
     }
 
     @Test
-    @DisplayName("Check if the two sorting types work (A-Z | Z-A)")
+    @DisplayName("T08 Check if the two sorting types work (A-Z | Z-A)")
     void getAllPersonSorted() {
         List<HRPerson> list = fascade.getAllPersonSortedZA();
         Collections.reverse(list);
@@ -84,31 +84,31 @@ class FascadeTest {
     }
 
     @Test
-    @DisplayName("Check if correct HRPerson object gets returned with the search term")
+    @DisplayName("T09 Check if correct HRPerson object gets returned with the search term")
     void getSearchedPerson1() {
         assertEquals(fascade.getSearchedPerson("admin").get(0).getFirstName(), "admin");
     }
 
     @Test
-    @DisplayName("Check if correct HRPerson object gets returned with the search term")
+    @DisplayName("T10 Check if correct HRPerson object gets returned with the search term")
     void getSearchedPerson2() {
         assertEquals(fascade.getSearchedPerson("leander").get(0).getFirstName(), "Modred");
     }
 
     @Test
-    @DisplayName("Check if getPersonsFullName() returns the correct person object")
+    @DisplayName("T11 Check if getPersonsFullName() returns the correct person object")
     void getPersonsFullName1() {
         assertEquals(fascade.getPersonByFullName("admin admin").getFirstName(), "admin");
     }
 
     @Test
-    @DisplayName("Check if getPersonsFullName() returns the correct person object")
+    @DisplayName("T12 Check if getPersonsFullName() returns the correct person object")
     void getPersonsFullName2() {
         assertEquals(fascade.getPersonByFullName("Xose Tushar").getFirstName(), "Xose");
     }
 
     @Test
-    @DisplayName("Check if switchPersonDepartmentTo really saves the person to the new department")
+    @DisplayName("T13 Check if switchPersonDepartmentTo really saves the person to the new department")
     void switchPersonDepartmentTo() {
         HRPerson p = fascade.getPersonByFullName("admin admin");
         Department d = fascade.getAllDepartment().get(0);
@@ -117,26 +117,26 @@ class FascadeTest {
     }
 
     @Test
-    @DisplayName("Check if getSearchedTeam returns a team object")
+    @DisplayName("T14 Check if getSearchedTeam returns a team object")
     void getSearchedTeam() {
         assertNotNull(fascade.getSearchedTeam("The Water Coolers"));
     }
 
     @Test
-    @DisplayName("Check if the team of selected person is changed")
+    @DisplayName("T15 Check if the team of selected person is changed")
     void setTeamOfPerson() {
         fascade.setTeamOfPerson(fascade.getPersonByFullName("admin admin"), "The Water Coolers");
         assertEquals(fascade.getPersonByFullName("admin admin").getParticipation().getTeam().getDesignation(), "The Water Coolers");
     }
 
     @Test
-    @DisplayName("Check if getSearchedJobFunction() returns the correct JobFunction object")
+    @DisplayName("T16 Check if getSearchedJobFunction() returns the correct JobFunction object")
     void getSearchedJobFunction() {
         assertEquals(fascade.getSearchedJobFunction("Secretary").getDesignation(), "Secretary");
     }
 
     @Test
-    @DisplayName("Check if setJobFunctionOfPerson() correctly changes the job function the person possesses")
+    @DisplayName("T17 Check if setJobFunctionOfPerson() correctly changes the job function the person possesses")
     void setJobFunctionOfPerson() {
         HRPerson p = fascade.getPersonByFullName("admin admin");
         fascade.setJobFunctionOfPerson(p, "Receptionist");
