@@ -4,30 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Alles pushen supported by Dong Won CEO">
+    <list default="true" id="b844f202-e788-46c0-9ee0-89bf8e419b78" name="Changes" comment="Finished all the comments needed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employees/JobFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/JobFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employees/Participation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/Participation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/employees/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/employees/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fascades/Fascade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DatahandlerJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/AssignmentPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/DataPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/DataPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/LogbookPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LogbookPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/OverviewPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PersonPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/AddButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/AddButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/DeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/DeleteButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/buttons/EditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/buttons/EditButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/DataInfoPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentFiltering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentFiltering.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonAssignmentSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/components/PersonOverview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/Authorization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/popups/CreateEditPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/popups/CreateEditPerson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DATA/personJSON.json" beforeDir="false" />
     </list>
     <list id="18219ac8-aa36-426a-99c4-beabb6c77909" name="Changes by franc" comment="" />
     <list id="ccd9d3ff-b23d-463b-a2a2-110f45ab2ebd" name="Changes by Medox36" comment="" />
@@ -230,13 +212,6 @@
       <workItem from="1655818739730" duration="5493000" />
       <workItem from="1655826862170" duration="5223000" />
       <workItem from="1655880131515" duration="1372000" />
-    </task>
-    <task id="LOCAL-00017" summary="Small changes GUI">
-      <created>1654897776099</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1654897776099</updated>
     </task>
     <task id="LOCAL-00018" summary="Added AddAssignmentPanel.java, Changed structure from GUI">
       <created>1654937007632</created>
@@ -574,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655884911944</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Finished all the comments needed">
+      <created>1655893435832</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1655893435832</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed a lot of names" />
     <MESSAGE value="Added the last feature to Overview. You can filter now the person list." />
     <MESSAGE value="Added a lot of comments" />
     <MESSAGE value="Added a bunch of comments and renamed some stuff." />
@@ -617,7 +598,8 @@
     <MESSAGE value="edited combobox color" />
     <MESSAGE value="Fixed bug" />
     <MESSAGE value="Alles pushen supported by Dong Won CEO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alles pushen supported by Dong Won CEO" />
+    <MESSAGE value="Finished all the comments needed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished all the comments needed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

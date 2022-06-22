@@ -3,6 +3,7 @@ package view;
 
 import employees.HRPerson;
 import fascades.Fascade;
+import log.UserAction;
 import utils.Menu;
 import view.buttons.AddButton;
 
@@ -10,11 +11,14 @@ import view.components.PersonInfo;
 import view.components.PersonOverview;
 import view.buttons.DeleteButton;
 import view.buttons.EditButton;
+import view.popups.Authorization;
 import view.popups.CreateEditPerson;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.io.IOException;
+
 /**
  * <h1>PersonPane</h1>
  * @author: Francesco Ryu
@@ -93,6 +97,11 @@ public class PersonPane extends JPanel {
         deleteButton.addActionListener(e -> {
             fascade.deletePerson(focusedPerson);
             personOverview.updateButtons();
+            try {
+                Authorization.currentUser.writeLogEntry(focusedPerson, UserAction.DELETE_PERSON);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
         });
 
         southPanel.add(buttonPanel, BorderLayout.WEST);

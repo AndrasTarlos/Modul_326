@@ -1,6 +1,7 @@
 package view;
 
 import fascades.FascadeLogbook;
+import log.LogBook;
 import utils.Menu;
 
 import javax.swing.*;

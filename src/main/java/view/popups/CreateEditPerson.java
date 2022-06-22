@@ -1,6 +1,7 @@
 package view.popups;
 
 import employees.HRPerson;
+import log.UserAction;
 import view.components.PersonInfo;
 import view.components.PersonOverview;
 
@@ -8,6 +9,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 /**
  * <h1>CreateEditPerson</h1>
@@ -113,6 +115,11 @@ public class CreateEditPerson extends JDialog {
                     p.setLastName(nameSplit[1]);
 
                 utils.Menu.fascade.createPerson(p);
+                try {
+                    Authorization.currentUser.writeLogEntry(p, UserAction.CREATE_PERSON);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 this.dispose();
             } else {
                 // Change the name of the person
@@ -130,6 +137,11 @@ public class CreateEditPerson extends JDialog {
                 } else {
                     focusedPerson.setModus(0);
                     focusedPerson.setPwd(null);
+                }
+                try {
+                    Authorization.currentUser.writeLogEntry(focusedPerson, UserAction.CHANGE_VALUE);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
                 this.dispose();
             }
