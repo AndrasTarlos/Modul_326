@@ -105,6 +105,7 @@ public class PersonOverview extends JPanel {
 
         contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
+        contentPanel.setPreferredSize(new Dimension(140, 700));
         scrollPanePerson = new JScrollPane(contentPanel);
 
         addButtonsToContentPanel();
@@ -131,8 +132,8 @@ public class PersonOverview extends JPanel {
         personList = fascade.getAllPerson();
         for (int i = 0; i < personList.size(); i++) {
             JButton button = new JButton(fascade.getPersonsFullName(personList.get(i)));
-            button.setMinimumSize(new Dimension(170, 25));
-            button.setMaximumSize(new Dimension(170, 25));
+            button.setMinimumSize(new Dimension(160, 25));
+            button.setMaximumSize(new Dimension(160, 25));
             button.setBorder(null);
             button.setBorderPainted(false);
             button.setBackground(new Color(246, 245, 245, 255));
