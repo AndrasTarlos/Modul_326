@@ -105,7 +105,7 @@ public class PersonOverview extends JPanel {
 
         contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
-        contentPanel.setPreferredSize(new Dimension(140, 700));
+        contentPanel.setPreferredSize(new Dimension(140, 500));
         scrollPanePerson = new JScrollPane(contentPanel);
 
         addButtonsToContentPanel();
