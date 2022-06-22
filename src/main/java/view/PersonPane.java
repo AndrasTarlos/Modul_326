@@ -46,10 +46,12 @@ public class PersonPane extends JPanel {
         hrPersonCheckBox = new JCheckBox("HR-Mitarbeiter ");
         hrPersonCheckBox.setFocusable(false);
         hrPersonCheckBox.setEnabled(false);
+        hrPersonCheckBox.setForeground(Color.BLACK);
 
         administratorCheckBox = new JCheckBox("Administrator ");
         administratorCheckBox.setFocusable(false);
         administratorCheckBox.setEnabled(false);
+        administratorCheckBox.setForeground(Color.BLACK);
 
         checkBoxPanel = new JPanel();
 
