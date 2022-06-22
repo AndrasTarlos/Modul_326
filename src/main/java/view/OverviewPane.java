@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
  * @version: 13.0
  * @date: 18.06.2022
  * <h2>Description</h2>
- * // GUI for Overview. Generates a panel for the specific tab in the Menu.java
+ * GUI for Overview. Generates a panel for the specific tab in the Menu.java
  */
 public class OverviewPane extends JPanel {
     PersonInfo personInfo;
@@ -41,9 +41,8 @@ public class OverviewPane extends JPanel {
         GridLayout personDetailLayout = new GridLayout(2, 0);
         this.setLayout(new BorderLayout());
 
-        /**
-         * Generates imported components
-         */
+
+        // Generates imported components
 
         personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(false);
@@ -72,9 +71,8 @@ public class OverviewPane extends JPanel {
             }
         };
 
-        /**
-         * sort functions to display the people in desired order
-         */
+
+        // Sort functions to display the people in desired order
 
         noneSort = new JRadioButton("Keine");
         noneSort.addActionListener(sortActionListener);
@@ -125,6 +123,10 @@ public class OverviewPane extends JPanel {
         this.add(personenPanel);
     }
 
+    /**
+     * Getter of personOverview
+     * @return PersonOverview
+     */
     public PersonOverview getPersonOverview() {
         return personOverview;
     }

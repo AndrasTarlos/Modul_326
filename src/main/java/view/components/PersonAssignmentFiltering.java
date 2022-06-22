@@ -29,6 +29,10 @@ public class PersonAssignmentFiltering extends JPanel {
 
     private final Fascade fascade;
 
+    /**
+     * Advanced constructor
+     * @param personOverview for the purpose to update its contents
+     */
     public PersonAssignmentFiltering(PersonOverview personOverview) {
         this.setLayout(new BorderLayout());
         fascade = utils.Menu.fascade;
@@ -49,32 +53,17 @@ public class PersonAssignmentFiltering extends JPanel {
         departmentComboBox = new JComboBox<>();
         departmentComboBox.setPreferredSize(new Dimension(224, 20));
         departmentComboBox.setFocusable(false);
-        departmentComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filterPerson();
-            }
-        });
+        departmentComboBox.addActionListener(e -> filterPerson());
 
         functionComboBox = new JComboBox<>();
         functionComboBox.setPreferredSize(new Dimension(224, 20));
         functionComboBox.setFocusable(false);
-        functionComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filterPerson();
-            }
-        });
+        functionComboBox.addActionListener(e -> filterPerson());
 
         teamsComboBox = new JComboBox<>();
         teamsComboBox.setPreferredSize(new Dimension(224, 20));
         teamsComboBox.setFocusable(false);
-        teamsComboBox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filterPerson();
-            }
-        });
+        teamsComboBox.addActionListener(e -> filterPerson());
 
         selectionPanel.add(departmentComboBox);
         selectionPanel.add(functionComboBox);
@@ -92,6 +81,9 @@ public class PersonAssignmentFiltering extends JPanel {
         this.add(selectionPanel, BorderLayout.CENTER);
     }
 
+    /**
+     * Fills the combo boxes content with data
+     */
     public void loadComboBoxData() {
         teamsComboBox.addItem("Keine");
         for (Team t: fascade.getTeams()) {
@@ -106,6 +98,11 @@ public class PersonAssignmentFiltering extends JPanel {
             departmentComboBox.addItem(d.getName());
         }
     }
+
+    /**
+     * Gets the selected filters from the combo boxes, gets the
+     * required data from the fascade and updates the buttons
+     */
     public void filterPerson() {
         String dep = (!Objects.equals((String) departmentComboBox.getSelectedItem(), "Keine")) ? (String) departmentComboBox.getSelectedItem() : null;
         String func = (!Objects.equals((String) functionComboBox.getSelectedItem(), "Keine")) ? (String) functionComboBox.getSelectedItem() : null;
@@ -114,6 +111,10 @@ public class PersonAssignmentFiltering extends JPanel {
         personOverview.updateButtons();
     }
 
+    /**
+     *
+     * @param p a PersonOverview object
+     */
     public void setPersonOverview(PersonOverview p) {
         personOverview = p;
     }

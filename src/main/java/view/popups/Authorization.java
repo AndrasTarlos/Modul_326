@@ -1,6 +1,5 @@
 package view.popups;
 
-import com.sun.tools.javac.Main;
 import employees.HRPerson;
 import fascades.Fascade;
 import utils.Menu;
@@ -15,11 +14,14 @@ import java.awt.event.WindowEvent;
 import java.util.Objects;
 
 /**
- * @author: Francesco Ryu/Andras Tarlos
+ * <h1>Authorization</h1>
+ * @author: Francesco Ryu / Andras Tarlos
  * @version: 3.0
  * @date: 21.06.2022
  * <h2>Description</h2>
- * Creates the login for HRPerson and admin.
+ * Creates the login GUI popup for HRPerson and admin
+ * to acquire higher privileges like editing, adding
+ * and deleting content.
  */
 
 public class Authorization extends JDialog {
@@ -41,6 +43,11 @@ public class Authorization extends JDialog {
 
     public static HRPerson currentUser;
 
+    /**
+     * Advanced constructor
+     * @param menu object
+     * @param tabbedPane object
+     */
     public Authorization(Menu menu, JTabbedPane tabbedPane) {
         super(menu, true);
 
@@ -85,7 +92,7 @@ public class Authorization extends JDialog {
             if (inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
                 setVisible(false);
                 loggedIn = true;
-                fascade.setAHRPersonLoggedIn(true);
+                fascade.setHRPersonLoggedIn(true);
                 JOptionPane.showMessageDialog(this, "Login erfolgreich");
             }
             if (!inputCode.getText().equals(fascade.getPersonsPassword(currentUser))) {
@@ -121,9 +128,12 @@ public class Authorization extends JDialog {
         this.setVisible(true);
     }
 
+    /**
+     * Fills the combo box with HRPerson or / and Administrators
+     */
     private void addComboBoxContent() {
         for (HRPerson p: Menu.fascade.getAllHRPerson()) {
-            selectPerson.addItem(p.getFirstName() + " " + p.getLastName());
+            selectPerson.addItem(p.getFullName());
         }
     }
 }

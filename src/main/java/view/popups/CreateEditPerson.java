@@ -1,6 +1,7 @@
 package view.popups;
 
 import employees.HRPerson;
+import log.UserAction;
 import view.components.PersonInfo;
 import view.components.PersonOverview;
 
@@ -8,11 +9,17 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 /**
- * @author: Francesco Ryu
+ * <h1>CreateEditPerson</h1>
+ * @author: Andras Tarlos / Francesco Ryu
  * @version: 4.0
  * @date: 20.06.2022
+ * <h2>Description</h2>
+ * Creates a dynamic GUI popup that is able to
+ * either create a new member/person/user or edit
+ * an already existing member.
  */
 
 public class CreateEditPerson extends JDialog {
@@ -32,6 +39,12 @@ public class CreateEditPerson extends JDialog {
     JButton quitButton;
     JButton saveButton;
 
+    /**
+     * Advanced constructor
+     * @param personOverview object to update it
+     * @param type String (Create / Edit)
+     * @param focusedPerson an HRPerson object
+     */
     public CreateEditPerson(PersonOverview personOverview, String type, HRPerson focusedPerson) {
         personInfoPanel = new PersonInfo(true);
 
@@ -80,7 +93,7 @@ public class CreateEditPerson extends JDialog {
         buttonPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         saveButton.addActionListener(e -> {
-            // Only accept the "speichern" button, if the user has entered a name
+            // Only accept the "Speichern" button, if the user has entered a name
             if (!personInfoPanel.getName().equals("") && focusedPerson == null) {
                 HRPerson p = new HRPerson();
 
@@ -102,6 +115,11 @@ public class CreateEditPerson extends JDialog {
                     p.setLastName(nameSplit[1]);
 
                 utils.Menu.fascade.createPerson(p);
+                try {
+                    Authorization.currentUser.writeLogEntry(p, UserAction.CREATE_PERSON);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 this.dispose();
             } else {
                 // Change the name of the person
@@ -119,6 +137,11 @@ public class CreateEditPerson extends JDialog {
                 } else {
                     focusedPerson.setModus(0);
                     focusedPerson.setPwd(null);
+                }
+                try {
+                    Authorization.currentUser.writeLogEntry(focusedPerson, UserAction.CHANGE_VALUE);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
                 }
                 this.dispose();
             }

@@ -1,5 +1,6 @@
 package employees;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +19,7 @@ import java.util.Locale;
 @Getter
 @Setter
 public class Person implements Comparable<Person> {
-    //private byte[] photo;
+    private String photo;
     private String firstName;
     private String lastName;
     private Participation participation;
@@ -66,5 +67,14 @@ public class Person implements Comparable<Person> {
                 return o1.getFirstName().toUpperCase(Locale.ROOT).compareTo(o2.getFirstName().toUpperCase(Locale.ROOT));
             }
         };
+    }
+
+    /**
+     * Returns the full name of the person
+     * @return String
+     */
+    @JsonIgnore
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

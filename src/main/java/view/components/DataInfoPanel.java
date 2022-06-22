@@ -46,12 +46,15 @@ public class DataInfoPanel extends JPanel {
     public DataInfoPanel(String labelName) {
         fascade = utils.Menu.fascade;
         label = new JLabel(labelName);
+
         setLabelName(labelName);
 
+        // Initialize all buttons
         addButton = new AddButton();
         editButton = new EditButton();
         deleteButton = new DeleteButton();
 
+        // Open create-edit-delete function dynamically depending on which button was pressed
         switch (labelName) {
             case "Abteilung:" -> {
                 addButton.addActionListener(e -> {
@@ -116,6 +119,7 @@ public class DataInfoPanel extends JPanel {
         buttonPanel.add(editButton);
         buttonPanel.add(deleteButton);
 
+        // Add buttons method
         addButtons();
 
         buttonScrollPanePanel = new JPanel();
@@ -134,7 +138,11 @@ public class DataInfoPanel extends JPanel {
         this.setBorder(new LineBorder(Color.BLACK));
     }
 
+    /**
+     * Adds the buttons to the scrollPanes panel
+     */
     public void addButtons() {
+        // Save the individual lists in an object array
         switch (labelName) {
             case "Abteilung:" -> itemList = fascade.getAllDepartment().toArray();
             case "Funktionen:" -> itemList = fascade.getJobFunctions().toArray();
@@ -143,6 +151,7 @@ public class DataInfoPanel extends JPanel {
 
         for (int i = 0; i < itemList.length; i++) {
             String name = null;
+            // Type cast the objects into the right type
             switch (labelName) {
                 case "Abteilung:" -> name = ((Department) itemList[i]).getName();
                 case "Funktionen:" -> name = ((JobFunction) itemList[i]).getDesignation();
@@ -158,20 +167,25 @@ public class DataInfoPanel extends JPanel {
             button.setBackground(new Color(246, 245, 245, 255));
             button.setFocusable(false);
 
-            button.addActionListener(e -> {
-                focusedItem = e.getActionCommand();
-            });
+            button.addActionListener(e -> focusedItem = e.getActionCommand());
             contentPanel.add(button);
         }
         contentPanel.revalidate();
         contentPanel.repaint();
     }
 
+    /**
+     * Updates and refreshes the buttons
+     */
     public void updateButtons() {
         contentPanel.removeAll();
         addButtons();
     }
 
+    /**
+     * Sets the name of the label
+     * @param labelName String
+     */
     public void setLabelName(String labelName) {
         this.labelName = labelName;
     }

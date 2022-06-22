@@ -6,13 +6,13 @@ import employees.HRPerson;
 import employees.JobFunction;
 import employees.Participation;
 import fascades.Fascade;
-import org.jetbrains.annotations.NotNull;
+import log.UserAction;
+import view.popups.Authorization;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * <h1>PersonAssignmentSettings</h1>
@@ -51,7 +51,7 @@ public class PersonAssignmentSettings extends JPanel {
         JLabel function = new JLabel("Funktion:");
         function.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        JLabel teams = new JLabel("Teams:");
+        JLabel teams = new JLabel("Team:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
         // create the 3 combo boxes and add action listeners to them
@@ -61,8 +61,10 @@ public class PersonAssignmentSettings extends JPanel {
         departmentComboBox.addActionListener(e -> {
             // if there is a person selected from the person list and the department is
             // changed, change the selected department in the backend (model class) as well
-            //if (focusedPerson != null)
-                //fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
+            if (focusedPerson != null) {
+                fascade.switchPersonDepartmentTo(fascade.getSearchedDepartment((String) departmentComboBox.getSelectedItem()), focusedPerson);
+                writeLogEntry();
+            }
         });
 
         functionComboBox = new JComboBox<>();
@@ -71,8 +73,11 @@ public class PersonAssignmentSettings extends JPanel {
         functionComboBox.addActionListener(e -> {
             // if there is a person selected from the person list and the job function is
             // changed, change the selected job function in the backend (model class) as well
-            if (focusedPerson != null)
+            if (focusedPerson != null) {
                 fascade.setJobFunctionOfPerson(focusedPerson, (String) functionComboBox.getSelectedItem());
+                writeLogEntry();
+            }
+
         });
 
         teamsComboBox = new JComboBox<>();
@@ -84,6 +89,7 @@ public class PersonAssignmentSettings extends JPanel {
             if (focusedPerson != null) {
                 fascade.setTeamOfPerson(focusedPerson, (String) teamsComboBox.getSelectedItem());
                 focusedPerson.getParticipation().setTeam(fascade.getSearchedTeam((String) teamsComboBox.getSelectedItem()));
+                writeLogEntry();
             }
         });
 
@@ -162,5 +168,17 @@ public class PersonAssignmentSettings extends JPanel {
         teamsComboBox.setSelectedItem(p.getTeam().getDesignation());
         functionComboBox.setSelectedItem(p.getFunction().getDesignation());
         departmentComboBox.setSelectedItem(person.getDepartmentName());
+    }
+
+    /**
+     * Writes a log entry
+     */
+    public void writeLogEntry() {
+        try {
+            if (Authorization.currentUser != null)
+                Authorization.currentUser.writeLogEntry(focusedPerson, UserAction.SET_ASSIGNMENT);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }

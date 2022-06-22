@@ -11,11 +11,9 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * <h1>Menu</h1>
- *
  * @author: Francesco Ryu, Andras Tarlos
  * @version: 1.0
  * @date: 21.06.2022
@@ -54,7 +52,6 @@ public class Menu extends JFrame {
         selectTab.addTab("Logbuch", logbookPane);
 
         //Sets a ChangeListener to display the authorization
-
         selectTab.addChangeListener(e -> {
             if (!fascade.isAHRPersonLoggedIn()) {
                 if (selectTab.getSelectedIndex() == 1 ||
@@ -69,17 +66,18 @@ public class Menu extends JFrame {
             overviewPane.getPersonOverview().updateButtons();
             personPane.getPersonOverview().updateButtons();
             assignmentPane.getPersonOverviewPanel().updateButtons();
+            logbookPane.updateLogbook();
         });
 
 
         this.add(selectTab);
-
         this.setSize(600, 700);
         this.setVisible(true);
         this.setResizable(false);
         this.setLocation(500, 200);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         selectTab.setSelectedIndex(0);
+
         // Add window listener
         WindowListener wl = new WindowAdapter() {
             @Override
@@ -90,12 +88,10 @@ public class Menu extends JFrame {
             }
         };
         this.addWindowListener(wl);
-
     }
 
     /**
      * Here starts the execution of the program
-     *
      * @param args String args
      */
     public static void main(String[] args) {
