@@ -51,9 +51,9 @@ public class PersonOverview extends JPanel {
 
     /**
      * constructor for the PersonOverview class
-     * @param personInfo
-     * @param personAssignmentSettings
-     * @param personPane
+     * @param personInfo object of PersonInfo
+     * @param personAssignmentSettings object of personAssignmentSettings
+     * @param personPane object of personPane
      * @param setVisibleSearchBar if you set this true, you will see the searchBar like in this tab
      */
 
@@ -141,7 +141,8 @@ public class PersonOverview extends JPanel {
 
             button.addActionListener(e -> {
                 updatePanels(fascade.getPersonByFullName(e.getActionCommand()));
-                personPane.setFocusedPerson(fascade.getPersonByFullName(e.getActionCommand()));
+                if (personPane != null)
+                    personPane.setFocusedPerson(fascade.getPersonByFullName(e.getActionCommand()));
             });
             contentPanel.add(button);
         }
