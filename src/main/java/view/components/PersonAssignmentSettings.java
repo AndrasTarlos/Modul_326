@@ -51,7 +51,7 @@ public class PersonAssignmentSettings extends JPanel {
         JLabel function = new JLabel("Funktion:");
         function.setBorder(new EmptyBorder(5, 0, 0, 0));
 
-        JLabel teams = new JLabel("Teams:");
+        JLabel teams = new JLabel("Team:");
         teams.setBorder(new EmptyBorder(5, 0, 0, 0));
 
         // create the 3 combo boxes and add action listeners to them

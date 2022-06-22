@@ -14,7 +14,7 @@ import java.awt.*;
  * @version: 1.0
  * @date: 18.06.2022
  * <h2>Description</h2>
- * // GUI for assigning person. Generates a tab in the Menu.java
+ * GUI for assigning person. Generates a tab in the Menu.java
  */
 
 public class AssignmentPane extends JPanel {
@@ -30,10 +30,8 @@ public class AssignmentPane extends JPanel {
 
         GridLayout personDetailLayout = new GridLayout(2, 0);
 
-        /**
-         * Generates imported components
-         */
 
+        //Generates imported components
         personEditPanel = new JPanel();
         personInfo = new PersonInfo(false);
         personAssignmentPanel = new PersonAssignmentSettings(true);

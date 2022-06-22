@@ -70,10 +70,7 @@ public class PersonOverview extends JPanel {
         searchBarTextField = new JTextField();
         searchBarTextField.setColumns(15);
 
-        /**
-         * Creates lens Image into a Button for searchBar
-         */
-
+        // Creates lens Image into a Button for searchBar
         ImageIcon lensImage = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(lensImage);
         JButton imgButton = new JButton();
@@ -88,10 +85,7 @@ public class PersonOverview extends JPanel {
             updateButtons();
         });
 
-        /**
-         * Creates searchBar with imgButton and TextField for searching person with name
-         */
-
+        // Creates searchBar with imgButton and TextField for searching person with name
         searchBar = new JPanel();
         searchBar.setBorder(new TitledBorder(""));
         searchBar.setLayout(new GridLayout(2, 1));
@@ -99,10 +93,7 @@ public class PersonOverview extends JPanel {
         searchBar.add(imgButton);
         searchBar.add(searchBarTextField);
 
-        /**
-         * Creates list with buttons from Person
-         */
-
+        // Creates list with buttons from Person
         contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
         contentPanel.setPreferredSize(new Dimension(140, 700));

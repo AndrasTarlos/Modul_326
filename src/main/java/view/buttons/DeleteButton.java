@@ -30,6 +30,10 @@ public class DeleteButton extends JButton {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Advanced constructor
+     */
     public DeleteButton() {
         ImageIcon addButtonPic = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(addButtonPic);

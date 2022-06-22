@@ -16,7 +16,6 @@ import employees.Participation;
 import employees.Person;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * <h1>Fascade</h1>
@@ -190,8 +189,13 @@ public class Fascade {
         getAllDepartment().get(0).addMember(p);
     }
 
+    /**
+     * Deletes a Person
+     * @param person object to be deleted
+     */
     public void deletePerson(HRPerson person) {
-        getSearchedDepartment(person.getDepartmentName()).removeMember(person);
+        if (!person.getFullName().equals("admin admin"))
+            getSearchedDepartment(person.getDepartmentName()).removeMember(person);
     }
 
     /**
@@ -447,13 +451,21 @@ public class Fascade {
         person.getParticipation().setFunction(getSearchedJobFunction(newJobFunction));
     }
 
+    /**
+     *
+     * @return boolean value
+     */
     @JsonIgnore
     public boolean isAHRPersonLoggedIn() {
         return isAHRPersonLoggedIn;
     }
 
+    /**
+     * Sets the new logged in user
+     * @param AHRPersonLoggedIn boolean
+     */
     @JsonIgnore
-    public void setAHRPersonLoggedIn(boolean AHRPersonLoggedIn) {
+    public void setHRPersonLoggedIn(boolean AHRPersonLoggedIn) {
         isAHRPersonLoggedIn = AHRPersonLoggedIn;
     }
 }

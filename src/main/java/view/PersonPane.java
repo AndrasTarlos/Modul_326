@@ -21,7 +21,7 @@ import java.awt.*;
  * @version: 1.0
  * @date: 19.06.2022
  * <h2>Description</h2>
- * // GUI for Person. Generates a panel for the specific tab in the Menu.java
+ * GUI for Person. Generates a panel for the specific tab in the Menu.java
  */
 public class PersonPane extends JPanel {
     AddButton addButton;
@@ -40,6 +40,9 @@ public class PersonPane extends JPanel {
 
     Fascade fascade;
 
+    /**
+     * Advanced constructor
+     */
     public PersonPane() {
         fascade = Menu.fascade;
 

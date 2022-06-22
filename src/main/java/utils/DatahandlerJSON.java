@@ -22,7 +22,8 @@ import java.util.Objects;
  * @version: 1.0
  * @date: 18.06.2022
  * <h2>Description</h2>
- *
+ * This class writes and reads the JSON files
+ * companyJSON and fascadeJSON.
  */
 public class DatahandlerJSON {
     private static final URI companyJsonPath;

@@ -29,6 +29,10 @@ public class EditButton extends JButton {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Advanced constructor
+     */
     public EditButton() {
         ImageIcon addButtonPic = new ImageIcon(Paths.get(imgPath).toString());
         JLabel imgLabel = new JLabel(addButtonPic);

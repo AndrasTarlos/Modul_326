@@ -20,7 +20,7 @@ import utils.Menu;
  * @version: 1.0
  * @date: 18.06.2022
  * <h2>Description</h2>
- * // GUI for "Stammdaten". Generates a panel for the specific tab in the Menu.java
+ * GUI for "Stammdaten". Generates a panel for the specific tab in the Menu.java
  */
 
 public class DataPane extends JPanel {
@@ -54,10 +54,8 @@ public class DataPane extends JPanel {
         componentsPanel = new JPanel();
         componentsPanel.setLayout(new BoxLayout(componentsPanel, BoxLayout.Y_AXIS));
 
-        /**
-         * Generates dataInfoPanel 3 times with the matching labelName
-         */
 
+        // Generates dataInfoPanel 3 times with the matching labelName
         String[] labelNames = {"Abteilung:", "Funktionen:", "Teams:"};
 
         for (int i = 0; i < 3; i++) {
